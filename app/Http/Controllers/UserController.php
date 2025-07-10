@@ -261,7 +261,7 @@ class UserController extends Controller
         $this->userService->updateOTPDetails($user);
         $user = $this->userService->getUser($user->id);
 
-        if ($user->sendEmailVerificationNotification(true)) {
+        if ($user->sendEmailVerificationNotification()) {
             return back()->with('alert-success', 'OTP email sent successfully.');
         } else {
             return back()->with('alert-danger', 'Could not sent OTP email. Please try after some time.');
