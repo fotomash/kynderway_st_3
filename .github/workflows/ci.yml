@@ -6,17 +6,44 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: kynderway
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_USER: kynderway
+          MYSQL_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
+    strategy:
+      matrix:
+        php-version: [ '8.1', '8.2' ]
     steps:
       - uses: actions/checkout@v3
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: ${{ matrix.php-version }}
+          extensions: pdo_mysql
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
-      - name: Generate API docs
-        run: php artisan scribe:generate
+      - name: Run migrations
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: kynderway
+          DB_USERNAME: kynderway
+          DB_PASSWORD: password
+        run: php artisan migrate --force
+      - name: Static analysis - Larastan
+        run: composer lint:phpstan
+      - name: Static analysis - PHP CS Fixer
+        run: composer lint
       - name: Run tests
-        run: vendor/bin/phpunit --testdox
+        run: php artisan test
