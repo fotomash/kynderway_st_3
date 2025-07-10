@@ -1,0 +1,4761 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot access property \\$secondary_notifications on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Console/Commands/EmailMessagesCron.php
+
+		-
+			message: "#^Method App\\\\Console\\\\Commands\\\\EmailMessagesCron\\:\\:handle\\(\\) should return int but return statement is missing\\.$#"
+			count: 1
+			path: app/Console/Commands/EmailMessagesCron.php
+
+		-
+			message: "#^Offset 'email' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Console/Commands/EmailMessagesCron.php
+
+		-
+			message: "#^Offset 'name' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Console/Commands/EmailMessagesCron.php
+
+		-
+			message: "#^Method App\\\\Console\\\\Commands\\\\deleteUser\\:\\:handle\\(\\) should return int but return statement is missing\\.$#"
+			count: 1
+			path: app/Console/Commands/deleteUser.php
+
+		-
+			message: "#^Property App\\\\Events\\\\AccountActivate\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: app/Events/AccountActivate.php
+
+		-
+			message: "#^Property App\\\\Events\\\\AccountSuspend\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: app/Events/AccountSuspend.php
+
+		-
+			message: "#^Method App\\\\Events\\\\SendJobOfferEvent\\:\\:__construct\\(\\) has parameter \\$job_ids with no type specified\\.$#"
+			count: 1
+			path: app/Events/SendJobOfferEvent.php
+
+		-
+			message: "#^Property App\\\\Events\\\\SendJobOfferEvent\\:\\:\\$job_ids has no type specified\\.$#"
+			count: 1
+			path: app/Events/SendJobOfferEvent.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Events\\\\UserAccountDeleteEvent\\:\\:\\$user\\.$#"
+			count: 1
+			path: app/Events/UserAccountDeleteEvent.php
+
+		-
+			message: "#^Method App\\\\Events\\\\UserAccountDeleteEvent\\:\\:__construct\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Events/UserAccountDeleteEvent.php
+
+		-
+			message: "#^Property App\\\\Events\\\\UserAccountDeleteEvent\\:\\:\\$type has no type specified\\.$#"
+			count: 1
+			path: app/Events/UserAccountDeleteEvent.php
+
+		-
+			message: "#^Property App\\\\Events\\\\UserDeleteEmailAdminEvent\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: app/Events/UserDeleteEmailAdminEvent.php
+
+		-
+			message: "#^Property App\\\\Events\\\\UserVerificationApproved\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: app/Events/UserVerificationApproved.php
+
+		-
+			message: "#^Property App\\\\Events\\\\UserVerificationRejected\\:\\:\\$user has no type specified\\.$#"
+			count: 1
+			path: app/Events/UserVerificationRejected.php
+
+		-
+			message: "#^Property App\\\\Events\\\\JobDelete\\:\\:\\$job_post has no type specified\\.$#"
+			count: 1
+			path: app/Events/jobDelete.php
+
+		-
+			message: "#^Property App\\\\Events\\\\ProfileActivate\\:\\:\\$profile_post has no type specified\\.$#"
+			count: 1
+			path: app/Events/profileActivate.php
+
+		-
+			message: "#^Property App\\\\Events\\\\ProfileDelete\\:\\:\\$profile_post has no type specified\\.$#"
+			count: 1
+			path: app/Events/profileDelete.php
+
+		-
+			message: "#^Property App\\\\Events\\\\ProfileSuspend\\:\\:\\$profile_post has no type specified\\.$#"
+			count: 1
+			path: app/Events/profileSuspend.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Exceptions\\\\Handler\\:\\:\\$dontFlash is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Foundation\\\\Exceptions\\\\Handler\\:\\:\\$dontFlash\\.$#"
+			count: 1
+			path: app/Exceptions/Handler.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Exceptions\\\\Handler\\:\\:\\$dontReport is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Foundation\\\\Exceptions\\\\Handler\\:\\:\\$dontReport\\.$#"
+			count: 1
+			path: app/Exceptions/Handler.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\:\\:\\$reports\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Called 'count' on Laravel collection, but could have been retrieved as a query\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access offset 'id' on mixed\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$deleted_by on App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\Report\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$job on App\\\\Models\\\\User_Connections\\|null\\.$#"
+			count: 2
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$jobPoster on App\\\\Models\\\\User_Connections\\|null\\.$#"
+			count: 4
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$jobProvider on App\\\\Models\\\\User_Connections\\|null\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$jobtype on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$name on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$status on App\\\\Models\\\\Report\\|null\\.$#"
+			count: 2
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$userDetails on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 6
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$userDetails on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 6
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$userdetails on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$userdetails on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method delete\\(\\) on App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\Report\\|null\\.$#"
+			count: 2
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Experiences\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Specialities\\|null\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:approveConnectionMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:approveConnectionMail\\(\\) has parameter \\$connectid with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:approveConnectionMailFromProvider\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:approveConnectionMailFromProvider\\(\\) has parameter \\$connectid with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusActivateMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusActivateMail\\(\\) has parameter \\$activationType with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusActivateMail\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusSuspendMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusSuspendMail\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:changesStatusSuspendMail\\(\\) has parameter \\$suspensionType with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:countWorkProfiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:deleteAccount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:deleteAccount\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:deleteAccountMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:deleteAccountMail\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:deleteAccountMail\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getApplicantsCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getApplicantsCount\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getIcon\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getIcon\\(\\) has parameter \\$categoryid with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProfileImage\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProfileImage\\(\\) has parameter \\$imageValue with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProfilePic\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProfilePic\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProviderJobType\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getProviderJobType\\(\\) has parameter \\$jobtypes with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getReportedProviderName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getReportedProviderName\\(\\) has parameter \\$reportedConnection with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getTotalCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getTotalCount\\(\\) has parameter \\$connectionId with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getTotalCount\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getUnseenCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getUnseenCount\\(\\) has parameter \\$connectionId with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getUnseenCount\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getUserName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getUserName\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getValuesForIds\\(\\) has parameter \\$databaseValue with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:getValuesForIds\\(\\) has parameter \\$modelValue with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:hasProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:hasWorkProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:jobOrProfileDeleteMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:jobOrProfileDeleteMail\\(\\) has parameter \\$deletedValue with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:jobOrProfileDeleteMail\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:reportComplete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:reportComplete\\(\\) has parameter \\$referenceID with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:reportComplete\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:softDeleteAllJobs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:softDeleteAllJobs\\(\\) has parameter \\$by with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:softDeleteAllJobs\\(\\) has parameter \\$jobId with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:unreadMessageMail\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:unreadMessageMail\\(\\) has parameter \\$data with no type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Method App\\\\Helpers\\\\Helper\\:\\:verificationRequestMailToProvider\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Offset 'email' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Offset 'last_name' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Offset 'name' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Variable \\$report might not be defined\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Variable \\$sendMailTo might not be defined\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Variable \\$senddetails might not be defined\\.$#"
+			count: 3
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Variable \\$subject might not be defined\\.$#"
+			count: 1
+			path: app/Helpers/Helper.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 5
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:adminAddNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:adminAddVerifyNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:assignUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:assignUser\\(\\) has parameter \\$mainUserId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:assignUserToVerificationRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:assignUserToVerificationRequest\\(\\) has parameter \\$verifyId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:changePassword\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:dashboard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:deleteRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:deletedUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:listMessages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:logout\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:providerPendingRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:showMessages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:showMessages\\(\\) has parameter \\$messageid with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:showVerificationHistory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:softDeleteUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:updateUserStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:updateVerificationStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\AdminController\\:\\:users\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Parameter \\#1 \\$view of function view expects view\\-string\\|null, string given\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$adminService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$getVerifiedService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$jobPostService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$languageUserService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$messageService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$profilePostService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$userConnectionService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$userService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\AdminController\\:\\:\\$videoService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/AdminController.php
+
+		-
+			message: "#^Cannot access property \\$email on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/ConfirmablePasswordController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+
+		-
+			message: "#^Cannot call method sendEmailVerificationNotification\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Auth\\\\EmailVerificationNotificationController\\:\\:store\\(\\) should return Illuminate\\\\Http\\\\Response but returns Illuminate\\\\Http\\\\RedirectResponse\\.$#"
+			count: 2
+			path: app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/EmailVerificationPromptController.php
+
+		-
+			message: "#^Parameter \\#1 \\$key of function __ expects string\\|null, mixed given\\.$#"
+			count: 2
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Hashing\\\\HashManager\\:\\:make\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Auth\\\\RegisteredUserController\\:\\:store\\(\\) should return Illuminate\\\\Http\\\\RedirectResponse but returns Illuminate\\\\View\\\\View\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Hashing\\\\HashManager\\:\\:make\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: "#^Cannot access property \\$client_type on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Cannot access property \\$type on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Cannot call method hasVerifiedEmail\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Cannot call method markEmailAsVerified\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Parameter \\#1 \\$user of class Illuminate\\\\Auth\\\\Events\\\\Verified constructor expects Illuminate\\\\Contracts\\\\Auth\\\\MustVerifyEmail, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/Auth/VerifyEmailController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User_Connections\\:\\:\\$job\\.$#"
+			count: 4
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User_Connections\\:\\:\\$profile\\.$#"
+			count: 2
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$fullconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 6
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$jobconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$password on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$position on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$pref_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$profile_picture on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$req_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method job\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method store\\(\\) on array\\<int, Illuminate\\\\Http\\\\UploadedFile\\>\\|Illuminate\\\\Http\\\\UploadedFile\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Experiences\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Specialities\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:addJobPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:approveConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:change_password\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:dashboard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:deleteConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getAllJobtype\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getAllLoaders\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getDashboarLoadMore\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getUserDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getValuesForIds\\(\\) has parameter \\$dbvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:getValuesForIds\\(\\) has parameter \\$modelvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:jobSoftDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:manageAccount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:manageProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:postVacancy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:stopJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:updateApplicationJobNote\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:updateJobNote\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:update_profile_picture\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:update_user_profile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:viewFullJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Offset 'client_type' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of static method Illuminate\\\\Filesystem\\\\FilesystemAdapter\\:\\:url\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, Illuminate\\\\Contracts\\\\Pagination\\\\LengthAwarePaginator given\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\<App\\\\Models\\\\User_Connections\\>\\:\\:skip\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:\\$basic_detail has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\BusinessController\\:\\:\\$slug has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Variable \\$finalValue might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/BusinessController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\EmailsController\\:\\:adminAccountDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/EmailsController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\EmailsController\\:\\:sendJobOffers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/EmailsController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\EmailsController\\:\\:userAccountDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/EmailsController.php
+
+		-
+			message: "#^Parameter \\#2 \\$options of class Illuminate\\\\Mail\\\\Markdown constructor expects array, mixed given\\.$#"
+			count: 3
+			path: app/Http/Controllers/EmailsController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Controllers\\\\GuestController\\:\\:\\$basic_detail\\.$#"
+			count: 7
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\:\\:\\$userconnection\\.$#"
+			count: 2
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Profile_Posts\\:\\:\\$userdetails\\.$#"
+			count: 4
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Anonymous function has an unused use \\$country\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$document_url on App\\\\Models\\\\Document\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Document\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$name on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$profile_category_id on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$provider_id on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Experiences\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Specialities\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:downloadFile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:downloadFile\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getAllJobtype\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getAllUserJobPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getAllUserJobPost\\(\\) has parameter \\$profileID with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getAllUserJobPost\\(\\) has parameter \\$profile_category_id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getAllUserJobPost\\(\\) has parameter \\$providerID with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getJob\\(\\) has parameter \\$slug with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getPhpInfo\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getProfile\\(\\) has parameter \\$category_slug with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getProfile\\(\\) has parameter \\$profile_slug with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getSearchProviderbar\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getValuesForIds\\(\\) has parameter \\$dbvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getValuesForIds\\(\\) has parameter \\$modelvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:searchProviderByAjx\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:searchProviders\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:setJobConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:updateJobPostSlugs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:updateProfileCategoriesSlugs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:updateProfilePostSlugs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:viewPDF\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, Illuminate\\\\Contracts\\\\Pagination\\\\LengthAwarePaginator given\\.$#"
+			count: 2
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, mixed given\\.$#"
+			count: 2
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\GuestController\\:\\:\\$slug has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Variable \\$dashboardUrl might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Variable \\$providerFullName might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Variable \\$secondaryNotification might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Variable \\$sendMailTo might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/GuestController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User_Connections\\:\\:\\$job\\.$#"
+			count: 6
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User_Connections\\:\\:\\$profile\\.$#"
+			count: 3
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$fullconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 7
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$jobconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$password on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$position on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$pref_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$profile_picture on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$provider_id on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$req_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Profile_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method job\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method store\\(\\) on array\\<int, Illuminate\\\\Http\\\\UploadedFile\\>\\|Illuminate\\\\Http\\\\UploadedFile\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Experiences\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Specialities\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:addjobpost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:approveConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:change_password\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:dashboard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:deleteConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getAllJobtype\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getAllLoaders\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getDashboarLoadMore\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getUserDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getValuesForIds\\(\\) has parameter \\$dbvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:getValuesForIds\\(\\) has parameter \\$modelvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:jobSoftDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:manageAccount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:manageProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:postVacancy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:stopJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:updateApplicationJobNote\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:updateJobNote\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:update_profile_picture\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:update_user_profile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:viewFullJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Offset 'client_type' does not exist on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of static method Illuminate\\\\Filesystem\\\\FilesystemAdapter\\:\\:url\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, Illuminate\\\\Contracts\\\\Pagination\\\\LengthAwarePaginator given\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\<App\\\\Models\\\\User_Connections\\>\\:\\:skip\\(\\) expects int, mixed given\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:\\$basic_detail has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\IndividualController\\:\\:\\$slug has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Variable \\$finalValue might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/IndividualController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobOfferController\\:\\:add\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobOfferController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobOfferController\\:\\:add\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobOfferController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobOfferController\\:\\:offer\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobOfferController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobOfferController\\:\\:sendJobOffers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobOfferController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:\\$assigned_user_id\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:\\$profile_category_id\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:\\$selected\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Call to an undefined method App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:save\\(\\)\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$name on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$position on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$pref_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$req_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$userconnection on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:adminAddJobNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:assignUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:assignUser\\(\\) has parameter \\$jobId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:deleteJob\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:deleteJobOffer\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:deletedJobs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:show\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:show\\(\\) has parameter \\$jobId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:show\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:showReport\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:showReport\\(\\) has parameter \\$jobId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:updateJobSelect\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\JobPostController\\:\\:updateJobStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Relation 'profilecategory' is not found in App\\\\Models\\\\Job_Posts model\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Relation 'userdetails' is not found in App\\\\Models\\\\Job_Posts model\\.$#"
+			count: 1
+			path: app/Http/Controllers/JobPostController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:adminAddProfileNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:assignUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:assignUser\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:deleteProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:show\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:show\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:updateProfileStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:updateSelectStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\ProfilePostController\\:\\:\\$profilePostService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProfilePostController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:\\$basic_detail\\.$#"
+			count: 12
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:\\$profile_categories\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Profile_Posts\\:\\:\\$profilecat\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'categoryname' on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'id' on mixed\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'language_level' on mixed\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'language_name' on mixed\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'profile_category_id' on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access offset 'profilecat' on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$document_url on App\\\\Models\\\\Document\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Document\\>\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$fullconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 33
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$jobtypes on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$name on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$password on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$position on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$pref_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$profile_picture on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$providerconnect on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$report_count on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$req_language on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$user_id on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$userdetails on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 4
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$view_count on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 4
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot access property \\$workwith on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method delete\\(\\) on App\\\\Models\\\\Document\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Document\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method delete\\(\\) on App\\\\Models\\\\Profile_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Profile_Posts\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method forget\\(\\) on mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method getMimeType\\(\\) on array\\<int, Illuminate\\\\Http\\\\UploadedFile\\>\\|Illuminate\\\\Http\\\\UploadedFile\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method job\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method save\\(\\) on App\\\\Models\\\\User_Connections\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User_Connections\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method store\\(\\) on array\\<int, Illuminate\\\\Http\\\\UploadedFile\\>\\|Illuminate\\\\Http\\\\UploadedFile\\|null\\.$#"
+			count: 5
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Experiences\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Job_Types\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on App\\\\Models\\\\Specialities\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Cannot call method touch\\(\\) on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:addDocument\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:addGetVerified\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:addProfiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:addvideointro\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:approveConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:carer\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:change_password\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:cleaner\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:dashboard\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteDocument\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteDocument\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteOtherLanguage\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteProfile\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:deleteconnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getAllJobtype\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getAllUser_ProfilePost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getProfile\\(\\) has parameter \\$profileCategoryId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getSearchSidebar\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getValuesForIds\\(\\) has parameter \\$dbvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getValuesForIds\\(\\) has parameter \\$modelvalue with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getVerified\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:getjobdetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:giveAccess\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:housekeeper\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:manageAccount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:manageDocuments\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:manageProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:maternityNurse\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:nanny\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:petCarer\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:profilepost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:profilepost\\(\\) has parameter \\$profile_cat_id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:profilepost\\(\\) has parameter \\$request with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:reportConnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:searchJobs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:searchjobsbyajax\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:serviceProfiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:set_provider_connection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:tutor\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:update_profile_picture\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:update_user_profile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:verified\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:videoIntro\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Negated boolean expression is always false\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'id' does not exist on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'language_name' does not exist on App\\\\Models\\\\User_Language\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'language_supported' does not exist on array\\{profile_picture\\: string\\}\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'profile_category_id' does not exist on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'profilecategory' does not exist on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Offset 'user_id' does not exist on App\\\\Models\\\\Job_Posts\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of static method Illuminate\\\\Filesystem\\\\FilesystemAdapter\\:\\:url\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, Illuminate\\\\Contracts\\\\Pagination\\\\LengthAwarePaginator given\\.$#"
+			count: 3
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, mixed given\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Parameter \\#2 \\$string of function explode expects string, mixed given\\.$#"
+			count: 4
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\ProviderController\\:\\:\\$slug has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Property App\\\\Models\\\\User_Connections\\:\\:\\$report_reason \\(string\\|null\\) does not accept mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$chk_user_connect in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$dashboardUrl might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$duration might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$fileMimeType might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$getLanguageArr in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$getLevelArr in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 4
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$jobPosterFullname might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$jobmainids might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$path_document might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$path_proof might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$path_video might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$postedcategory might not be defined\\.$#"
+			count: 4
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Variable \\$secondaryNotification might not be defined\\.$#"
+			count: 1
+			path: app/Http/Controllers/ProviderController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:\\$adstatus\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Job_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Job_Posts\\>\\:\\:\\$suspendBy\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Profile_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Profile_Posts\\>\\:\\:\\$adstatus\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Profile_Posts\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Profile_Posts\\>\\:\\:\\$suspendBy\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\Report\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Report\\>\\:\\:\\$assigned_user_id\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$country on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$jobPosts on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$name on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$profileposts on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$reportUsers on App\\\\Models\\\\Report\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\Report\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$usertype on App\\\\Models\\\\User\\|Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<App\\\\Models\\\\User\\>\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Function save not found\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:adminAddReportNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:assignUserToReport\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:assignUserToReport\\(\\) has parameter \\$reportId with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:create\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:index\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:index\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:showReportedUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:showReportedUsers\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:userReportList\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\ReportController\\:\\:userReportList\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Property App\\\\Models\\\\ReportUser\\:\\:\\$comment \\(string\\) does not accept mixed\\.$#"
+			count: 1
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Relation 'job' is not found in App\\\\Models\\\\Report model\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Relation 'profile' is not found in App\\\\Models\\\\Report model\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Relation 'reportUsers' is not found in App\\\\Models\\\\Report model\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Variable \\$job might not be defined\\.$#"
+			count: 3
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Variable \\$jobPostID might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Variable \\$profile might not be defined\\.$#"
+			count: 4
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Variable \\$profilePostD might not be defined\\.$#"
+			count: 2
+			path: app/Http/Controllers/ReportController.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$id on App\\\\Models\\\\User\\|null\\.$#"
+			count: 3
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$jobPosts on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$otp on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$otp_send_at on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$profileposts on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot call method markEmailAsVerified\\(\\) on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\UserController\\:\\:hardDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\UserController\\:\\:verifyOTP\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\UserController\\:\\:verifyResendOTP\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Parameter \\#1 \\$user of class App\\\\Events\\\\UserAccountDeleteEvent constructor expects App\\\\Models\\\\User, App\\\\Models\\\\User\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Parameter \\#1 \\$user of class App\\\\Events\\\\UserDeleteEmailAdminEvent constructor expects App\\\\Models\\\\User, App\\\\Models\\\\User\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Parameter \\#1 \\$user of class Illuminate\\\\Auth\\\\Events\\\\Verified constructor expects Illuminate\\\\Contracts\\\\Auth\\\\MustVerifyEmail, App\\\\Models\\\\User\\|null given\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$adminService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$basic_detail has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$getVerifiedService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$jobPostService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$languageUserService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$messageService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$profilePostService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$userConnectionService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$userService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Property App\\\\Http\\\\Controllers\\\\UserController\\:\\:\\$videoService has no type specified\\.$#"
+			count: 1
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Http/Middleware/isAdmin.php
+
+		-
+			message: "#^Cannot access property \\$is_block on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isAdmin.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Middleware/isAdmin.php
+
+		-
+			message: "#^Static call to instance method Illuminate\\\\Session\\\\Store\\:\\:flash\\(\\)\\.$#"
+			count: 2
+			path: app/Http/Middleware/isAdmin.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Http/Middleware/isBusiness.php
+
+		-
+			message: "#^Cannot access property \\$country on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isBusiness.php
+
+		-
+			message: "#^Cannot access property \\$is_block on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isBusiness.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Middleware/isBusiness.php
+
+		-
+			message: "#^Static call to instance method Illuminate\\\\Session\\\\Store\\:\\:flash\\(\\)\\.$#"
+			count: 2
+			path: app/Http/Middleware/isBusiness.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Http/Middleware/isIndividual.php
+
+		-
+			message: "#^Cannot access property \\$country on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isIndividual.php
+
+		-
+			message: "#^Cannot access property \\$is_block on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isIndividual.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Middleware/isIndividual.php
+
+		-
+			message: "#^Static call to instance method Illuminate\\\\Session\\\\Store\\:\\:flash\\(\\)\\.$#"
+			count: 2
+			path: app/Http/Middleware/isIndividual.php
+
+		-
+			message: "#^Cannot access property \\$client_type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 2
+			path: app/Http/Middleware/isProvider.php
+
+		-
+			message: "#^Cannot access property \\$country on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isProvider.php
+
+		-
+			message: "#^Cannot access property \\$is_block on App\\\\Models\\\\User\\|null\\.$#"
+			count: 1
+			path: app/Http/Middleware/isProvider.php
+
+		-
+			message: "#^Cannot access property \\$type on App\\\\Models\\\\User\\|null\\.$#"
+			count: 4
+			path: app/Http/Middleware/isProvider.php
+
+		-
+			message: "#^Static call to instance method Illuminate\\\\Session\\\\Store\\:\\:flash\\(\\)\\.$#"
+			count: 2
+			path: app/Http/Middleware/isProvider.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method Illuminate\\\\Support\\\\Str\\:\\:lower\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: app/Http/Requests/Auth/LoginRequest.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ExperiencesInterface\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ExperiencesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ExperiencesInterface\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ExperiencesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:assignAdmin\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:assignAdmin\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:getPendingProvidersRequests\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:getVerificationHistory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateDataOnVerificationSuccess\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$comment with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateGetVerifiedNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\GetVerifiedInterface\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/GetVerifiedInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobPostInterface\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobPostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobPostInterface\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobPostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobPostInterface\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobPostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobPostInterface\\:\\:getAll\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobPostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobTypesInterface\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobTypesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\JobTypesInterface\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/JobTypesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\LanguageUserInterface\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/LanguageUserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\LanguageUserInterface\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/LanguageUserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:deleteFromTo\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:deleteFromTo\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:getJobDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:getJobDetails\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:getMessageList\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:getMessages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\MessageInterface\\:\\:getMessages\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/MessageInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:assignAdmin\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:assignAdmin\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:deleteProviderId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:deleteProviderId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:getWith\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:getWith\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:selectedProfileCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:selectedProfileCount\\(\\) has parameter \\$category with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:suspendActivate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:suspendActivate\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:suspendActivate\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:suspendActivate\\(\\) has parameter \\$suspendedBy with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateEducationDesc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateEducationDesc\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateNotes\\(\\) has parameter \\$notes with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateSelectProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateSelectProfile\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ProfilePostInterface\\:\\:updateSelectProfile\\(\\) has parameter \\$select with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ProfilePostInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportInterface\\:\\:updateStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportInterface\\:\\:updateStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportInterface\\:\\:updateStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportUserInterface\\:\\:updateStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportUserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportUserInterface\\:\\:updateStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportUserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\ReportUserInterface\\:\\:updateStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/ReportUserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\SpecialitiesInterface\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/SpecialitiesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\SpecialitiesInterface\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/SpecialitiesInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:deleteJobUserId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:deleteJobUserId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:deleteProviderId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:deleteProviderId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserConnectionsInterface\\:\\:getAll\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserConnectionsInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:assignAdminToUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:assignAdminToUser\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:assignAdminToUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:getDeleteRequestUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:getDeletedUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:getUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:getUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:getUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:hardDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:hardDelete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:hardDelete\\(\\) has parameter \\$random with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:hardDelete\\(\\) has parameter \\$timestamp with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:softDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:softDelete\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:softDelete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateBlockStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateBlockStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateBlockStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateDeleteRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateDeleteRequest\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateOTPDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateOTPDetails\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserPassword\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserPassword\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\UserInterface\\:\\:updateUserPassword\\(\\) has parameter \\$password with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/UserInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\VideoIntroInterface\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Interfaces/VideoIntroInterface.php
+
+		-
+			message: "#^Method App\\\\Interfaces\\\\VideoIntroInterface\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Interfaces/VideoIntroInterface.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Models\\\\User\\:\\:\\$profileposts\\.$#"
+			count: 1
+			path: app/Listeners/SendJobOfferListener.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$event with type object is not subtype of native type App\\\\Events\\\\SendJobOfferEvent\\.$#"
+			count: 1
+			path: app/Listeners/SendJobOfferListener.php
+
+		-
+			message: "#^Relation 'profileposts' is not found in App\\\\Models\\\\User model\\.$#"
+			count: 1
+			path: app/Listeners/SendJobOfferListener.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Events\\\\UserAccountDeleteEvent\\:\\:\\$user\\.$#"
+			count: 3
+			path: app/Listeners/SendUserAccountDeleteMail.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\AccountDeleteAdmin\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/AccountDeleteAdmin.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\AccountDeleteAdmin\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/AccountDeleteAdmin.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\ConnectApproval\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/ConnectApproval.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\ConnectApproval\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/ConnectApproval.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\EmailVerification\\:\\:\\$content\\.$#"
+			count: 1
+			path: app/Mail/EmailVerification.php
+
+		-
+			message: "#^Parameter \\#1 \\$view of method Illuminate\\\\Mail\\\\Mailable\\:\\:markdown\\(\\) expects view\\-string, string given\\.$#"
+			count: 1
+			path: app/Mail/EmailVerification.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\GetVerified\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/GetVerified.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\GetVerified\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/GetVerified.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\GetVerifiedProvider\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/GetVerifiedProvider.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\GetVerifiedProvider\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/GetVerifiedProvider.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\JobConnect\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/JobConnect.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\JobConnect\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/JobConnect.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\JobProfileDelete\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/JobProfileDelete.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\JobProfileDelete\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/JobProfileDelete.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\NewMessage\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/NewMessage.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\NewMessage\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/NewMessage.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\ProviderConnect\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/ProviderConnect.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\ProviderConnect\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/ProviderConnect.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\ProviderConnectApproval\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/ProviderConnectApproval.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\ProviderConnectApproval\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/ProviderConnectApproval.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\SendJobOffersMail\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/SendJobOffersMail.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\SendJobOffersMail\\:\\:__construct\\(\\) has parameter \\$subject with no type specified\\.$#"
+			count: 1
+			path: app/Mail/SendJobOffersMail.php
+
+		-
+			message: "#^Property App\\\\Mail\\\\SendJobOffersMail\\:\\:\\$content has no type specified\\.$#"
+			count: 1
+			path: app/Mail/SendJobOffersMail.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\StatusChangeToActivate\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/StatusChangeToActivate.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\StatusChangeToActivate\\:\\:__construct\\(\\) has parameter \\$subject with no type specified\\.$#"
+			count: 1
+			path: app/Mail/StatusChangeToActivate.php
+
+		-
+			message: "#^Property App\\\\Mail\\\\StatusChangeToActivate\\:\\:\\$content has no type specified\\.$#"
+			count: 1
+			path: app/Mail/StatusChangeToActivate.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\StatusChangeToSuspend\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/StatusChangeToSuspend.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\StatusChangeToSuspend\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/StatusChangeToSuspend.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\UserAccountDelete\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/UserAccountDelete.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\UserAccountDelete\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/UserAccountDelete.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\UserVerificationApproved\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/UserVerificationApproved.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\UserVerificationApproved\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/UserVerificationApproved.php
+
+		-
+			message: "#^Access to an undefined property App\\\\Mail\\\\UserVerificationRejected\\:\\:\\$content\\.$#"
+			count: 2
+			path: app/Mail/UserVerificationRejected.php
+
+		-
+			message: "#^Method App\\\\Mail\\\\UserVerificationRejected\\:\\:__construct\\(\\) has parameter \\$content with no type specified\\.$#"
+			count: 1
+			path: app/Mail/UserVerificationRejected.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Getverified\\:\\:assigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Getverified.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Getverified\\:\\:user\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Getverified.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Offer\\:\\:job_post\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Offer.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:activeReports\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:applied\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:assigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:profilecategory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:reports\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:userconnection\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Posts\\:\\:userdetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Job_Types\\:\\:modulename\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Job_Types.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Categories\\:\\:jobs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Categories.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Posts\\:\\:activeReports\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Posts\\:\\:assigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Posts\\:\\:profilecat\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Posts\\:\\:reports\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Profile_Posts\\:\\:userdetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Profile_Posts.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Report\\:\\:assigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Report.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Report\\:\\:job\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Report.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Report\\:\\:profile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Report.php
+
+		-
+			message: "#^Method App\\\\Models\\\\Report\\:\\:reportUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/Report.php
+
+		-
+			message: "#^Method App\\\\Models\\\\ReportUser\\:\\:report\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/ReportUser.php
+
+		-
+			message: "#^Method App\\\\Models\\\\ReportUser\\:\\:user\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/ReportUser.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:assigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:assignedUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:deletedby\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:getVerified\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:jobPosts\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:myJobs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:myProfiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:myVerification\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:profileposts\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:reports\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:sendEmailVerificationNotification\\(\\) with return type void returns int but should not return anything\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:userlanguages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User\\:\\:videosets\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^PHPDoc type array of property App\\\\Models\\\\User\\:\\:\\$fillable is not covariant with PHPDoc type array\\<string\\> of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$fillable\\.$#"
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User_Connections\\:\\:job\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User_Connections.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User_Connections\\:\\:jobPoster\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User_Connections.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User_Connections\\:\\:jobProvider\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User_Connections.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User_Connections\\:\\:profile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User_Connections.php
+
+		-
+			message: "#^Method App\\\\Models\\\\User_Language\\:\\:getusers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Models/User_Language.php
+
+		-
+			message: "#^Cannot access property \\$client_type on Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable\\|null\\.$#"
+			count: 2
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: "#^Cannot access property \\$type on Illuminate\\\\Contracts\\\\Auth\\\\Authenticatable\\|null\\.$#"
+			count: 3
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: "#^Cannot access property \\$id on mixed\\.$#"
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: "#^PHPDoc tag @var above a method has no effect\\.$#"
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: "#^PHPDoc tag @var does not specify variable name\\.$#"
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ExperiencesRepository\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ExperiencesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ExperiencesRepository\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ExperiencesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:assignAdmin\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:assignAdmin\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:getPendingProvidersRequests\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:getVerificationHistory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateDataOnVerificationSuccess\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$comment with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateGetVerifiedNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\GetVerifiedRepository\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/GetVerifiedRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobPostRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobPostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobPostRepository\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobPostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobPostRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobPostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobPostRepository\\:\\:getAll\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobPostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobTypesRepository\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobTypesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\JobTypesRepository\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/JobTypesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\LanguageUserRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/LanguageUserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\LanguageUserRepository\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/LanguageUserRepository.php
+
+		-
+			message: "#^Cannot call method toArray\\(\\) on Chatify\\\\Http\\\\Models\\\\Message\\|null\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:deleteFromTo\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:deleteFromTo\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:getJobDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:getJobDetails\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:getMessageList\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:getMessages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\MessageRepository\\:\\:getMessages\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/MessageRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:assignAdmin\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:assignAdmin\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:deleteProviderId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:deleteProviderId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:getWith\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:getWith\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:selectedProfileCount\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:selectedProfileCount\\(\\) has parameter \\$category with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:suspendActivate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:suspendActivate\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:suspendActivate\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:suspendActivate\\(\\) has parameter \\$suspendedBy with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateEducationDesc\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateEducationDesc\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateNotes\\(\\) has parameter \\$notes with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateSelectProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateSelectProfile\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ProfilePostRepository\\:\\:updateSelectProfile\\(\\) has parameter \\$select with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ProfilePostRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportRepository\\:\\:updateStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportRepository\\:\\:updateStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportRepository\\:\\:updateStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportUserRepository\\:\\:updateStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportUserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportUserRepository\\:\\:updateStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportUserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\ReportUserRepository\\:\\:updateStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/ReportUserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\SpecialitiesRepository\\:\\:getValuesForIds\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/SpecialitiesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\SpecialitiesRepository\\:\\:getValuesForIds\\(\\) has parameter \\$ids with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/SpecialitiesRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:deleteJobUserId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:deleteJobUserId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:deleteProviderId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:deleteProviderId\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:getAll\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserConnectionsRepository\\:\\:getAll\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserConnectionsRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:assignAdminToUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:assignAdminToUser\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:assignAdminToUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:getDeleteRequestUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:getDeletedUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:getUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:getUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:getUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:hardDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:hardDelete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:hardDelete\\(\\) has parameter \\$random with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:hardDelete\\(\\) has parameter \\$timestamp with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:softDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:softDelete\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:softDelete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateBlockStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateBlockStatus\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateBlockStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateDeleteRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateDeleteRequest\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateOTPDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateOTPDetails\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserNotes\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserPassword\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserPassword\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\UserRepository\\:\\:updateUserPassword\\(\\) has parameter \\$password with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/UserRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\VideoIntroRepository\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Repositories/VideoIntroRepository.php
+
+		-
+			message: "#^Method App\\\\Repositories\\\\VideoIntroRepository\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Repositories/VideoIntroRepository.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:assignAdminToUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:assignAdminToUser\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:assignAdminToUser\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:deleteRequestUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:deleteStorageImages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:deleteStorageImages\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:deletedUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:getPendingProvidersRequests\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:getUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:getUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:getUsers\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:getVerificationHistory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateGetVerifiedNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateGetVerifiedNotes\\(\\) has parameter \\$verify_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateUserNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateUserNotes\\(\\) has parameter \\$note with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\AdminService\\:\\:updateUserNotes\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\AdminService\\:\\:\\$getVerifiedRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\AdminService\\:\\:\\$userRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/AdminService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:assignAdmin\\(\\) has parameter \\$admin_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:assignAdmin\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:delete\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:get\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:updateDataOnVerificationSuccess\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$comment with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\GetVerifiedService\\:\\:updateDataOnVerificationSuccess\\(\\) has parameter \\$setStatus with no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\GetVerifiedService\\:\\:\\$getVerifiedRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/GetVerifiedService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\JobPostService\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/JobPostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\JobPostService\\:\\:delete\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/JobPostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\JobPostService\\:\\:deleteReportsAndReportsUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/JobPostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\JobPostService\\:\\:deleteReportsAndReportsUser\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/JobPostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\JobPostService\\:\\:\\$jobPostRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/JobPostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\LanguageUserService\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/LanguageUserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\LanguageUserService\\:\\:delete\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/LanguageUserService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\LanguageUserService\\:\\:\\$languageUserRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/LanguageUserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:deleteFromTo\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:deleteFromTo\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:getJobDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:getJobDetails\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:getMessageList\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:getMessages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\MessageService\\:\\:getMessages\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\MessageService\\:\\:\\$messageRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/MessageService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:assignAdmin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:assignAdmin\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:assignAdmin\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:countSelectedProfiles\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:countSelectedProfiles\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:delete\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:deleteProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:deleteProfile\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:deleteProfile\\(\\) has parameter \\$reportCheck with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:getAllProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:getOnlyProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:getOnlyProfile\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:getProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:getProfile\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:profileAssigned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:profileAssigned\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:profileExists\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:profileExists\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:suspendActivateProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:suspendActivateProfile\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:suspendActivateProfile\\(\\) has parameter \\$reportCheck with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:suspendActivateProfile\\(\\) has parameter \\$setStatus with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:suspendActivateProfile\\(\\) has parameter \\$suspendedBy with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateNotes\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateNotes\\(\\) has parameter \\$notes with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateNotes\\(\\) has parameter \\$profilePostId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateSelectProfile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateSelectProfile\\(\\) has parameter \\$profileId with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\ProfilePostService\\:\\:updateSelectProfile\\(\\) has parameter \\$select with no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$jobTypeRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$messageRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$profilePostRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$reportRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$reportUserRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$specialitiesRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\ProfilePostService\\:\\:\\$userConnectionsRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/ProfilePostService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:createSlug\\(\\) has parameter \\$title with no type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:createSlug\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:getRelatedSlugs\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:getRelatedSlugs\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:getRelatedSlugs\\(\\) has parameter \\$slug with no type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\Slug\\:\\:getRelatedSlugs\\(\\) has parameter \\$type with no type specified\\.$#"
+			count: 1
+			path: app/Services/Slug.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserConnectionService\\:\\:deleteJobUserId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserConnectionService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserConnectionService\\:\\:deleteJobUserId\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserConnectionService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserConnectionService\\:\\:deleteProviderId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserConnectionService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserConnectionService\\:\\:deleteProviderId\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserConnectionService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\UserConnectionService\\:\\:\\$userConnectionRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/UserConnectionService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:getUser\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:getUser\\(\\) has parameter \\$id with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:hardDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:hardDelete\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:softDelete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:softDelete\\(\\) has parameter \\$adminId with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:softDelete\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateBlockStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateBlockStatus\\(\\) has parameter \\$setStatus with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateBlockStatus\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateDeleteRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateDeleteRequest\\(\\) has parameter \\$userId with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateOTPDetails\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateOTPDetails\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateUserPassword\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateUserPassword\\(\\) has parameter \\$password with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\UserService\\:\\:updateUserPassword\\(\\) has parameter \\$user_id with no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\UserService\\:\\:\\$userRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/UserService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\VideoService\\:\\:delete\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Services/VideoService.php
+
+		-
+			message: "#^Method App\\\\Services\\\\VideoService\\:\\:delete\\(\\) has parameter \\$user with no type specified\\.$#"
+			count: 1
+			path: app/Services/VideoService.php
+
+		-
+			message: "#^Property App\\\\Services\\\\VideoService\\:\\:\\$videoIntroRepository has no type specified\\.$#"
+			count: 1
+			path: app/Services/VideoService.php
+
+		-
+			message: "#^Cannot access property \\$success on mixed\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php
+
+		-
+			message: "#^Method App\\\\Validators\\\\ReCaptcha\\:\\:validate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php
+
+		-
+			message: "#^Method App\\\\Validators\\\\ReCaptcha\\:\\:validate\\(\\) has parameter \\$attribute with no type specified\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php
+
+		-
+			message: "#^Method App\\\\Validators\\\\ReCaptcha\\:\\:validate\\(\\) has parameter \\$parameters with no type specified\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php
+
+		-
+			message: "#^Method App\\\\Validators\\\\ReCaptcha\\:\\:validate\\(\\) has parameter \\$validator with no type specified\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php
+
+		-
+			message: "#^Method App\\\\Validators\\\\ReCaptcha\\:\\:validate\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: app/Validators/ReCaptcha.php

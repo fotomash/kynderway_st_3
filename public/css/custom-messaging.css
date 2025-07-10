@@ -1,0 +1,327 @@
+.prantDivAlign{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px !important;
+    align-content: center;
+    align-items: center;
+}
+
+.shareAndViewDocuments .btn-custom{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.06px;
+    width: fit-content;
+    height: 30px; 
+    border-radius: 20px;
+    border: 0.5px solid #ACB1CB!important; 
+    padding: 8px 12px; 
+    gap: 10px; 
+   color : #656565!important;
+}
+
+.shareAndViewDocuments {
+    margin:15px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.linedBetweenDocuments{
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    margin: 5px 0px;
+    border-color: #F8F8F8;
+}
+
+#pills-document .cp-field{
+    padding: unset!important;
+}
+
+#pills-document .cp-field .btn-blocked{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.06px;
+    color: #767676;
+}
+
+#pills-document .cp-field > .row{
+    padding: 0 20px!important;
+}
+
+#pills-document .cp-field .btn-success{
+    background: #2C9A81;
+    width: fit-content;
+    height: auto; 
+    min-height: 32px;
+    border-radius: 20px;
+    padding: 8px 12px; 
+    gap: 10px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #FFFFFF;
+    border: none;
+    display: inline-block; 
+    text-align: center; 
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+#pills-document .cp-field .btn-request{
+    color: #787878;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    width: fit-content;
+    height: 32px;
+    border-radius: 20px;
+    border: 1px solid #787878;
+    padding: 8px 12px;
+    gap: 10px; 
+}
+
+#pills-document .cp-field .col-md-4{
+    display: flex;
+    justify-content: end;
+}
+
+#pills-document .cp-field .btn-success-granted{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.06px;
+    color: #2C9A81;
+    cursor: not-allowed;
+    float: right;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: end;
+}
+
+#pills-document .cp-field .btn-success-granted img{
+    margin-right: 10px;
+}
+
+#pills-document .cp-field .btn-success-granted{
+    cursor:not-allowed;
+    float: right;
+}
+
+#pills-document .cp-field .col-md-8 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px!important;
+    line-height: 16.41px;
+    color: #3F3F3F;
+}
+
+#pills-document .cp-field .textShareDocument{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.06px;
+    color: #727272;
+}
+
+.containerChat {
+    position: relative;
+    width: 100%;
+    height: calc(100dvh - 80px);
+    min-height: 100%;
+}
+
+.containerChat iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.boxSentRequest {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 94px;
+    border-radius: 4px;
+    border: 0.5px solid #ACB1CB;
+    padding: 12px 16px;
+    background-color: #E5E7F4;
+    color: #37427C;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15.23px;
+    box-sizing: border-box;
+}
+
+.boxSentRequest span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.23px;
+    text-align: left;
+}
+
+.containerChat .row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.containerChat .btn-block-access, .btn-grant-access {
+    border-radius: 20px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.containerChat .btn-grant-access{
+    background-color: #2C9A81;
+    color: #fff;
+}
+
+.containerChat .btn-block-access{
+    color: #787878;
+    border: 1px solid #787878;
+}
+
+.containerChat .btn-block:hover, .btn-grant:hover {
+    background-color: #2d366b;
+}
+
+.noDocument {
+    height: auto; 
+    top: 94px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: #F2F1F7;
+    justify-content: space-between;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; 
+    box-sizing: border-box;
+    background-color: #F8F8F8;
+}
+
+.noDocument .noDocumentText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.06px;
+    color: #727272;
+}
+
+.noDocument .noDocumentText span {
+    font-weight: 400;
+}
+
+.noDocument .noDocumentText a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.06px;
+    text-align: left;
+    color: #37427C;
+}
+
+#pills-document .la-ellipsis-v{
+    color: #757575;
+    cursor: pointer;
+}
+
+#pills-document .alignItems{
+    display: flex;
+   align-items: center;
+   justify-content: end;
+}
+
+@media (max-width: 599px) {
+    #pills-document .cp-field .col-md-4{
+        width: 50%!important;
+    }
+    #pills-document .cp-field .col-md-8{
+        width: 50%!important;
+    }
+    #pills-document .alignItems {
+        justify-content: end;
+        margin-right: 4px;
+    }
+    .flexDirectionEnd{
+        min-width: 40%!important;
+        justify-content: center!important;
+    }
+    
+    .flexDirectionStart{
+        min-width: 60%!important;
+    }
+}
+
+.chatNameProvClient span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.75px;
+    color:#656565;
+}
+
+.flexDirectionEnd{
+    display: flex;
+    justify-content: end;
+}
+
+.flexDirectionStart{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.flexDirectionStart .la-angle-left{
+    color: #000000;
+    font-size: 25px;
+}
+
+#clickBackToChat{
+    cursor: pointer;
+}
+
+#documents_library{
+    color: #fff; 
+    padding: 0 20px;
+}
+
+#documents_library_modal .close {
+    padding: 0;
+    margin: 0;
+}
+
+.ed-options-provider{
+    width: 234px!important
+}
+#shareAndViewDocuments{
+    display: none;
+    width: 95%;
+}
+
+.text-bold{
+    font-weight: 700!important;
+}
+
+@media (min-width: 599px) {
+    .noDocumentTextChat{
+        position: relative;
+        top: 240px;
+    }
+}
+
+.noDocumentTextChat{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #727272;
+}

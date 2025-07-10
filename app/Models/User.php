@@ -1,0 +1,142 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+use App\Notifications\UserVerificationEmail;
+use Illuminate\Support\Facades\Mail;
+
+class User extends Authenticatable implements MustVerifyEmail
+{
+    use HasFactory;
+    use Notifiable;
+    use SoftDeletes;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'last_name',
+        'type',
+        'client_type',
+        'phone_code',
+        'phone',
+        'secondary_notifications',
+        'is_private',
+        'country',
+        'nationality',
+        'state',
+        'city',
+        'postal_code',
+        'landmark',
+        'profile_picture',
+        'address',
+        'native_language',
+        'birth_date',
+        'company_name',
+        'company_website',
+        'email',
+        'password',
+        'assign_user_id',
+        'deleted_by',
+        'deleted_type',
+        'delete_request',
+        'otp',
+        'otp_send_at',
+        'is_new'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new UserVerificationEmail());
+        return 1;
+    }
+
+    public function profileposts()
+    {
+        return $this->hasMany(Profile_Posts::class, 'provider_id', 'id');
+    }
+
+    public function jobPosts()
+    {
+        return $this->hasMany(Job_Posts::class);
+    }
+
+    public function userlanguages()
+    {
+        return $this->hasMany(User_Language::class, 'user_id');
+    }
+
+    public function videosets()
+    {
+        return $this->hasMany(Videointros::class, 'provider_id');
+    }
+
+    public function getVerified()
+    {
+        return $this->hasOne(Getverified::class, 'provider_id')->latest();
+    }
+
+    public function assigned()
+    {
+        return $this->belongsto(User::class, 'assign_user_id', 'id');
+    }
+
+    public function assignedUser()
+    {
+        return $this->hasMany(User::class, 'id', 'assign_user_id');
+    }
+
+    public function myJobs()
+    {
+        return $this->hasMany(User::class, 'user_id', 'assigned_user_id');
+    }
+
+    public function myProfiles()
+    {
+        return $this->hasMany(User::class, 'provider_id', 'assigned_user_id');
+    }
+
+    public function myVerification()
+    {
+        return $this->hasMany(User::class, 'provider_id', 'assigned_user_id');
+    }
+
+    public function reports()
+    {
+        return $this->hasMany(ReportUser::class);
+    }
+
+    public function deletedby()
+    {
+        return $this->belongsto(User::class, 'deleted_by', 'id');
+    }
+}

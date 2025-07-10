@@ -1,0 +1,115 @@
+
+.cp-field .info{
+  float: none;
+}
+
+.form-check-date{
+  display: flex;
+  margin: .5rem 0rem;
+}
+
+.cp-field .form-check-date input {
+  width: auto;
+  position: initial;
+  height: auto;
+  margin: 0rem .4rem 0rem 0rem;
+}
+
+.cpp-fiel.--calendar , .price-group{
+  background-color: #F9F9FB;
+  border-radius: 1rem;
+}
+
+
+.cpp-fiel .jcalendar-table > table:nth-child(1) > tbody:nth-child(2),
+.cpp-fiel .jcalendar-table thead td,
+.cpp-fiel .jcalendar-set-day:not(.jcalendar-selected) ,
+.cpp-fiel .jcalendar-container{
+  background-color: #F9F9FB;
+}
+
+.cpp-fiel .jcalendar-weekday {
+  background-color: #fff;
+}
+.cpp-fiel .jcalendar-set-day.jcalendar-selected{
+  background-color: #8c50a0;
+  border-radius: 2rem;
+  color: #fff;
+  transition: 299ms background-color;
+}
+
+.cpp-fiel td.jcalendar-weekday:nth-child(1) {
+  border-radius: .5rem 0em 0rem .5rem;
+}
+.cpp-fiel td.jcalendar-weekday:nth-child(7) {
+  border-radius: 0em .5rem .5rem 0rem ;
+}
+.price-group p{
+  margin: 0px;
+  height: auto;
+  line-height: 40px;
+  flex: 0 0 10rem;
+  display: block;
+  float: none;
+}
+.price-group .cp-field{
+  margin: 1rem 0rem;
+}
+
+.post-vacancy-edit-modal .modal-content,.post-vacancy-edit-modal .modal-header{
+  border-radius: 1rem !important;
+  background-color: #fff;
+  border: none !important;
+}
+
+.post-vacancy-edit-modal .close{
+  position: inherit;
+  color: #2f2f2f;
+  opacity: 1;
+  border: none !important;
+  border-radius: 0;
+  font-size: 2rem;
+  float: none;
+  font-weight: lighter;
+  display: block;
+  margin: .5rem .5rem .5rem auto;
+  padding: 0;
+}
+
+.post-vacancy-edit-modal .title-h3{
+  font-weight:bold;
+  font-size: 1.3rem;
+  color: #304384;
+}
+
+.post-vacancy-edit-modal .edit-header{
+  background-color: #ecedf3;
+  padding: .4rem;
+  border-radius: 1rem;
+  font-size: .8rem;
+  text-align: right;
+  color: #686868;
+}
+.post-vacancy-edit-modal .edit-header a,.post-vacancy-edit-modal .edit-header a:hover{
+  color: #686868;
+}
+
+
+.post-vacancy-edit-modal .modal-body .row .col-3{
+  color: #686868;
+}
+
+.post-vacancy-edit-modal .btn.btn-kinderway-2{
+  background-color:rgb(48, 67, 132);
+  border-radius: 3rem;
+  margin: auto;
+  display: block;
+  padding: .5rem 2rem;
+  border-color: rgb(48, 67, 132);
+
+}
+
+.post-vacancy-edit-modal .btn.btn-kinderway-2:hover {
+  background-color: #8c50a0;
+  border-color: #8c50a0;
+}

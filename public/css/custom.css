@@ -1,0 +1,148 @@
+.inputicon_cls{
+  	left: auto !important; 
+  	right:15px;
+}
+
+.set_box{
+	padding: 0 0px 0 15px !important; 
+}
+
+
+/* Modal box*/
+.modal_margin {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.modal-text {		
+	color: #fff !important;	
+	font-weight: 600;
+}
+
+.set-modal-content{
+    margin-top:180px !important;
+}
+
+.mintxt-modal {
+	/* color: #000; */
+	font-size: 16px;
+	font-weight: 600;		
+  color: #444;
+  line-height: 1.5rem;
+}
+/* ---Modal box----*/
+
+.boxlayout {  
+  padding-right: 100px;  
+}
+
+.setchkbox {  
+  /*opacity:0.011;
+  z-index:100;*/
+  position: absolute;
+  left: -100vw;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.limargin{
+	margin-right:0px !important;
+}
+
+.setprofiletype_radio {    
+  position: absolute;
+  left: -100vw;  
+}
+
+.set-addmore {
+    float: left;
+    width: 100%;
+    padding: 10px 20px 2px; 
+}
+
+.setremove {
+  color: #007bff !important; 
+}
+
+.setbarwidth{
+  width: 90% !important;
+  padding-left: 5px !important;
+  word-wrap: break-word;
+}
+
+.setlangwidth{
+  width: 70% !important;
+  padding-left: 30px !important;
+  word-wrap: break-word;
+}
+
+.setwhitetext{
+  color: #fff !important;  
+}
+
+.disablemask{
+  background: #ddd3ee !important;
+  width: 500px;
+  padding: 5px;
+}
+
+/** To prevent flickering of images on hover **/
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; 
+  content: url("../assets/media/categories/purple/Asset\ 13@2x.png") url("../assets/media/categories/purple/Asset\ 10@2x.png") url("../assets/media/categories/purple/Asset\ 5@2x.png") url("../assets/media/categories/purple/Asset\ 4@2x.png") url("../assets/media/categories/purple/Asset\ 1@2x.png");
+}
+
+.category-all {
+
+  width: 100%;
+  height: 50%;
+  margin: 14px 0px 2px 0;
+  background: url("../assets/media/categories/dark_grey/Asset\ 14@2x.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.category-toys {
+
+  width: 100%;
+  height: 50%;
+  margin: 14px 0px 2px 0;
+  background: url("../assets/media/categories/dark_grey/Asset\ 11@2x.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.category-maternity {
+
+  width: 100%;
+  height: 50%;
+  margin: 14px 0px 2px 0;
+  background: url("../assets/media/categories/dark_grey/Asset\ 7@2x.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.category-cleaner {
+
+  width: 100%;
+  height: 50%;
+  margin: 14px 0px 2px 0;
+  background: url("../assets/media/categories/dark_grey/Asset\ 6@2x.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+
+.category-housekeeper {
+
+  width: 100%;
+  height: 50%;
+  margin: 14px 0px 2px 0;
+  background: url("../assets/media/categories/dark_grey/Asset\ 2@2x.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
