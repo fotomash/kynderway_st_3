@@ -234,6 +234,9 @@ class UserController extends Controller
         }
         if ($user->markEmailAsVerified()) {
             event(new Verified($user));
+            $user->otp = null;
+            $user->otp_send_at = null;
+            $user->save();
         }
 
         $user_type = $user->type;
