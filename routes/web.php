@@ -108,11 +108,11 @@ Route::get('/mail/user-account-delete', [EmailsController::class, 'userAccountDe
 Route::get('/mail/send-job-offers', [EmailsController::class, 'sendJobOffers']);
 
 Route::post('/verify-otp', [UserController::class, 'verifyOTP'])   //optimized
-        ->middleware('auth')
+        ->middleware(['auth', 'throttle:5,1'])
         ->name('verification.otp');
 
 Route::post('/verify-resend-otp', [UserController::class, 'verifyResendOTP'])   //optimized
-        ->middleware('auth')
+        ->middleware(['auth', 'throttle:5,1'])
         ->name('verification.resend.otp');
 
 Route::get('/view-pdf', [GuestController::class, 'viewPDF']);
