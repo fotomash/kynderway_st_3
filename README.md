@@ -34,6 +34,8 @@ docker-compose up
 The application will be available on `http://localhost:8000` and MySQL will listen on
 port `3306`. A dedicated service runs the queue worker using `php artisan queue:work`.
 
+Generated API documentation can be viewed at `/docs` once the containers are up.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
@@ -69,6 +71,10 @@ In order to ensure that the Laravel community is welcoming to all, please review
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## API documentation
+
+Documentation for this project's API is automatically generated during CI builds and can be accessed in your running environment at `/docs`.
 
 ## License
 
