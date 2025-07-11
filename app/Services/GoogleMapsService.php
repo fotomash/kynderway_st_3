@@ -14,9 +14,7 @@ class GoogleMapsService
         $response = GoogleMaps::load('geocoding')
             ->setParam(['address' => $address])
             ->get();
-        
-        $result = json_decode($response);
-        
+
         if ($result->status === 'OK') {
             return [
                 'lat' => $result->results[0]->geometry->location->lat,
@@ -24,10 +22,7 @@ class GoogleMapsService
                 'formatted_address' => $result->results[0]->formatted_address,
             ];
         }
-        
-        return null;
-    }
-    
+
     /**
      * Get nearby places
      */
@@ -40,10 +35,7 @@ class GoogleMapsService
                 'type' => $type,
             ])
             ->get();
-            
-        return json_decode($response);
-    }
-    
+
     /**
      * Calculate distance between two points
      */
@@ -56,7 +48,7 @@ class GoogleMapsService
                 'mode' => 'driving',
             ])
             ->get();
-            
+
         return json_decode($response);
     }
 }

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\EmailMessagesCron::class,
         Commands\deleteUser::class,
         Commands\EmailMessagesCron::class,
+        Commands\SecurityAudit::class,
     ];
 
     /**
