@@ -32,3 +32,5 @@ Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
     Route::post('verify-document', [KYCController::class, 'verifyDocument']);
     Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
 });
+
+Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);

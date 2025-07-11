@@ -73,7 +73,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'delete_request',
         'otp',
         'otp_send_at',
-        'is_new'
+        'is_new',
+        'credits'
     ];
 
     /**
