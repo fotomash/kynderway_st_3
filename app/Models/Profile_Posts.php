@@ -11,6 +11,21 @@ class Profile_Posts extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            if (!$model->latitude || !$model->longitude) {
+                $user = $model->userdetails;
+                if ($user) {
+                    $model->latitude = $user->latitude;
+                    $model->longitude = $user->longitude;
+                }
+            }
+        });
+    }
+
     protected $table = 'profile_posts';
 
     protected $guarded = [];

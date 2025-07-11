@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\Geocodable;
 
 use App\Notifications\UserVerificationEmail;
 use Illuminate\Support\Facades\Mail;
@@ -17,6 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasFactory;
     use Notifiable;
     use SoftDeletes;
+    use \App\Traits\Geocodable;
 
     /**
      * The attributes that are mass assignable.
@@ -40,6 +42,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'landmark',
         'profile_picture',
         'address',
+        'latitude',
+        'longitude',
         'native_language',
         'birth_date',
         'company_name',
