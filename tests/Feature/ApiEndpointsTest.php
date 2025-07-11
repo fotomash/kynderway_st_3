@@ -2,56 +2,12 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ApiEndpointsTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        Schema::create('users', function ($table) {
-            $table->id();
-            $table->string('address')->nullable();
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
-            $table->timestamps();
-        });
-
-        Schema::create('job_posts', function ($table) {
-            $table->id();
-            $table->string('jobtitle')->nullable();
-            $table->string('city')->nullable();
-            $table->string('country')->nullable();
-            $table->string('address')->nullable();
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
-            $table->softDeletes();
-            $table->timestamps();
-        });
-
-        Schema::create('profile_posts', function ($table) {
-            $table->id();
-            $table->unsignedBigInteger('provider_id')->nullable();
-            $table->integer('profile_category_id')->nullable();
-            $table->decimal('payamount')->nullable();
-            $table->string('currency')->nullable();
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
-            $table->softDeletes();
-            $table->timestamps();
-        });
-    }
-
-    protected function tearDown(): void
-    {
-        Schema::dropIfExists('job_posts');
-        Schema::dropIfExists('profile_posts');
-        Schema::dropIfExists('users');
-
-        parent::tearDown();
-    }
+    use RefreshDatabase;
 
     public function test_jobs_endpoint_returns_success()
     {
