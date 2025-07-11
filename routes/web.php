@@ -119,6 +119,8 @@ Route::post('/verify-resend-otp', [UserController::class, 'verifyResendOTP'])   
 Route::get('/view-pdf', [GuestController::class, 'viewPDF']);
 Route::get('/unsubscribe/{email}', [GuestController::class, 'unsubscribe']);
 
+Route::view('/credits-demo', 'credit-demo');
+
 Route::get('auth/{provider}', [SocialAuthController::class, 'redirectToProvider'])
     ->name('social.login');
 Route::get('auth/{provider}/callback', [SocialAuthController::class, 'handleProviderCallback'])
