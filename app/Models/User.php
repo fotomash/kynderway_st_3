@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Review;
 use App\Traits\Geocodable;
 
 use App\Notifications\UserVerificationEmail;
@@ -154,6 +155,16 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(ReportUser::class);
     }
+    public function reviewsWritten()
+    {
+        return $this->hasMany(Review::class, "reviewer_id");
+    }
+
+    public function reviewsReceived()
+    {
+        return $this->hasMany(Review::class, "reviewee_id");
+    }
+
 
     public function deletedby()
     {
