@@ -34,6 +34,13 @@ docker-compose up
 
 The application will be available on `http://localhost:8000` and MySQL will listen on
 port `3306`. A dedicated service runs the queue worker using `php artisan queue:work`.
+Prometheus and Grafana containers are also available for basic metrics exploration.
+Access them at:
+
+- Prometheus: <http://localhost:9090>
+- Grafana: <http://localhost:3000> (default login is `admin` / `secret`)
+
+Prometheus reads its configuration from `prometheus.yml` in the project root.
 
 Generated API documentation can be viewed at `/docs` once the containers are up.
 
