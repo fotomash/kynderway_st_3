@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\JobController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\MapsController;
+use App\Http\Controllers\KYCController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,8 @@ Route::prefix('v1')->group(function () {
 });
 
 Route::post('maps/geocode', [MapsController::class, 'geocode']);
+
+Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
+    Route::post('verify-document', [KYCController::class, 'verifyDocument']);
+    Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
+});
