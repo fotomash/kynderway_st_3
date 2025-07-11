@@ -9,6 +9,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Http\Request;
 use App\Models\User_Connections;
 use Illuminate\Support\Facades\Auth;
@@ -117,6 +118,11 @@ Route::post('/verify-resend-otp', [UserController::class, 'verifyResendOTP'])   
 
 Route::get('/view-pdf', [GuestController::class, 'viewPDF']);
 Route::get('/unsubscribe/{email}', [GuestController::class, 'unsubscribe']);
+
+Route::get('auth/{provider}', [SocialAuthController::class, 'redirectToProvider'])
+    ->name('social.login');
+Route::get('auth/{provider}/callback', [SocialAuthController::class, 'handleProviderCallback'])
+    ->name('social.callback');
 
 
 
