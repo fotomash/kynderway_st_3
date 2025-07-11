@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'is_client' => \App\Http\Middleware\isClient::class,
         'is_provider' => \App\Http\Middleware\isProvider::class,
         'api_key' => \App\Http\Middleware\ValidateApiKey::class,
+        'jwt.auth' => \App\Http\Middleware\JwtMiddleware::class,
     ];
 }

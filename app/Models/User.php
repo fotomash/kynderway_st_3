@@ -73,7 +73,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'delete_request',
         'otp',
         'otp_send_at',
-        'is_new'
+        'is_new',
+        'credits'
     ];
 
     /**
@@ -163,6 +164,21 @@ class User extends Authenticatable implements MustVerifyEmail
     public function reviewsReceived()
     {
         return $this->hasMany(Review::class, "reviewee_id");
+    }
+
+    public function credits()
+    {
+        return $this->hasOne(UserCredit::class);
+    }
+
+    public function creditTransactions()
+    {
+        return $this->hasMany(CreditTransaction::class);
+    }
+
+    public function unlockedProfiles()
+    {
+        return $this->hasMany(UnlockedProfile::class, 'parent_id');
     }
 
 
