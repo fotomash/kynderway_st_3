@@ -13,6 +13,19 @@ use App\Traits\Geocodable;
 use App\Notifications\UserVerificationEmail;
 use Illuminate\Support\Facades\Mail;
 
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     type="object",
+ *     title="User",
+ *     required={"id", "name", "email"},
+ *     @OA\Property(property="id", type="integer", description="User ID"),
+ *     @OA\Property(property="name", type="string", description="User name"),
+ *     @OA\Property(property="email", type="string", format="email", description="User email"),
+ *     @OA\Property(property="created_at", type="string", format="date-time", description="Creation timestamp")
+ * )
+ */
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory;
