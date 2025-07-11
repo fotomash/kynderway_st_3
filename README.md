@@ -24,9 +24,10 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Docker setup
 
 The repository ships with a `Dockerfile` and `docker-compose.yml` for local development.
-Build the containers and start the stack with:
+Copy the provided environment example file and then build the containers:
 
 ```bash
+cp .env.example .env
 docker-compose build
 docker-compose up
 ```
