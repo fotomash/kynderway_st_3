@@ -29,7 +29,7 @@
         "nunomaduro/collision": "^5.0",
         "nunomaduro/larastan": "^1.0",
         "phpunit/phpunit": "^9.3.3",
-        "knuckleswtf/scribe": "^5.2"
+        "knuckleswtf/scribe": "^4.31"
     },
     "config": {
         "optimize-autoloader": true,
