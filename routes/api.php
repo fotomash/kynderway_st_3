@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\JobController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\MapsController;
+use App\Http\Controllers\Api\VacationCareController;
 use App\Http\Controllers\KYCController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,11 @@ Route::prefix('v1')->group(function () {
 });
 
 Route::post('maps/geocode', [MapsController::class, 'geocode']);
+Route::post('vacation-care/search', [VacationCareController::class, 'searchVacationNannies']);
 
 Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
     Route::post('verify-document', [KYCController::class, 'verifyDocument']);
     Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
 });
+
+Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
