@@ -882,7 +882,7 @@ if(showIntroJS) {
                 $.ajax({
                     type: 'GET',
                     dataType: 'JSON',
-                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + postal_code + "&key=AIzaSyDUcTrAifnwQoksLhOMxqhPRwn47FY0xEk",
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + postal_code + "&key={{ config('services.google_maps.key') }}",
                     data: {postal_code: postal_code, _token: '{{csrf_token()}}'},
                     success: function (response) {
                         if (response.status == 'OK') {
