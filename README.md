@@ -36,6 +36,9 @@ port `3306`. A dedicated service runs the queue worker using `php artisan queue:
 
 Generated API documentation can be viewed at `/docs` once the containers are up.
 
+Set `GOOGLE_MAPS_API_KEY` in your `.env` file so the application can query the
+Google Maps API for address lookups.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.

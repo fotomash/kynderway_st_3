@@ -35,4 +35,8 @@ return [
         'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
     ],
 
+    'google_maps' => [
+        'key' => env('GOOGLE_MAPS_API_KEY'),
+    ],
+
 ];
