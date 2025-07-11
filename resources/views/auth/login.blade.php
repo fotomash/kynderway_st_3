@@ -143,6 +143,11 @@
                                                     <button type="submit" value="submit">Login</button>
                                                 </div>
                                             </div>
+                                                <div class="social-login mt-3">
+                                                    <a href="/login/google" class="btn btn-danger btn-block mb-2">Login with Google</a>
+                                                    <a href="/login/apple" class="btn btn-dark btn-block mb-2">Login with Apple</a>
+                                                    <a href="/login/linkedin" class="btn btn-primary btn-block">Login with LinkedIn</a>
+                                                </div>
                                         </form>
                                     </div>
                                 </div>
