@@ -79,6 +79,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 Documentation for this project's API is automatically generated during CI builds and can be accessed in your running environment at `/docs`.
 
+To generate the docs locally, run:
+
+```bash
+php artisan scribe:generate
+```
+
+You may also run `composer docs` if you have installed the Composer script.
+
+The OpenAPI specification is available at `/docs.openapi`.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
