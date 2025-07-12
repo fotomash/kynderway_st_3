@@ -1,12 +1,16 @@
-# Kynderway Mobile SDK Documentation
+# Kynderway Mobile API Documentation
+
+## Base URL
+
+All endpoints are available under the `/api/mobile/v1` prefix.
 
 ## Authentication
 
 ### Login
-```http
-POST /api/v1/mobile/login
-Content-Type: application/json
 
+`POST /api/mobile/v1/login`
+
+```
 {
     "email": "user@example.com",
     "password": "password",
@@ -14,39 +18,164 @@ Content-Type: application/json
 }
 ```
 
-Using Authentication Token
-```http
-GET /api/v1/user
-Authorization: Bearer {token}
+Response:
 ```
-All other `/api/v1/mobile` routes require the same `Authorization` header.
-
-### Error Handling
-
-All API errors follow this format:
-```json
 {
-    "message": "Error message",
-    "errors": {
-        "field": ["Error detail"]
-    }
+    "token": "<access_token>",
+    "user": { /* User object */ }
 }
 ```
-Unauthenticated requests will receive a `401` response using this format.
 
-## Bookings
+### Logout
 
-### Create Booking
-`POST /api/v1/mobile/bookings`
+`POST /api/mobile/v1/logout`
 
 Headers:
 ```
-Authorization: Bearer {token}
+Authorization: Bearer <token>
+```
+
+Response:
+```
+{
+    "message": "Logged out successfully"
+}
+```
+
+### Current User
+
+`GET /api/mobile/v1/user`
+
+Headers:
+```
+Authorization: Bearer <token>
+```
+
+Response is the authenticated user resource.
+
+### Update Profile
+
+`PUT /api/mobile/v1/user`
+
+Headers:
+```
+Authorization: Bearer <token>
 Content-Type: application/json
 ```
 
 Body:
-```json
+```
+{
+    "name": "New Name",
+    "avatar": "<url>"
+}
+```
+
+Response is the updated user resource.
+
+## Home
+
+### Home Screen
+
+`GET /api/mobile/v1/home`
+
+Headers:
+```
+Authorization: Bearer <token>
+```
+
+Response:
+```
+{
+    "message": "Welcome to the mobile API",
+    "user": { /* User object */ }
+}
+```
+
+## Devices
+
+### Register Device
+
+`POST /api/mobile/v1/device/register`
+
+Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+Body:
+```
+{
+    "token": "<push_token>"
+}
+```
+
+Response:
+```
+{ "success": true }
+```
+
+### Unregister Device
+
+`POST /api/mobile/v1/device/unregister`
+
+Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+Body:
+```
+{
+    "token": "<push_token>"
+}
+```
+
+Response:
+```
+{ "success": true }
+```
+
+## Nannies
+
+### Nearby Search
+
+`GET /api/mobile/v1/nannies/nearby?lat={lat}&lng={lng}&radius={km}`
+
+Headers:
+```
+Authorization: Bearer <token>
+```
+
+Returns an array of provider profiles near the supplied coordinates.
+
+## Bookings
+
+### Active Bookings
+
+`GET /api/mobile/v1/bookings/active`
+
+Headers:
+```
+Authorization: Bearer <token>
+```
+
+Response is a list of current bookings with a status of `requested` or `accepted`.
+
+### Create Booking
+
+`POST /api/mobile/v1/bookings`
+
+Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+Body:
+```
 {
     "parent_id": 1,
     "nanny_id": 2,
@@ -59,7 +188,7 @@ Body:
 ```
 
 Response `201 Created`:
-```json
+```
 {
     "id": 10,
     "parent_id": 1,
@@ -76,15 +205,16 @@ Response `201 Created`:
 ```
 
 ### Complete Booking
-`POST /api/v1/mobile/bookings/{id}/complete`
+
+`POST /api/mobile/v1/bookings/{id}/complete`
 
 Headers:
 ```
-Authorization: Bearer {token}
+Authorization: Bearer <token>
 ```
 
 Response `200 OK`:
-```json
+```
 {
     "id": 10,
     "status": "completed",
@@ -100,7 +230,19 @@ Response `200 OK`:
 }
 ```
 
+### Error Handling
+
+All API errors follow this format:
+```
+{
+    "message": "Error message",
+    "errors": {
+        "field": ["Error detail"]
+    }
+}
+```
+Unauthenticated requests receive a `401` response using this format.
+
 ### Escrow and Auto-Reject
 - A payment intent is created and held in escrow when a booking is made. Funds are not released until the nanny completes the booking.
 - Bookings that remain in the `requested` status are automatically rejected by a background job, notifying the parent.
-
