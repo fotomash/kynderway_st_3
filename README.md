@@ -59,3 +59,19 @@ Prometheus and Grafana containers are also started for metrics at `http://localh
 GitHub Actions runs the workflow defined in `.github/workflows/ci.yml` on every push and pull request. The workflow sets up a MySQL service, installs dependencies, executes migrations and then runs `composer lint:phpstan`, `composer lint` and `php artisan test`.
 
 
+## Test coverage and Cypress
+
+Run the PHPUnit suite with artisan:
+```bash
+php artisan test
+```
+Generate an HTML coverage report:
+```bash
+php artisan test --coverage-html build/coverage
+```
+The coverage report will be available in `build/coverage`.
+
+Execute the Cypress end-to-end tests:
+```bash
+npm run e2e
+```
