@@ -356,7 +356,7 @@
 
             // if (!localStorage.getItem('completedIntro')) {
             var showIntroJS = {{ $showIntroJS ? 'true' : 'false' }};
-            var hasWorkProfile = @json(Helper::hasWorkProfile());
+            var hasWorkProfile = @json(UserHelper::hasWorkProfile());
 if(showIntroJS) {
 
 

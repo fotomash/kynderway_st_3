@@ -161,13 +161,13 @@ class JobPostController extends Controller
             $jobPost = Job_Posts::withTrashed()->where('id', $jobId)->with('userdetails', 'profilecategory')->first();
 
             //jobtype
-            $allJobTypes = implode(',', Helper::getValuesForIds('jobtypes', $jobPost->jobtypes));
+            $allJobTypes = implode(',', UserHelper::getValuesForIds('jobtypes', $jobPost->jobtypes));
 
             //work with
-            $allWorkwith = implode(',', Helper::getValuesForIds('workwith', $jobPost->workwith));
+            $allWorkwith = implode(',', UserHelper::getValuesForIds('workwith', $jobPost->workwith));
 
             //experience - work skills
-            $allJobPositions = implode(',', Helper::getValuesForIds('position', $jobPost->position));
+            $allJobPositions = implode(',', UserHelper::getValuesForIds('position', $jobPost->position));
 
             //req_language
             $requiredLanguages =  $jobPost->req_language;
@@ -215,13 +215,13 @@ class JobPostController extends Controller
                 'suspendBy' => $suspendedBy
              ]);
              if ($reportCheck) {
-                 Helper::reportComplete($jobId, 'Job');
+                UserHelper::reportComplete($jobId, 'Job');
              }
              //Send mail to user when job post status changed to suspend/pause (0)
              if ($setStatus == 0) {
-                 Helper::changesStatusSuspendMail($jobId, 'Job');
+                 EmailHelper::changesStatusSuspendMail($jobId, 'Job');
              } else {
-                 Helper::changesStatusActivateMail($jobId, 'Job');
+                 EmailHelper::changesStatusActivateMail($jobId, 'Job');
              }
 
              $statusMessage = $setStatus == 1 ? 'Activated' : 'Suspended';
@@ -263,17 +263,17 @@ class JobPostController extends Controller
             $jobReporters = '';
             $jobConnection = sizeof($jobPost->userconnection);
             if (sizeof($jobPost->userconnection) > 0) {
-                $jobReporters = Helper::getReportedProviderName($jobPost->userconnection->toArray());
+                $jobReporters = UserHelper::getReportedProviderName($jobPost->userconnection->toArray());
             }
 
             //jobtype
-            $allJobTypes = implode(',', Helper::getValuesForIds('jobtypes', $jobPost->jobtypes));
+            $allJobTypes = implode(',', UserHelper::getValuesForIds('jobtypes', $jobPost->jobtypes));
 
             //work with
-            $allWorkwith = implode(',', Helper::getValuesForIds('workwith', $jobPost->workwith));
+            $allWorkwith = implode(',', UserHelper::getValuesForIds('workwith', $jobPost->workwith));
 
             //experience - work skills
-            $allJobPositions = implode(',', Helper::getValuesForIds('position', $jobPost->position));
+            $allJobPositions = implode(',', UserHelper::getValuesForIds('position', $jobPost->position));
 
             //req_language
             $requiredLanguages =  $jobPost->req_language;
@@ -292,10 +292,10 @@ class JobPostController extends Controller
         $reportCheck = isset($request->reportCheck) ? $request->reportCheck : 0;
 
         if ($jobId != '') {
-            Helper::jobOrProfileDeleteMail($jobId, 'Job');
-            Helper::softDeleteAllJobs($jobId, Auth::user()->name);
+            EmailHelper::jobOrProfileDeleteMail($jobId, 'Job');
+            UserHelper::softDeleteAllJobs($jobId, Auth::user()->name);
             if ($reportCheck) {
-                Helper::reportComplete($jobId, 'Job');
+                UserHelper::reportComplete($jobId, 'Job');
             }
             return back()->with('alert-success', 'Job deleted successfully');
         }

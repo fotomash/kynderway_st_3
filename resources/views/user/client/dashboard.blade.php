@@ -109,7 +109,7 @@
                                                         {{-- <div class="usy-dt"> --}}
                                                             <div class="row">
                                                                 <div class="col-1 pl-0 pr-0 remove">
-                                                                    <img src="{{ Helper::getIcon($alljobs['profile_category_id']) }}" width="50" />
+                                                                    <img src="{{ UserHelper::getIcon($alljobs['profile_category_id']) }}" width="50" />
                                                                 </div>
                                                                 <div class="col-11 pl-0 pr-0 mob-max-width">
                                                                     <div class="usy-name" style="display: inline-block; width: 93%;">
@@ -145,10 +145,10 @@
                                                                     <div class="row">
                                                                         <div class="col-md-8 p-0">
                                                                             <div class="user-picy">
-                                                                                <img src="{{ Helper::getProfilePic($post['provider_id']) }}" style="border-radius: 14px;" alt="">
+                                                                                <img src="{{ UserHelper::getProfilePic($post['provider_id']) }}" style="border-radius: 14px;" alt="">
                                                                             </div>
                                                                             <h3 style="display: inline-block; padding-left:12px; padding-top:18px;">
-                                                                                {{ Helper::getUserName($post['provider_id']) }}
+                                                                                {{ UserHelper::getUserName($post['provider_id']) }}
                                                                             </h3>
                                                                             <span class="float-right-desktop" style="break-word;overflow-wrap: break-word;width: 70%;font-size: 14px; font-style: italic; color: #304384; font-weight: bold; padding-top: 15px;" id="chatMessage-{{ $post['id'] }}">
 
@@ -158,15 +158,15 @@
                                                                                     @endif
                                                                                 @endif
                                                                                 @if($post->jobconnect)
-                                                                                    @if(Helper::getTotalCount($post['id'],$post['provider_id']) == 0 && $post['requested_by'] != 'service_provider')
-                                                                                        @if(Helper::getUnseenCount($post['id'],$post['job_userid']) > 0)
+                                                                                    @if(UserHelper::getTotalCount($post['id'],$post['provider_id']) == 0 && $post['requested_by'] != 'service_provider')
+                                                                                        @if(UserHelper::getUnseenCount($post['id'],$post['job_userid']) > 0)
                                                                                             {{$post['NameProvider']}} has accepted your job invitation. <br>You have a New Message from {{$post['NameProvider']}}
                                                                                         @else
                                                                                             {{$post['NameProvider']}} has accepted your job invitation. <br>Chat with  {{$post['NameProvider']}} now
                                                                                         @endif
-                                                                                    @elseif (Helper::getTotalCount($post['id'],$post['job_userid']) == 0 && $post['requested_by'] == 'service_provider')
+                                                                                    @elseif (UserHelper::getTotalCount($post['id'],$post['job_userid']) == 0 && $post['requested_by'] == 'service_provider')
                                                                                         Chat with  {{$post['NameProvider']}} now.
-                                                                                    @elseif(Helper::getUnseenCount($post['id'],$post['job_userid']) > 0)
+                                                                                    @elseif(UserHelper::getUnseenCount($post['id'],$post['job_userid']) > 0)
                                                                                         You have a New Message
                                                                                     @endif
                                                                                 @endif
@@ -190,7 +190,7 @@
                                                                                     @endif
                                                                                     >
                                                                                         <i class="fas fa-comment" style="background-color: transparent; width:45px;">
-                                                                                            <span id="chatCount-{{ $post['id'] }}">{{ Helper::getUnseenCount($post['id'],$post['job_userid']) }}</span>
+                                                                                            <span id="chatCount-{{ $post['id'] }}">{{ UserHelper::getUnseenCount($post['id'],$post['job_userid']) }}</span>
                                                                                         </i>
                                                                                     </a></li>
 
@@ -689,7 +689,7 @@
         });
 
         var channel = pusher.subscribe('private-chatify');
-        {{--<span id="chatCount-{{ $post['id'] }}">{{ Helper::getUnseenCount($post['id'],$post['job_userid']) }}</span>--}}
+        {{--<span id="chatCount-{{ $post['id'] }}">{{ UserHelper::getUnseenCount($post['id'],$post['job_userid']) }}</span>--}}
         channel.bind('client-contactItem', function () {
 
             var chats = @json($alluser_jobs);
@@ -775,7 +775,7 @@
             Pusher2.logToConsole = false;
 
             var channel2 = Pusher2.subscribe('private-chatify-notification');
-            {{--<span id="chatCount-{{ $post['id'] }}">{{ Helper::getUnseenCount($post['id'],$post['job_userid']) }}</span>--}}
+            {{--<span id="chatCount-{{ $post['id'] }}">{{ UserHelper::getUnseenCount($post['id'],$post['job_userid']) }}</span>--}}
             channel2.bind('messaging', function () {
 
         

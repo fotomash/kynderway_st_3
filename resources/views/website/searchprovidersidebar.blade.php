@@ -23,7 +23,7 @@
                     <div class="row mb-3 special" style=" width:100%; background-color: #F4F5F9">
                         <div class="col-md-3 p-0 text-center">
                             <div class="usy-dt p-4" style="width: 100%;">
-                                <img src="{{ Helper::getProfileImage($profileposts['userdetails']['profile_picture']) }}"
+                                <img src="{{ UserHelper::getProfileImage($profileposts['userdetails']['profile_picture']) }}"
                                      style="
     height: 150px;
     width: 150px;
@@ -151,7 +151,7 @@
 
                                 <div class="col-4 col-md-4 text-center text-white" style="overflow-wrap:break-word;">
                                     <i class="fas fa-user pb-2" style="font-size: 36px;"></i>
-                                    <p class="text-white">{{  Helper::getProviderJobType($profileposts->jobtypes) }}</p>
+                                    <p class="text-white">{{  UserHelper::getProviderJobType($profileposts->jobtypes) }}</p>
                                 </div> --}}
 
 

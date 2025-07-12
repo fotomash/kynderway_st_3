@@ -15,7 +15,7 @@
                     <div class="row mb-3 special" style=" width:100%; background-color: #F4F5F9;">
                         <div class="col-md-3 p-0">
                             <div class="usy-dt pb-0 pt-4">
-                                <img src="{{ Helper::getProfileImage($jposts['userdetails']['profile_picture']) }}" style="background-color: #fff;" class="mb-3" width="100%" alt="">
+                                <img src="{{ UserHelper::getProfileImage($jposts['userdetails']['profile_picture']) }}" style="background-color: #fff;" class="mb-3" width="100%" alt="">
 
                             </div>
                         </div>

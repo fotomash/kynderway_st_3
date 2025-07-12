@@ -25,7 +25,7 @@
                     <div class="row mb-3 special" style=" width:100%; background-color: #F4F5F9">
                         <div class="col-md-3 p-0 text-center">
                             <div class="usy-dt p-4" style="width: 100%;">
-                                <img src="{{ Helper::getProfileImage($profile_posts['userdetails']['profile_picture']) }}" style="height: 150px;width: 150px;object-fit: cover;max-height: 300px;float: none;background-color: #fff;" width="100%" alt=""/>
+                                <img src="{{ UserHelper::getProfileImage($profile_posts['userdetails']['profile_picture']) }}" style="height: 150px;width: 150px;object-fit: cover;max-height: 300px;float: none;background-color: #fff;" width="100%" alt=""/>
                             </div>
                         </div>
 

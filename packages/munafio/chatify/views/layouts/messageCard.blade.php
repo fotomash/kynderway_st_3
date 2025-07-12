@@ -2,7 +2,7 @@
 @if($viewType == 'default')
     @if($from_id != $to_id)
     <div class="message-card" data-id="{{ $id }}">
-        <img src="{{ Helper::getProfilePic($from_id) }}" width="32" class="picSender">
+        <img src="{{ UserHelper::getProfilePic($from_id) }}" width="32" class="picSender">
         <p>{!! ($message == null && $attachment != null && @$attachment[2] != 'file') ? $attachment[1] : nl2br($message) !!}
             <sub title="{{ $fullTime }}">{{ $time }}</sub>
             {{-- If attachment is a file --}}

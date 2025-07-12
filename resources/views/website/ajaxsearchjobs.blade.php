@@ -23,7 +23,7 @@
                      data-target="#modal_aside_right">
                     <div class="col-md-3 p-0">
                         <div class="usy-dt pb-0 pt-4">
-                            <img src="{{ Helper::getProfileImage($jobPost['userdetails']['profile_picture']) }}" class="mb-3"
+                            <img src="{{ UserHelper::getProfileImage($jobPost['userdetails']['profile_picture']) }}" class="mb-3"
                                  width="100%"
                                  alt="">
                             <p class="p-2 pt-4" style="font-size: 17px; width:100%; text-align:center; color:#444;">
