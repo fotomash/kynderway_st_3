@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\Mobile\HomeController;
 use App\Http\Controllers\Api\Mobile\NannyController;
 use App\Http\Controllers\Api\Mobile\BookingController;
 use App\Http\Controllers\Api\Mobile\DeviceController;
+use App\Http\Controllers\Api\Mobile\OfflineSyncController;
 
 Route::prefix('mobile/v1')
     ->middleware(['api', 'throttle:mobile-api'])
@@ -25,6 +26,7 @@ Route::prefix('mobile/v1')
 
             Route::get('/user', [UserController::class, 'profile']);
             Route::put('/user', [UserController::class, 'update']);
+            Route::get('/offline-data', [OfflineSyncController::class, 'index']);
             Route::post('/bookings', [BookingController::class, 'store']);
             Route::post('/bookings/{booking}/complete', [BookingController::class, 'complete']);
         });
