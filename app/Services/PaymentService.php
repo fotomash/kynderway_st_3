@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Booking;
 use App\Models\Transaction;
+use App\Events\PaymentProcessed;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Stripe\Transfer;
@@ -102,7 +103,9 @@ class PaymentService
             'status' => 'completed',
             'released_at' => now(),
         ]);
-        
+
+        event(new PaymentProcessed($transaction));
+
         return $transaction;
     }
 }

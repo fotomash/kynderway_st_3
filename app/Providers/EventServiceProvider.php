@@ -17,6 +17,9 @@ use App\Events\UserVerificationApproved;
 use App\Events\UserVerificationRejected;
 use App\Events\UserAccountDeleteEvent;
 use App\Events\UserDeleteEmailAdminEvent;
+use App\Events\CreditsPurchased;
+use App\Events\CreditsUsed;
+use App\Events\PaymentProcessed;
 
 use App\Listeners\SendJobDeleteMail;
 use App\Listeners\SendProfileActivateMail;
@@ -29,6 +32,8 @@ use App\Listeners\SendUserVerificationApprovedMail;
 use App\Listeners\SendUserVerificationRejectedMail;
 use App\Listeners\SendUserAccountDeleteMail;
 use App\Listeners\SendUserDeleteAdminMail;
+use App\Listeners\SendCreditPurchaseNotification;
+use App\Listeners\UpdateUserCreditsBalance;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -74,6 +79,14 @@ class EventServiceProvider extends ServiceProvider
         SendJobOfferEvent::class => [
             SendJobOfferListener::class,
         ],
+        CreditsPurchased::class => [
+            SendCreditPurchaseNotification::class,
+            UpdateUserCreditsBalance::class,
+        ],
+        CreditsUsed::class => [
+            UpdateUserCreditsBalance::class,
+        ],
+        PaymentProcessed::class => [],
 
     ];
 
