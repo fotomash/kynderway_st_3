@@ -16,6 +16,22 @@ class BrowseController extends Controller
         $this->credits = $credits;
     }
 
+    /**
+     * @OA\Post(
+     *     path="/api/browse/nannies/{id}/unlock",
+     *     summary="Unlock nanny profile",
+     *     tags={"Credits"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the nanny",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(response=200, description="Successful unlock"),
+     *     @OA\Response(response=401, description="Unauthorized")
+     * )
+     */
     public function unlockNanny(Request $request, $id)
     {
         $user = $request->user();
