@@ -9,13 +9,39 @@ class Factory {
 }
 namespace Kreait\Firebase\Messaging;
 class MessagingStub {
-    public function send($message){}
-    public function subscribeToTopic($topic, $token){}
+    public $sentMessage;
+    public $subscribedTopic;
+    public $subscribedTokens;
+
+    public function send($message){
+        $this->sentMessage = $message;
+    }
+
+    public function subscribeToTopic($topic, $token){
+        $this->subscribedTopic = $topic;
+        $this->subscribedTokens = $token;
+    }
 }
 class CloudMessage {
-    public static function withTarget($type, $token){ return new static(); }
-    public function withNotification($notification){ return $this; }
-    public function withData(array $data){ return $this; }
+    public $targetType;
+    public $target;
+    public $notification;
+    public $data = [];
+
+    public static function withTarget($type, $token){
+        $msg = new static();
+        $msg->targetType = $type;
+        $msg->target = $token;
+        return $msg;
+    }
+    public function withNotification($notification){
+        $this->notification = $notification;
+        return $this;
+    }
+    public function withData(array $data){
+        $this->data = $data;
+        return $this;
+    }
 }
 class Notification {
     public static function create($title,$body){ return new static(); }

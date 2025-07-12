@@ -12,12 +12,17 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Tests\TestCase;
+use Kreait\Firebase\Messaging\MessagingStub;
+
+require_once __DIR__ . '/../Stubs/FirebaseStubs.php';
 
 class ProfileUnlockTest extends TestCase
 {
     protected function setUp(): void
     {
         parent::setUp();
+
+        app()->instance('firebase.messaging', new MessagingStub());
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
