@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Services\PushNotificationService;
 
 class BookingAutoRejectJob implements ShouldQueue
 {
@@ -21,6 +22,8 @@ class BookingAutoRejectJob implements ShouldQueue
     {
         if ($this->booking->status === Booking::STATUS_REQUESTED) {
             $this->booking->update(['status' => Booking::STATUS_REJECTED]);
+            app(PushNotificationService::class)
+                ->notifyParentOfStatusChange($this->booking->parent, $this->booking);
         }
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\User;
 use App\Services\BookingService;
 use App\Services\PaymentService;
+use App\Services\PushNotificationService;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Mockery;
@@ -15,9 +16,13 @@ use Tests\TestCase;
 
 class BookingServiceTest extends TestCase
 {
+    private $pushService;
+
     protected function setUp(): void
     {
         parent::setUp();
+
+        $this->pushService = Mockery::mock(PushNotificationService::class);
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -77,7 +82,8 @@ class BookingServiceTest extends TestCase
             ->once()
             ->andReturn((object) ['id' => 'pi_test']);
 
-        $service = new BookingService(new PaymentService());
+        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
+        $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,
             'nanny_id' => $nanny->id,
@@ -102,7 +108,9 @@ class BookingServiceTest extends TestCase
             ->once()
             ->andReturn((object) ['id' => 'pi_test']);
 
-        $service = new BookingService(new PaymentService());
+        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
+        $this->pushService->shouldReceive('notifyParentOfStatusChange')->once();
+        $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,
             'nanny_id' => $nanny->id,
