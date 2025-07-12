@@ -13,6 +13,7 @@
             <file>./tests/Feature/ProfileUnlockTest.php</file>
             <file>./tests/Feature/PaymentProcessingTest.php</file>
             <file>./tests/Feature/BookingFlowTest.php</file>
+            <file>./tests/Feature/MobileApiTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
