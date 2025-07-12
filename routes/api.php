@@ -19,18 +19,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('v1')->group(function () {
-    Route::apiResource('jobs', JobController::class)->only(['index', 'show']);
-    Route::apiResource('profiles', ProfileController::class)->only(['index', 'show']);
-    Route::get('profiles/nearby', [ProfileController::class, 'nearby']);
-});
+Route::prefix('v1')
+    ->middleware(['api', 'throttle:60,1'])
+    ->as('v1.')
+    ->group(function () {
+        Route::apiResource('jobs', JobController::class)->only(['index', 'show']);
+        Route::apiResource('profiles', ProfileController::class)->only(['index', 'show']);
+        Route::get('profiles/nearby', [ProfileController::class, 'nearby']);
+        Route::post('maps/geocode', [MapsController::class, 'geocode']);
+        Route::post('vacation-care/search', [VacationCareController::class, 'searchVacationNannies']);
 
-Route::post('maps/geocode', [MapsController::class, 'geocode']);
-Route::post('vacation-care/search', [VacationCareController::class, 'searchVacationNannies']);
+        Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
+            Route::post('verify-document', [KYCController::class, 'verifyDocument']);
+            Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
+        });
 
-Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
-    Route::post('verify-document', [KYCController::class, 'verifyDocument']);
-    Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
-});
+        Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
+    });
 
-Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
+Route::prefix('v2')
+    ->middleware(['api', 'throttle:100,1'])
+    ->as('v2.')
+    ->group(function () {
+        // Duplicate v1 endpoints for now; replace with v2 implementations as needed
+        Route::apiResource('jobs', JobController::class)->only(['index', 'show']);
+        Route::apiResource('profiles', ProfileController::class)->only(['index', 'show']);
+        Route::get('profiles/nearby', [ProfileController::class, 'nearby']);
+        Route::post('maps/geocode', [MapsController::class, 'geocode']);
+        Route::post('vacation-care/search', [VacationCareController::class, 'searchVacationNannies']);
+
+        Route::prefix('kyc')->middleware('auth:sanctum')->group(function () {
+            Route::post('verify-document', [KYCController::class, 'verifyDocument']);
+            Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
+        });
+
+        Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
+    });
