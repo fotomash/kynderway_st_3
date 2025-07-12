@@ -22,7 +22,9 @@ return new class extends Migration
             $table->date('active_until')->nullable();
             $table->timestamps();
 
-            $table->spatialIndex('coordinates');
+            if (config('database.default') !== 'sqlite') {
+                $table->spatialIndex('coordinates');
+            }
             $table->index(['user_id', 'location_type']);
         });
     }
