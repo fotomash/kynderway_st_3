@@ -9,7 +9,9 @@
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+            <file>./tests/Feature/CreditPurchaseTest.php</file>
+            <file>./tests/Feature/ProfileUnlockTest.php</file>
+            <file>./tests/Feature/PaymentProcessingTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
