@@ -7,6 +7,7 @@ class Factory {
 namespace Kreait\Firebase\Messaging;
 class MessagingStub {
     public function send($message){}
+    public function subscribeToTopic($topic, $token){}
 }
 class CloudMessage {
     public static function withTarget($type, $token){ return new static(); }

@@ -27,6 +27,7 @@ class BookingAutoRejectJobTest extends TestCase
             $table->string('password')->nullable();
             $table->string('remember_token')->nullable();
             $table->string('stripe_account_id')->nullable();
+            $table->string('fcm_token')->nullable();
             $table->decimal('commission_rate', 5, 2)->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -51,8 +52,8 @@ class BookingAutoRejectJobTest extends TestCase
 
     public function test_job_rejects_booking_and_notifies_parent()
     {
-        $parent = User::factory()->create();
-        $nanny = User::factory()->create();
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
+        $nanny = User::factory()->create(['fcm_token' => 'nanny']);
         $booking = Booking::create([
             'parent_id' => $parent->id,
             'nanny_id' => $nanny->id,
@@ -60,7 +61,7 @@ class BookingAutoRejectJobTest extends TestCase
         ]);
 
         $service = Mockery::mock(PushNotificationService::class);
-        $service->shouldReceive('notifyParentOfStatusChange')->once();
+        $service->shouldReceive('sendToDevice')->once();
         app()->instance(PushNotificationService::class, $service);
 
         $job = new BookingAutoRejectJob($booking);

@@ -17,6 +17,9 @@ use Mockery;
 use Stripe\PaymentIntent;
 use Stripe\Transfer;
 use Tests\TestCase;
+use Kreait\Firebase\Messaging\MessagingStub;
+
+require_once __DIR__ . '/../Stubs/FirebaseStubs.php';
 
 class BookingFlowTest extends TestCase
 {
@@ -28,6 +31,8 @@ class BookingFlowTest extends TestCase
 
         $this->pushService = Mockery::mock(PushNotificationService::class);
 
+        app()->instance('firebase.messaging', new MessagingStub());
+
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -36,6 +41,7 @@ class BookingFlowTest extends TestCase
             $table->string('password');
             $table->string('remember_token')->nullable();
             $table->string('stripe_account_id')->nullable();
+            $table->string('fcm_token')->nullable();
             $table->decimal('commission_rate', 5, 2)->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -82,15 +88,15 @@ class BookingFlowTest extends TestCase
     {
         Notification::fake();
 
-        $nanny = User::factory()->create();
-        $parent = User::factory()->create();
+        $nanny = User::factory()->create(['fcm_token' => 'nanny']);
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
 
         Mockery::mock('alias:' . PaymentIntent::class)
             ->shouldReceive('create')
             ->once()
             ->andReturn((object) ['id' => 'pi']);
 
-        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
+        $this->pushService->shouldReceive('sendToDevice')->once();
         $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,
@@ -110,8 +116,8 @@ class BookingFlowTest extends TestCase
 
     public function test_auto_reject_job_changes_status()
     {
-        $nanny = User::factory()->create();
-        $parent = User::factory()->create();
+        $nanny = User::factory()->create(['fcm_token' => 'nanny']);
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
 
         $booking = Booking::create([
             'parent_id' => $parent->id,
@@ -128,16 +134,18 @@ class BookingFlowTest extends TestCase
 
     public function test_complete_booking_releases_payment()
     {
-        $nanny = User::factory()->create(['stripe_account_id' => 'acct_nanny']);
-        $parent = User::factory()->create();
+        $nanny = User::factory()->create([
+            'stripe_account_id' => 'acct_nanny',
+            'fcm_token' => 'nanny'
+        ]);
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
 
         Mockery::mock('alias:' . PaymentIntent::class)
             ->shouldReceive('create')
             ->once()
             ->andReturn((object) ['id' => 'pi']);
 
-        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
-        $this->pushService->shouldReceive('notifyParentOfStatusChange')->once();
+        $this->pushService->shouldReceive('sendToDevice')->twice();
         $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,

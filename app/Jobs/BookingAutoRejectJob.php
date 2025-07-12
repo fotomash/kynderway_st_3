@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Services\PushNotificationService;
+use Kreait\Firebase\Messaging\Notification;
 
 class BookingAutoRejectJob implements ShouldQueue
 {
@@ -23,7 +24,18 @@ class BookingAutoRejectJob implements ShouldQueue
         if ($this->booking->status === Booking::STATUS_REQUESTED) {
             $this->booking->update(['status' => Booking::STATUS_REJECTED]);
             app(PushNotificationService::class)
-                ->notifyParentOfStatusChange($this->booking->parent, $this->booking);
+                ->sendToDevice(
+                    $this->booking->parent->fcm_token,
+                    [
+                        'booking_id' => $this->booking->id,
+                        'status' => $this->booking->status,
+                        'type' => 'booking_status',
+                    ],
+                    Notification::create(
+                        'Booking Update',
+                        "Your booking with {$this->booking->nanny->name} is now {$this->booking->status}"
+                    )
+                );
         }
     }
 }
