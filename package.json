@@ -21,16 +21,18 @@
         "postcss": "^8.2.1",
         "postcss-import": "^12.0.1",
         "tailwindcss": "^2.0.2",
-        "vue": "^2.7.16",
-        "vue-loader": "^15.11.1",
-        "vue-template-compiler": "^2.7.16",
+        "vue": "^3.3.4",
+        "vue-loader": "^17.0.1",
+        "@vue/compiler-sfc": "^3.3.4",
         "vite": "^4.5.0",
-        "vite-plugin-vue2": "^2.0.3",
+        "@vitejs/plugin-vue": "^4.2.3",
         "laravel-vite-plugin": "^0.7.2",
         "vite-plugin-pwa": "^0.16.4"
     },
     "dependencies": {
         "laravel-echo": "^1.15.0",
-        "pusher-js": "^8.0.1"
+        "pusher-js": "^8.0.1",
+        "pinia": "^2.1.6",
+        "vue-router": "^4.2.5"
     }
 }
