@@ -26,16 +26,18 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::get('/clear', function () {   //optimized
-    Artisan::call('cache:clear');
-    Artisan::call('config:clear');
-    Artisan::call('config:cache');
-    Artisan::call('route:cache');
-    Artisan::call('route:clear');
-    Artisan::call('view:clear');
-    Artisan::call('view:cache');
-    return '<h1>Cache cleared</h1>';
-});
+if (app()->environment('local')) {
+    Route::get('/clear', function () {
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('config:cache');
+        Artisan::call('route:cache');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        Artisan::call('view:cache');
+        return '<h1>Cache cleared</h1>';
+    });
+}
 
 
 Route::get('/get-unseen-message-count', function (Request $request) {
