@@ -9,6 +9,8 @@ use App\Models\UnlockedProfile;
 use App\Models\UserCredit;
 use App\Notifications\ProfileUnlockedNotification;
 use Illuminate\Support\Facades\DB;
+use App\Events\CreditsPurchased;
+use App\Events\CreditsUsed;
 
 class CreditService
 {
@@ -37,13 +39,15 @@ class CreditService
             $credits->decrement('balance', $amount);
             $credits->increment('lifetime_used', $amount);
 
-            CreditTransaction::create([
+            $transaction = CreditTransaction::create([
                 'user_id'       => $user->id,
                 'type'          => 'use',
                 'amount'        => -$amount,
                 'balance_after' => $credits->balance,
                 'description'   => 'Credits used',
             ]);
+
+            event(new CreditsUsed($user, $amount, $transaction));
 
             $user->refresh();
         });
@@ -61,7 +65,7 @@ class CreditService
             $credits->increment('lifetime_purchased', $amount);
             $credits->update(['last_purchase_at' => now()]);
 
-            return CreditTransaction::create([
+            $transaction = CreditTransaction::create([
                 'user_id'       => $user->id,
                 'type'          => 'purchase',
                 'amount'        => $amount,
@@ -70,6 +74,10 @@ class CreditService
                 'reference_type' => 'credit_package',
                 'reference_id'   => $package->id,
             ]);
+
+            event(new CreditsPurchased($user, $package, $amount, $transaction));
+
+            return $transaction;
         });
     }
 
@@ -107,6 +115,8 @@ class CreditService
             if (class_exists(ProfileUnlockedNotification::class)) {
                 $nanny->notify(new ProfileUnlockedNotification($parent));
             }
+
+            event(new CreditsUsed($parent, $creditCost, $transaction));
 
             return $unlock;
         });
