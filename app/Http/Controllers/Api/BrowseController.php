@@ -52,7 +52,7 @@ class BrowseController extends Controller
 
         return response()->json([
             'success' => true,
-            'nanny' => $nanny,
+            'nanny' => new \App\Http\Resources\NannyResource($nanny),
             'remaining_credits' => optional($user->credits()->first())->balance ?? 0,
         ]);
     }

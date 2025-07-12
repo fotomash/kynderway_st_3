@@ -44,6 +44,7 @@ class BookingFlowTest extends TestCase
             $table->decimal('latitude', 10, 6)->nullable();
             $table->decimal('longitude', 10, 6)->nullable();
             $table->decimal('commission_rate', 5, 2)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
