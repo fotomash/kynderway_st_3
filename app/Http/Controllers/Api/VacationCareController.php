@@ -20,6 +20,7 @@ class VacationCareController extends Controller
      * @OA\Post(
      *     path="/api/vacation-care/search",
      *     summary="Search for nannies in vacation location",
+     *     tags={"Bookings"},
      *     @OA\RequestBody(
      *         @OA\JsonContent(
      *             @OA\Property(property="destination", type="string"),

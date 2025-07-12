@@ -14,6 +14,7 @@ class AuthController extends Controller
      * @OA\Post(
      *     path="/api/mobile/login",
      *     summary="Mobile user login",
+     *     tags={"Authentication"},
      *     @OA\RequestBody(
      *         @OA\JsonContent(
      *             @OA\Property(property="email", type="string"),
@@ -59,6 +60,7 @@ class AuthController extends Controller
      * @OA\Post(
      *     path="/api/mobile/logout",
      *     summary="Mobile user logout",
+     *     tags={"Authentication"},
      *     security={{"sanctum": {}}},
      *     @OA\Response(response=200, description="Success")
      * )
