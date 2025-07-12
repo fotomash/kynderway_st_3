@@ -32,6 +32,7 @@ class BookingServiceTest extends TestCase
             $table->string('password');
             $table->string('remember_token')->nullable();
             $table->string('stripe_account_id')->nullable();
+            $table->string('fcm_token')->nullable();
             $table->decimal('commission_rate', 5, 2)->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -74,15 +75,15 @@ class BookingServiceTest extends TestCase
 
     public function test_create_booking_creates_transaction()
     {
-        $nanny = User::factory()->create();
-        $parent = User::factory()->create();
+        $nanny = User::factory()->create(['fcm_token' => 'nanny']);
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
 
         Mockery::mock('alias:' . PaymentIntent::class)
             ->shouldReceive('create')
             ->once()
             ->andReturn((object) ['id' => 'pi_test']);
 
-        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
+        $this->pushService->shouldReceive('sendToDevice')->once();
         $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,
@@ -100,16 +101,18 @@ class BookingServiceTest extends TestCase
 
     public function test_complete_booking_updates_transaction()
     {
-        $nanny = User::factory()->create(['stripe_account_id' => 'acct_nanny']);
-        $parent = User::factory()->create();
+        $nanny = User::factory()->create([
+            'stripe_account_id' => 'acct_nanny',
+            'fcm_token' => 'nanny'
+        ]);
+        $parent = User::factory()->create(['fcm_token' => 'parent']);
 
         Mockery::mock('alias:' . PaymentIntent::class)
             ->shouldReceive('create')
             ->once()
             ->andReturn((object) ['id' => 'pi_test']);
 
-        $this->pushService->shouldReceive('notifyNannyOfBooking')->once();
-        $this->pushService->shouldReceive('notifyParentOfStatusChange')->once();
+        $this->pushService->shouldReceive('sendToDevice')->twice();
         $service = new BookingService(new PaymentService(), $this->pushService);
         $booking = $service->createBooking([
             'parent_id' => $parent->id,

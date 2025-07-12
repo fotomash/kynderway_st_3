@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use Kreait\Firebase\Factory;
 use Kreait\Firebase\Messaging\CloudMessage;
 use Kreait\Firebase\Messaging\Notification;
 
@@ -12,68 +11,41 @@ class PushNotificationService
 
     public function __construct()
     {
-        $firebase = (new Factory)->withServiceAccount(config('firebase.credentials'));
-        $this->messaging = $firebase->createMessaging();
+        $this->messaging = app('firebase.messaging');
     }
 
-    public function notifyNannyOfNewJob($nanny, $jobPost)
+    public function sendToDevice(string $token, array $data = [], ?Notification $notification = null): void
     {
-        $message = CloudMessage::withTarget('token', $nanny->fcm_token)
-            ->withNotification(Notification::create(
-                'New Job Match!',
-                "A new job matching your profile has been posted in {$jobPost->city}"
-            ))
-            ->withData([
-                'job_id' => $jobPost->id,
-                'type' => 'new_job',
-            ]);
+        $message = CloudMessage::withTarget('token', $token);
+
+        if ($notification) {
+            $message = $message->withNotification($notification);
+        }
+
+        if (!empty($data)) {
+            $message = $message->withData($data);
+        }
 
         $this->messaging->send($message);
     }
 
-    public function notifyParentOfApplication($parent, $application)
+    public function sendToTopic(string $topic, array $data = [], ?Notification $notification = null): void
     {
-        $message = CloudMessage::withTarget('token', $parent->fcm_token)
-            ->withNotification(Notification::create(
-                'New Application',
-                "{$application->nanny->name} has applied to your job posting"
-            ))
-            ->withData([
-                'application_id' => $application->id,
-                'type' => 'new_application',
-            ]);
+        $message = CloudMessage::withTarget('topic', $topic);
+
+        if ($notification) {
+            $message = $message->withNotification($notification);
+        }
+
+        if (!empty($data)) {
+            $message = $message->withData($data);
+        }
 
         $this->messaging->send($message);
     }
 
-    public function notifyNannyOfBooking($nanny, $booking)
+    public function subscribeToTopic(string $topic, $tokens): void
     {
-        $message = CloudMessage::withTarget('token', $nanny->fcm_token)
-            ->withNotification(Notification::create(
-                'New Booking Request',
-                "{$booking->parent->name} has requested a booking"
-            ))
-            ->withData([
-                'booking_id' => $booking->id,
-                'type' => 'new_booking',
-            ]);
-
-        $this->messaging->send($message);
-    }
-
-    public function notifyParentOfStatusChange($parent, $booking)
-    {
-        $message = CloudMessage::withTarget('token', $parent->fcm_token)
-            ->withNotification(Notification::create(
-                'Booking Update',
-                "Your booking with {$booking->nanny->name} is now {$booking->status}"
-            ))
-            ->withData([
-                'booking_id' => $booking->id,
-                'status' => $booking->status,
-                'type' => 'booking_status',
-            ]);
-
-        $this->messaging->send($message);
+        $this->messaging->subscribeToTopic($topic, $tokens);
     }
 }
