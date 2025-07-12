@@ -45,4 +45,35 @@ class PushNotificationService
 
         $this->messaging->send($message);
     }
+
+    public function notifyNannyOfBooking($nanny, $booking)
+    {
+        $message = CloudMessage::withTarget('token', $nanny->fcm_token)
+            ->withNotification(Notification::create(
+                'New Booking Request',
+                "{$booking->parent->name} has requested a booking"
+            ))
+            ->withData([
+                'booking_id' => $booking->id,
+                'type' => 'new_booking',
+            ]);
+
+        $this->messaging->send($message);
+    }
+
+    public function notifyParentOfStatusChange($parent, $booking)
+    {
+        $message = CloudMessage::withTarget('token', $parent->fcm_token)
+            ->withNotification(Notification::create(
+                'Booking Update',
+                "Your booking with {$booking->nanny->name} is now {$booking->status}"
+            ))
+            ->withData([
+                'booking_id' => $booking->id,
+                'status' => $booking->status,
+                'type' => 'booking_status',
+            ]);
+
+        $this->messaging->send($message);
+    }
 }
