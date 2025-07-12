@@ -13,7 +13,10 @@ class DeviceController extends Controller
             'token' => 'required|string',
         ]);
 
-        // Store or update device token here
+        $user = $request->user();
+        $user->fcm_token = $request->token;
+        $user->save();
+
         return response()->json(['success' => true]);
     }
 
@@ -23,7 +26,12 @@ class DeviceController extends Controller
             'token' => 'required|string',
         ]);
 
-        // Remove device token here
+        $user = $request->user();
+        if ($user->fcm_token === $request->token) {
+            $user->fcm_token = null;
+            $user->save();
+        }
+
         return response()->json(['success' => true]);
     }
 }

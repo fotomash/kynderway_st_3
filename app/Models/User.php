@@ -69,6 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'provider',
         'provider_id',
+        'fcm_token',
         'assign_user_id',
         'deleted_by',
         'deleted_type',
