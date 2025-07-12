@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -9,7 +9,7 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
-        createVuePlugin({
+        vue({
             template: {
                 transformAssetUrls: {
                     base: null,
@@ -44,9 +44,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    'vendor': ['vue', 'vue-router', 'pinia', 'axios'],
-                    'ui': ['@headlessui/vue', '@heroicons/vue'],
-                    'maps': ['@googlemaps/js-api-loader'],
+                    'vendor': ['vue', 'vue-router', 'pinia', 'axios']
                 }
             }
         }
