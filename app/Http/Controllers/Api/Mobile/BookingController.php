@@ -39,4 +39,22 @@ class BookingController extends Controller
 
         return response()->json($booking);
     }
+
+    public function active(Request $request)
+    {
+        $user = $request->user();
+
+        $bookings = Booking::query()
+            ->where(function ($query) use ($user) {
+                $query->where('parent_id', $user->id)
+                    ->orWhere('nanny_id', $user->id);
+            })
+            ->whereIn('status', [
+                Booking::STATUS_REQUESTED,
+                Booking::STATUS_ACCEPTED,
+            ])
+            ->get();
+
+        return response()->json($bookings);
+    }
 }
