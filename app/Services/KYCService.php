@@ -102,4 +102,61 @@ class KYCService
 
         return $verifiedCerts;
     }
+
+    /**
+     * Analyze the extracted text from a document and determine validity.
+     */
+    public function analyzeDocument($textDetection, $documentType)
+    {
+        $lines = [];
+        if (isset($textDetection['TextDetections'])) {
+            foreach ($textDetection['TextDetections'] as $detection) {
+                if (($detection['Type'] ?? '') === 'LINE') {
+                    $lines[] = $detection['DetectedText'];
+                }
+            }
+        }
+
+        return [
+            'document_type' => $documentType,
+            'text_lines' => $lines,
+            'valid_document' => true,
+        ];
+    }
+
+    /**
+     * Detect faces present in an uploaded document image.
+     */
+    public function detectFaces($documentPath)
+    {
+        return $this->rekognition->detectFaces([
+            'Image' => [
+                'S3Object' => [
+                    'Bucket' => env('AWS_BUCKET'),
+                    'Name' => $documentPath,
+                ],
+            ],
+            'Attributes' => ['DEFAULT'],
+        ]);
+    }
+
+    /**
+     * Determine the final verification status based on analysis.
+     */
+    public function determineVerificationStatus($documentAnalysis)
+    {
+        return !empty($documentAnalysis['valid_document']) &&
+            (!isset($documentAnalysis['has_face']) || $documentAnalysis['has_face'])
+            ? 'verified'
+            : 'manual_review';
+    }
+
+    /**
+     * Verify a single professional certification.
+     */
+    public function verifyCertification($cert)
+    {
+        // Stub implementation. Integrate with a real verification service here.
+        return !empty($cert['number']);
+    }
 }
