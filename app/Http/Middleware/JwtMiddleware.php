@@ -4,7 +4,13 @@ namespace App\Http\Middleware;
 
 use App\Models\User;
 use Closure;
-use Exception;
+use Lcobucci\JWT\Configuration;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
+use Lcobucci\JWT\UnencryptedToken;
+use Lcobucci\JWT\Validation\Constraint\SignedWith;
+use Lcobucci\JWT\Validation\Constraint\StrictValidAt;
+use Lcobucci\Clock\SystemClock;
 
 class JwtMiddleware
 {
@@ -36,33 +42,24 @@ class JwtMiddleware
 
     private function decodeJwt(string $jwt): ?array
     {
-        $parts = explode('.', $jwt);
-        if (count($parts) !== 3) {
+        try {
+            $config = Configuration::forSymmetricSigner(
+                new Sha256(),
+                InMemory::plainText(env('JWT_SECRET', ''))
+            );
+
+            $token = $config->parser()->parse($jwt);
+            \assert($token instanceof UnencryptedToken);
+
+            $config->validator()->assert(
+                $token,
+                new SignedWith($config->signer(), $config->verificationKey()),
+                new StrictValidAt(new SystemClock(new \DateTimeZone('UTC')))
+            );
+
+            return $token->claims()->all();
+        } catch (\Throwable $e) {
             return null;
         }
-
-        [$header64, $payload64, $signature64] = $parts;
-        $payload = json_decode($this->base64UrlDecode($payload64), true);
-        $header = json_decode($this->base64UrlDecode($header64), true);
-        if (!$payload || !$header) {
-            return null;
-        }
-
-        $expected = hash_hmac('sha256', $header64 . '.' . $payload64, env('JWT_SECRET', ''), true);
-        $signature = $this->base64UrlDecode($signature64);
-        if (!hash_equals($expected, $signature)) {
-            return null;
-        }
-
-        return $payload;
-    }
-
-    private function base64UrlDecode(string $input): string
-    {
-        $remainder = strlen($input) % 4;
-        if ($remainder) {
-            $input .= str_repeat('=', 4 - $remainder);
-        }
-        return base64_decode(strtr($input, '-_', '+/'));
     }
 }

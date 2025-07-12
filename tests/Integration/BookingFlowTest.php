@@ -38,6 +38,7 @@ class BookingFlowTest extends TestCase
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('remember_token')->nullable();
             $table->string('fcm_token')->nullable();
             $table->string('stripe_account_id')->nullable();
             $table->decimal('latitude', 10, 6)->nullable();
