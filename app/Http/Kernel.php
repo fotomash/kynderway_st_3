@@ -44,6 +44,7 @@ class Kernel extends HttpKernel
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            'metrics',
         ],
     ];
 
@@ -70,5 +71,6 @@ class Kernel extends HttpKernel
         'is_provider' => \App\Http\Middleware\isProvider::class,
         'api_key' => \App\Http\Middleware\ValidateApiKey::class,
         'jwt.auth' => \App\Http\Middleware\JwtMiddleware::class,
+        'metrics' => \App\Http\Middleware\PrometheusMetrics::class,
     ];
 }
