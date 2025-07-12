@@ -69,4 +69,25 @@ class MobileApiTest extends TestCase
         $limitGuest = $limiter($guest);
         $this->assertEquals('2.2.2.2', $limitGuest->key);
     }
+
+    public function test_offline_sync_endpoint_returns_cached_records(): void
+    {
+        $user = User::factory()->create(['password' => bcrypt('secret')]);
+
+        $login = $this->postJson('/api/mobile/v1/login', [
+            'email' => $user->email,
+            'password' => 'secret',
+            'device_name' => 'testing',
+        ]);
+        $token = $login->json('token');
+
+        \Cache::put("offline-records:{$user->id}", ['foo'], 60);
+
+        $this->withToken($token)->getJson('/api/mobile/v1/offline-data')
+            ->assertOk()
+            ->assertJson([
+                'cached_records' => ['foo'],
+            ])
+            ->assertJsonStructure(['profile', 'cached_records']);
+    }
 }
