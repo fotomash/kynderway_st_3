@@ -7,22 +7,29 @@ use App\Models\CreditPackage;
 use App\Models\CreditTransaction;
 use App\Models\UnlockedProfile;
 use App\Models\UserCredit;
-use App\Notifications\CreditsPurchasedNotification;
 use App\Notifications\ProfileUnlockedNotification;
 use Illuminate\Support\Facades\DB;
 
 class CreditService
 {
-    public function hasEnoughCredits(User $user, int $amount = 1): bool
+    /**
+     * Determine if the given user has at least the provided amount of credits.
+     */
+    public function hasEnoughCredits(User $user, int $amount = 3): bool
     {
         $credits = $user->credits()->first();
+
         return $credits && $credits->balance >= $amount;
     }
 
-    public function deductCredits(User $user, int $amount = 1): CreditTransaction
+    /**
+     * Deduct credits from the user and record the transaction.
+     */
+    public function deductCredits(User $user, int $amount = 3): void
     {
-        return DB::transaction(function () use ($user, $amount) {
+        DB::transaction(function () use ($user, $amount) {
             $credits = $user->credits()->first();
+
             if (!$credits || $credits->balance < $amount) {
                 throw new \Exception('Insufficient credits');
             }
@@ -30,45 +37,39 @@ class CreditService
             $credits->decrement('balance', $amount);
             $credits->increment('lifetime_used', $amount);
 
-            $transaction = CreditTransaction::create([
-                'user_id' => $user->id,
-                'type' => 'use',
-                'amount' => -$amount,
+            CreditTransaction::create([
+                'user_id'       => $user->id,
+                'type'          => 'use',
+                'amount'        => -$amount,
                 'balance_after' => $credits->balance,
-                'description' => 'Credits used',
+                'description'   => 'Credits used',
             ]);
 
             $user->refresh();
-
-            return $transaction;
         });
     }
 
-    public function purchaseCredits(User $user, CreditPackage $package, $paymentMethod)
+    /**
+     * Purchase credits for the user and record the transaction.
+     */
+    public function purchaseCredits(User $user, CreditPackage $package, int $amount): CreditTransaction
     {
-        return DB::transaction(function () use ($user, $package, $paymentMethod) {
-            $totalCredits = $package->credits + $package->bonus_credits;
-
+        return DB::transaction(function () use ($user, $package, $amount) {
             $credits = $user->credits()->firstOrCreate([]);
-            $credits->increment('balance', $totalCredits);
-            $credits->increment('lifetime_purchased', $totalCredits);
+
+            $credits->increment('balance', $amount);
+            $credits->increment('lifetime_purchased', $amount);
             $credits->update(['last_purchase_at' => now()]);
 
-            $transaction = CreditTransaction::create([
-                'user_id' => $user->id,
-                'type' => 'purchase',
-                'amount' => $totalCredits,
+            return CreditTransaction::create([
+                'user_id'       => $user->id,
+                'type'          => 'purchase',
+                'amount'        => $amount,
                 'balance_after' => $credits->balance,
-                'description' => "Purchased {$package->name}",
+                'description'   => "Purchased {$package->name}",
                 'reference_type' => 'credit_package',
-                'reference_id' => $package->id,
+                'reference_id'   => $package->id,
             ]);
-
-            if (class_exists(CreditsPurchasedNotification::class)) {
-                $user->notify(new CreditsPurchasedNotification($package, $totalCredits));
-            }
-
-            return $transaction;
         });
     }
 
