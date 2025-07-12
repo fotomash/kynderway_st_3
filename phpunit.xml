@@ -16,11 +16,22 @@
             <file>./tests/Feature/MobileApiTest.php</file>
             <file>./tests/Feature/PushNotificationTest.php</file>
         </testsuite>
+        <testsuite name="Integration">
+            <directory suffix="Test.php">./tests/Integration</directory>
+        </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./app</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">./app/Console</directory>
+        </exclude>
+        <report>
+            <html outputDirectory="build/html"/>
+            <text outputFile="build/coverage.txt"/>
+            <clover outputFile="build/clover.xml"/>
+        </report>
     </coverage>
     <php>
         <server name="APP_ENV" value="testing"/>
