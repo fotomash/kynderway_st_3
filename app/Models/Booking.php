@@ -9,7 +9,29 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    public const STATUS_REQUESTED = 'requested';
+    public const STATUS_ACCEPTED  = 'accepted';
+    public const STATUS_REJECTED  = 'rejected';
+    public const STATUS_COMPLETED = 'completed';
+    public const STATUS_CANCELLED = 'cancelled';
+
+    protected $fillable = [
+        'parent_id',
+        'nanny_id',
+        'agency_id',
+        'start_time',
+        'end_time',
+        'hours',
+        'hourly_rate',
+        'status',
+    ];
+
+    protected $casts = [
+        'start_time' => 'datetime',
+        'end_time'   => 'datetime',
+        'hours'      => 'integer',
+        'hourly_rate'=> 'decimal:2',
+    ];
 
     public function agency()
     {
