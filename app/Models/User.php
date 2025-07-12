@@ -212,7 +212,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
             return $query->select('*')
                 ->selectRaw("{$haversine} as distance_miles", [$lat, $lng, $lat])
-                ->having('distance_miles', '<=', $radius)
+                ->whereRaw("{$haversine} <= ?", [$lat, $lng, $lat, $radius])
                 ->orderBy('distance_miles');
         }
 
