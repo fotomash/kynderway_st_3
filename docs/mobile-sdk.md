@@ -116,6 +116,8 @@ Response:
 { "success": true }
 ```
 
+Clients should call this endpoint whenever a new Firebase Cloud Messaging (FCM) token is issued. Sending the latest token ensures the server can deliver push notifications to the correct device.
+
 ### Unregister Device
 
 `POST /api/mobile/v1/device/unregister`
