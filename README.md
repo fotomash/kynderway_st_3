@@ -20,7 +20,7 @@ Kynderway is a Laravel based platform for booking childcare. It provides a REST 
 4. Update `.env` with your local configuration:
    - **MySQL** – `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
    - **Stripe** – `STRIPE_SECRET` (your secret key)
-   - **Firebase** – `FIREBASE_CREDENTIALS` (path to the service account json)
+   - **Firebase** – `FIREBASE_CREDENTIALS` should point to your Firebase service account JSON, e.g. `/path/to/firebase_credentials.json`
 5. Run the database migrations:
    ```bash
    php artisan migrate
