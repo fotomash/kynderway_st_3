@@ -15,39 +15,46 @@ use App\Events\CreditsUsed;
 class CreditService
 {
     /**
-     * Determine if the given user has at least the provided amount of credits.
+     * Default number of credits consumed when unlocking a profile.
+     *
+     * @var int
      */
-    public function hasEnoughCredits(User $user, int $amount = 3): bool
+    private int $defaultCost = 3;
+
+    /**
+     * Determine if the given user has enough credits to perform an unlock.
+     */
+    public function hasEnoughCredits(User $user): bool
     {
         $credits = $user->credits()->first();
 
-        return $credits && $credits->balance >= $amount;
+        return $credits && $credits->balance >= $this->defaultCost;
     }
 
     /**
-     * Deduct credits from the user and record the transaction.
+     * Deduct the default credits from the user and record the transaction.
      */
-    public function deductCredits(User $user, int $amount = 3): void
+    public function deductCredits(User $user): void
     {
-        DB::transaction(function () use ($user, $amount) {
+        DB::transaction(function () use ($user) {
             $credits = $user->credits()->first();
 
-            if (!$credits || $credits->balance < $amount) {
+            if (!$credits || $credits->balance < $this->defaultCost) {
                 throw new \Exception('Insufficient credits');
             }
 
-            $credits->decrement('balance', $amount);
-            $credits->increment('lifetime_used', $amount);
+            $credits->decrement('balance', $this->defaultCost);
+            $credits->increment('lifetime_used', $this->defaultCost);
 
             $transaction = CreditTransaction::create([
                 'user_id'       => $user->id,
                 'type'          => 'use',
-                'amount'        => -$amount,
+                'amount'        => -$this->defaultCost,
                 'balance_after' => $credits->balance,
                 'description'   => 'Credits used',
             ]);
 
-            event(new CreditsUsed($user, $amount, $transaction));
+            event(new CreditsUsed($user, $this->defaultCost, $transaction));
 
             $user->refresh();
         });
