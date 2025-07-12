@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\Channels\PushNotificationChannel;
 // use app/Notifications/EmailVerification;
 
 use Auth;
@@ -42,6 +44,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
+        Notification::extend('push', function ($app) {
+            return $app->make(PushNotificationChannel::class);
+        });
 
         view()->composer('*', function ($view) {
             $user_type = '';
