@@ -12,8 +12,20 @@ require('dotenv').config();
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').vue().postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]);
+mix.js('resources/js/app.js', 'public/js')
+    .vue()
+    .postCss('resources/css/app.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ]);
+
+if (mix.inProduction()) {
+    mix.webpackConfig({
+        devtool: false,
+    });
+} else {
+    mix.webpackConfig({
+        devtool: 'source-map',
+    });
+}
