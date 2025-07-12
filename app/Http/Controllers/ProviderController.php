@@ -1250,13 +1250,7 @@ class ProviderController extends Controller
                 'providerFullname' => Auth::user()->name,
                 'dashboardUrl' => $dashboardUrl,
                 ];
-            //TODO: remove it on staging
             Mail::to($sendMailTo)->send(new ProviderConnect($senddetails));
-
-            // Mail::send('emails.provider-connect', $senddetails, function ($message) use ($sendMailTo)
-            // {
-            //     $message->to($sendMailTo)->subject('You have a new Job Application');
-            // });
         }
 
         //-------------------------------------------Email End-----------------------------------

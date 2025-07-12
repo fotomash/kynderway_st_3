@@ -25,8 +25,6 @@ use Carbon\Carbon;
 
 use Response;
 use Session;
-//TODO: remove it
-use Illuminate\Support\Facades\Log;
 
 class GuestController extends Controller
 {
