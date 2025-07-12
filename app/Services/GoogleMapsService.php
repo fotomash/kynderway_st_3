@@ -9,7 +9,7 @@ class GoogleMapsService
     /**
      * Get coordinates from address
      */
-    public function geocodeAddress($address)
+    public function geocodeAddress($address): ?array
     {
         $response = GoogleMaps::load('geocoding')
             ->setParam(['address' => $address])
@@ -47,7 +47,7 @@ class GoogleMapsService
     /**
      * Get nearby places
      */
-    public function getNearbyPlaces($lat, $lng, $radius = 1000, $type = 'restaurant')
+    public function getNearbyPlaces($lat, $lng, $radius = 1000, $type = 'restaurant'): ?array
     {
         $response = GoogleMaps::load('nearbysearch')
             ->setParam([
@@ -83,7 +83,7 @@ class GoogleMapsService
     /**
      * Calculate distance between two points
      */
-    public function calculateDistance($origin, $destination)
+    public function calculateDistance($origin, $destination): ?array
     {
         $response = GoogleMaps::load('distancematrix')
             ->setParam([
