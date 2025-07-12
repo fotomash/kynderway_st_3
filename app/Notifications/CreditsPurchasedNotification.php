@@ -6,6 +6,7 @@ use App\Models\CreditPackage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Kreait\Firebase\Messaging\Notification as FcmNotification;
 
 class CreditsPurchasedNotification extends Notification
 {
@@ -17,7 +18,7 @@ class CreditsPurchasedNotification extends Notification
 
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'push'];
     }
 
     public function toMail($notifiable)
@@ -25,5 +26,20 @@ class CreditsPurchasedNotification extends Notification
         return (new MailMessage())
             ->subject('Credits Purchased')
             ->line("You purchased {$this->credits} credits using package {$this->package->name}.");
+    }
+
+    public function toPush($notifiable): array
+    {
+        return [
+            'token' => $notifiable->fcm_token,
+            'data' => [
+                'type' => 'credits_purchased',
+                'credits' => $this->credits,
+            ],
+            'notification' => FcmNotification::create(
+                'Credits Purchased',
+                "You purchased {$this->credits} credits using package {$this->package->name}."
+            ),
+        ];
     }
 }

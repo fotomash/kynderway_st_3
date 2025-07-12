@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Kreait\Firebase\Messaging\Notification as FcmNotification;
 
-class BookingRequestNotification extends Notification
+class BookingConfirmedNotification extends Notification
 {
     use Queueable;
 
@@ -24,8 +24,8 @@ class BookingRequestNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-            ->subject('New Booking Request')
-            ->line('You have received a new booking request.');
+            ->subject('Booking Confirmed')
+            ->line("Your booking with {$this->booking->nanny->name} has been accepted.");
     }
 
     public function toPush($notifiable): array
@@ -34,11 +34,11 @@ class BookingRequestNotification extends Notification
             'token' => $notifiable->fcm_token,
             'data' => [
                 'booking_id' => $this->booking->id,
-                'type' => 'booking_request',
+                'type' => 'booking_confirmed',
             ],
             'notification' => FcmNotification::create(
-                'New Booking Request',
-                'You have received a new booking request.'
+                'Booking Confirmed',
+                "Your booking with {$this->booking->nanny->name} has been accepted."
             ),
         ];
     }

@@ -248,3 +248,13 @@ Unauthenticated requests receive a `401` response using this format.
 ### Escrow and Auto-Reject
 - A payment intent is created and held in escrow when a booking is made. Funds are not released until the nanny completes the booking.
 - Bookings that remain in the `requested` status are automatically rejected by a background job, notifying the parent.
+
+### Push Notifications
+When a booking is confirmed a push notification is sent with this payload:
+```json
+{
+    "type": "booking_confirmed",
+    "booking_id": 42
+}
+```
+Include `push` in your notification's `via()` method and implement `toPush()` to return the token, data and FCM notification instance.

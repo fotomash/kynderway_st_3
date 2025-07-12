@@ -2,6 +2,9 @@
 namespace Kreait\Firebase;
 class Factory {
     public function withServiceAccount($c){ return $this; }
+    public function withVerifierCache($cache){ return $this; }
+    public function withAuthTokenCache($cache){ return $this; }
+    public function withHttpClientOptions($opts){ return $this; }
     public function createMessaging(){ return new \Kreait\Firebase\Messaging\MessagingStub(); }
 }
 namespace Kreait\Firebase\Messaging;
