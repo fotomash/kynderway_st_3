@@ -45,6 +45,13 @@ class PrometheusMetrics
             $request->path()
         ]);
 
+        $gauge = $this->registry->getOrRegisterGauge(
+            'kynderway',
+            'app_memory_usage_bytes',
+            'Memory usage in bytes'
+        );
+        $gauge->set(memory_get_usage(true));
+
         return $response;
     }
 }

@@ -19,6 +19,7 @@
     "laravel/sanctum": "^2.15",
     "laravel/socialite": "^5.2",
     "laravel/tinker": "^2.5",
+    "promphp/prometheus_client_php": "^2.14",
     "stripe/stripe-php": "^10.0"
   },
   "require-dev": {
