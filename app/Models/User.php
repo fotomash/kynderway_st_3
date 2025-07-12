@@ -194,4 +194,37 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsto(User::class, 'deleted_by', 'id');
     }
+
+    /**
+     * Scope a query to users near the given coordinates within the radius (miles).
+     */
+    public function scopeNearby($query, array $location, $radius = 20)
+    {
+        $lat = $location['lat'] ?? null;
+        $lng = $location['lng'] ?? null;
+
+        if ($lat === null || $lng === null) {
+            return $query;
+        }
+
+        if (config('database.default') === 'sqlite') {
+            $haversine = '(3959 * acos(cos(radians(?)) * cos(radians(latitude)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(latitude))))';
+
+            return $query->select('*')
+                ->selectRaw("{$haversine} as distance_miles", [$lat, $lng, $lat])
+                ->having('distance_miles', '<=', $radius)
+                ->orderBy('distance_miles');
+        }
+
+        return $query->select('*')
+            ->selectRaw(
+                'ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) / 1609.34 as distance_miles',
+                [$lng, $lat]
+            )
+            ->whereRaw(
+                'ST_Distance_Sphere(point(longitude, latitude), point(?, ?)) <= ?',
+                [$lng, $lat, $radius * 1609.34]
+            )
+            ->orderBy('distance_miles');
+    }
 }
