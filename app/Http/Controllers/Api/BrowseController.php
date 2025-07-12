@@ -44,11 +44,11 @@ class BrowseController extends Controller
             return response()->json(['message' => 'Nanny not found'], 404);
         }
 
-        if (!$this->credits->hasEnoughCredits($user, 3)) {
+        if (!$this->credits->hasEnoughCredits($user)) {
             return response()->json(['message' => 'Insufficient credits'], 400);
         }
 
-        $this->credits->deductCredits($user, 3);
+        $this->credits->deductCredits($user);
 
         return response()->json([
             'success' => true,
