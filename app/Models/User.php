@@ -176,6 +176,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(CreditTransaction::class);
     }
 
+    public function paymentMethods()
+    {
+        return $this->hasMany(PaymentMethod::class);
+    }
+
     public function unlockedProfiles()
     {
         return $this->hasMany(UnlockedProfile::class, 'parent_id');
