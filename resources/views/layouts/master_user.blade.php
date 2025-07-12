@@ -224,7 +224,7 @@
                         <div class="user-account">
                             <div class="user-info" style="">
                                 @if(Auth::check())
-                                <img src="{{ Helper::getProfileImage(Auth::user()->profile_picture) }}" alt="Profile Picture">
+                                <img src="{{ UserHelper::getProfileImage(Auth::user()->profile_picture) }}" alt="Profile Picture">
                                 {{-- <a href="#" title="">{{ \Illuminate\Support\Str::limit(Auth::user()->name, 5, $end='...') }}</a> --}}
                                 <i class="la la-sort-down"></i>
                                 @else

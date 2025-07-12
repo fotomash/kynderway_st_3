@@ -425,11 +425,11 @@ class ClientController extends Controller
                         <div class="row">
                             <div class="col-md-8 p-0">
                                 <div class="user-picy">
-                                    <img src="' . Helper::getProfilePic($allconnection['provider_id']) . '"
+                                    <img src="' . UserHelper::getProfilePic($allconnection['provider_id']) . '"
                                          style="border-radius: 14px;" alt="">
                                 </div>
                                 <h3 style="display: inline-block; padding-left:12px; padding-top:18px;">
-                                    ' . Helper::getUserName($allconnection['provider_id']) . '
+                                    ' . UserHelper::getUserName($allconnection['provider_id']) . '
                                 </h3>';
 
                     $nextDiv .= '<span class="float-right-desktop" style="font-size: 14px; font-style: italic; color: #304384; font-weight: bold; padding-top: 15px;">';
@@ -439,10 +439,10 @@ class ClientController extends Controller
                         }
                     }
                     if ($allconnection->jobconnect) {
-                        if (Helper::getTotalCount($allconnection['id'], $allconnection['job_userid']) == 0) {
+                        if (UserHelper::getTotalCount($allconnection['id'], $allconnection['job_userid']) == 0) {
                             $nextDiv .= 'You have a New Connection';
                         }
-                        if (Helper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) > 0) {
+                        if (UserHelper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) > 0) {
                             $nextDiv .= 'You have a New Message';
                         }
                     }
@@ -452,10 +452,10 @@ class ClientController extends Controller
                             //         @endif
                             //     @endif
                             //     @if($post->jobconnect)
-                            //         @if(Helper::getTotalCount($post['id'],$post['job_userid']) == 0)
+                            //         @if(UserHelper::getTotalCount($post['id'],$post['job_userid']) == 0)
                             //             You have a New Connection
                             //         @endif
-                            //         @if(Helper::getUnseenCount($post['id'],$post['job_userid']) > 0)
+                            //         @if(UserHelper::getUnseenCount($post['id'],$post['job_userid']) > 0)
                             //             You have a New Message
                             //         @endif
                             //     @endif
@@ -468,11 +468,11 @@ class ClientController extends Controller
                 //     $nextDiv .= '<span> was invited by you</span>';
                     // }
 
-                    // if ($allconnection->jobconnect && Helper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) == 0) {
+                    // if ($allconnection->jobconnect && UserHelper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) == 0) {
                 //     $nextDiv .= '<span> You have a New Connection</span>';
                     // }
 
-                    // if ($allconnection->jobconnect && Helper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) > 0) {
+                    // if ($allconnection->jobconnect && UserHelper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) > 0) {
                 //     $nextDiv .= '<span> You have a New Message</span>';
                     // }
 
@@ -497,7 +497,7 @@ class ClientController extends Controller
                         }
                         $nextDiv .= '>
                                                  <i class="fas fa-comment" style="background-color: transparent; width:45px;">
-                                                     <span id="chatCount-' . $allconnection['id'] . '">' . Helper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) . '</span>
+                                                     <span id="chatCount-' . $allconnection['id'] . '">' . UserHelper::getUnseenCount($allconnection['id'], $allconnection['job_userid']) . '</span>
                                                  </i>
                                              </a>
                                              </li>';
@@ -661,7 +661,7 @@ class ClientController extends Controller
             }
 
             //Send mail on approval:
-            Helper::approveConnectionMail($connectid);
+            EmailHelper::approveConnectionMail($connectid);
 
             return Response::json(['success' => '1', 'message' => 'Connection approved successfully']);
         }
@@ -779,7 +779,7 @@ class ClientController extends Controller
         $jobId = $request->jobid;
 
         if ($jobId != '') {
-            Helper::softDeleteAllJobs($jobId, 'Self');
+            UserHelper::softDeleteAllJobs($jobId, 'Self');
             return Response::json(['success' => '1', 'message' => "Job deleted successfully!"]);
         }
     }

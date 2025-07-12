@@ -153,7 +153,7 @@
 
                                                                         <div class="col-md-6">
                                                                             <div class="mb-2">
-                                                                                <img src="{{ Helper::getProfileImage($pendingRequest->user->profile_picture) }}" alt="Profile Picture" width="100" height="100">
+                                                                                <img src="{{ UserHelper::getProfileImage($pendingRequest->user->profile_picture) }}" alt="Profile Picture" width="100" height="100">
                                                                             </div>
                                                                             <div class="mb-2">
                                                                                 <strong>Secondary Notification :</strong> {{ ($pendingRequest->user->secondary_notifications == 1) ? "On" : "Off" }}

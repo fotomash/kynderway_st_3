@@ -67,7 +67,7 @@ class EmailMessagesCron extends Command
                 $requiredData['fromUsername'] = $fromUser['name'];
 
                 // Send mail
-                if (Helper::unreadMessageMail($requiredData) != null) {
+                if (EmailHelper::unreadMessageMail($requiredData) != null) {
                     $this->info('Something went wrong. Could not send email of new messages');
                     break;
                 }

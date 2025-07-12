@@ -490,7 +490,7 @@
     <script>
         var profileId = "{{ session('profileid') }}";
         var saved = "{{ session('saved') }}";
-        var countWorkProfiles = @json(Helper::countWorkProfiles());
+        var countWorkProfiles = @json(UserHelper::countWorkProfiles());
 
         fetch('/user/check-new')
             .then(response => response.json())

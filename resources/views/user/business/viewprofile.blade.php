@@ -50,7 +50,7 @@
                             <div class="usy-dt p-4" style="width: 100%;">
                                 <img
                                     @if( isset($profile_posts['userdetails']['profile_picture']))
-                                        src="{{ Helper::getProfileImage($profile_posts['userdetails']['profile_picture']) }}"
+                                        src="{{ UserHelper::getProfileImage($profile_posts['userdetails']['profile_picture']) }}"
                                     @endif
                                      style="
                                         height: 150px;

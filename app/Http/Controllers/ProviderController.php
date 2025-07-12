@@ -1052,7 +1052,7 @@ class ProviderController extends Controller
 
 
         //Send mail to provider regarding verification request:
-        Helper::verificationRequestMailToProvider();
+        EmailHelper::verificationRequestMailToProvider();
 
         //Send mail to admin regarding verificaiton:---------------------------
         //*****************************************************************************
@@ -1353,7 +1353,7 @@ class ProviderController extends Controller
             }
 
             //Send mail on approval:
-            Helper::approveConnectionMailFromProvider($connectid);
+            EmailHelper::approveConnectionMailFromProvider($connectid);
 
             return Response::json(['success' => '1', 'message' => 'Connection approved successfully']);
         }

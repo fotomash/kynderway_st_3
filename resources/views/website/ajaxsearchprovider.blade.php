@@ -8,7 +8,7 @@
                             <div class="col-md-3 p-0">
                                 <div class="usy-dt pb-0 pt-4">
                                 {{-- <div class="usy-dt pl-4 pr-4 pb-0 pt-4"> --}}
-                                    <img src="{{Helper::getProfileImage($providerPost['userdetails']['profile_picture']) }}" width="100%" alt="">
+                                    <img src="{{UserHelper::getProfileImage($providerPost['userdetails']['profile_picture']) }}" width="100%" alt="">
 
 {{--                                    @if( isset($providerPost['userdetails']['getVerified']) && ($providerPost['userdetails']['getVerified']['status'] == 1))--}}
 {{--                                        <div style="width: 100%; text-align:center;">--}}

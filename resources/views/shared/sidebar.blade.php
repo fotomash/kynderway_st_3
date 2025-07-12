@@ -8,7 +8,7 @@
 
     <div class="user-data full-width shadow">
         <div class="user-profile">
-            <div class="username-dt" style="background-image: url('{{ Helper::getProfileImage(Auth::user()->profile_picture) }}'); height:260px; background-size: cover;">
+            <div class="username-dt" style="background-image: url('{{ UserHelper::getProfileImage(Auth::user()->profile_picture) }}'); height:260px; background-size: cover;">
                 {{-- <div class="usr-pic">
                     <div class="user-pro-img"> --}}
                         {{-- <img src="/website/images/resources/user-pro-img.png" alt=""> --}}
