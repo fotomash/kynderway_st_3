@@ -108,4 +108,52 @@ class PaymentService
 
         return $transaction;
     }
+
+    public function createPaymentIntent(Booking $booking, bool $savePaymentMethod = false)
+    {
+        $params = [
+            'amount' => $booking->hours * $booking->hourly_rate * 100,
+            'currency' => 'usd',
+            'metadata' => [
+                'booking_id' => $booking->id,
+                'parent_id' => $booking->parent_id,
+                'nanny_id' => $booking->nanny_id,
+            ],
+        ];
+
+        if ($savePaymentMethod) {
+            $params['setup_future_usage'] = 'off_session';
+        }
+
+        return PaymentIntent::create($params);
+    }
+
+    public function confirmPayment(string $paymentIntentId, Booking $booking)
+    {
+        $intent = PaymentIntent::retrieve($paymentIntentId);
+        return $intent->confirm();
+    }
+
+    public function canRefund(Booking $booking): bool
+    {
+        return (bool) $booking->transaction;
+    }
+
+    public function createRefund(Booking $booking, $amount = null, string $reason = 'requested_by_customer', ?string $notes = null)
+    {
+        $params = [
+            'payment_intent' => $booking->transaction->stripe_payment_intent_id,
+            'reason' => $reason,
+        ];
+
+        if ($amount !== null) {
+            $params['amount'] = (int) ($amount * 100);
+        }
+
+        if ($notes) {
+            $params['metadata'] = ['notes' => $notes];
+        }
+
+        return \Stripe\Refund::create($params);
+    }
 }
