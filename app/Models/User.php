@@ -77,7 +77,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'otp',
         'otp_send_at',
         'is_new',
-        'credits'
+        'credits',
+        'ssn',
+        'checkr_candidate_id',
+        'background_check_report_id',
+        'background_check_status',
+        'background_check_initiated_at'
     ];
 
     /**
@@ -88,6 +93,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
+        'ssn',
     ];
 
     /**
@@ -97,6 +103,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'background_check_initiated_at' => 'datetime',
     ];
 
     public function sendEmailVerificationNotification()
