@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\VerificationDocument;
 use Aws\Rekognition\RekognitionClient;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Crypt;
 
 class KYCService
 {
@@ -71,7 +72,7 @@ class KYCService
             'email' => $user->email,
             'phone' => $user->phone,
             'dob' => $user->date_of_birth,
-            'ssn' => $user->ssn, // Encrypted
+            'ssn' => Crypt::encryptString($user->ssn),
             'zipcode' => $user->zipcode,
         ]);
 
