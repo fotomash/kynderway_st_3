@@ -201,8 +201,8 @@ https://cdn.jsdelivr.net/npm/intro.js@7.0.1/intro.min.js
                                 }
                             })
                                 .then(response => response.json())
-                                .then(data => console.log(data))
-                                .catch(error => console.log(error));
+                                .then(data => { /* console.log(data); */ })
+                                .catch(error => { /* console.log(error); */ });
                         }
                     });
 
