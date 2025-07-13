@@ -66,4 +66,8 @@ return [
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
         'redirect' => env('LINKEDIN_REDIRECT_URL'),
     ],
+
+    'checkr' => [
+        'secret' => env('CHECKR_SECRET'),
+    ],
 ];
