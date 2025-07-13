@@ -15,6 +15,7 @@ class StubKYCService extends KYCService
     public function __construct()
     {
         // Skip parent constructor to avoid AWS SDK dependency
+        $this->checkrService = new \App\Services\CheckrService();
     }
 }
 
@@ -57,10 +58,7 @@ class BackgroundCheckTest extends TestCase
 
     public function test_background_check_can_be_initiated()
     {
-        Http::fake([
-            'https://api.checkr.com/v1/candidates' => Http::response(['id' => 'cand_1'], 200),
-            'https://api.checkr.com/v1/reports' => Http::response(['id' => 'rpt_1', 'status' => 'pending'], 200),
-        ]);
+        Http::fake();
 
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
@@ -71,23 +69,20 @@ class BackgroundCheckTest extends TestCase
         ]);
 
         $response->assertOk()->assertJson([
-            'report_id' => 'rpt_1',
+            'report_id' => 'rpt_stub',
             'status' => 'pending',
         ]);
 
         $user->refresh();
-        $this->assertEquals('cand_1', $user->checkr_candidate_id);
-        $this->assertEquals('rpt_1', $user->background_check_report_id);
+        $this->assertEquals('cand_stub', $user->checkr_candidate_id);
+        $this->assertEquals('rpt_stub', $user->background_check_report_id);
         $this->assertEquals('pending', $user->background_check_status);
         $this->assertEquals('123456789', Crypt::decryptString($user->ssn));
     }
 
     public function test_repeated_background_check_attempt_is_rejected()
     {
-        Http::fake([
-            'https://api.checkr.com/v1/candidates' => Http::response(['id' => 'cand_1'], 200),
-            'https://api.checkr.com/v1/reports' => Http::response(['id' => 'rpt_1', 'status' => 'pending'], 200),
-        ]);
+        Http::fake();
 
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');

@@ -4,16 +4,19 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Models\VerificationDocument;
+use App\Services\CheckrService;
 use Aws\Rekognition\RekognitionClient;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
 
 class KYCService
 {
-    private $rekognition;
+    protected $rekognition;
+    protected CheckrService $checkrService;
 
-    public function __construct()
+    public function __construct(CheckrService $checkrService)
     {
+        $this->checkrService = $checkrService;
         $this->rekognition = new RekognitionClient([
             'version' => 'latest',
             'region' => env('AWS_DEFAULT_REGION'),
@@ -61,10 +64,8 @@ class KYCService
      */
     public function performBackgroundCheck($user)
     {
-        $backgroundCheckService = new \App\Services\CheckrService();
-
-        if (!$user->checkr_candidate_id) {
-            $candidate = $backgroundCheckService->createCandidate([
+        if (! $user->checkr_candidate_id) {
+            $candidate = $this->checkrService->createCandidate([
                 'first_name' => $user->name,
                 'last_name' => $user->last_name,
                 'email' => $user->email,
@@ -79,7 +80,7 @@ class KYCService
             $candidate = (object) ['id' => $user->checkr_candidate_id];
         }
 
-        $report = $backgroundCheckService->createReport($candidate->id, [
+        $report = $this->checkrService->createReport($candidate->id, [
             'package' => 'childcare_pro',
         ]);
 
