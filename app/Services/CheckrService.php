@@ -4,6 +4,9 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Throwable;
+use App\Exceptions\CheckrApiException;
 
 class CheckrService
 {
@@ -30,10 +33,18 @@ class CheckrService
             $data['ssn'] = Crypt::decryptString($data['ssn']);
         }
 
-        $response = $this->client()->post($this->baseUrl . 'candidates', $data);
-        $response->throw();
+        try {
+            $response = $this->client()->post($this->baseUrl . 'candidates', $data);
+            $response->throw();
 
-        return (object) $response->json();
+            return (object) $response->json();
+        } catch (Throwable $e) {
+            Log::error('Checkr candidate creation failed', [
+                'message' => $e->getMessage(),
+            ]);
+
+            throw new CheckrApiException('Unable to create Checkr candidate', 0, $e);
+        }
     }
 
     /**
@@ -42,9 +53,18 @@ class CheckrService
     public function createReport(string $candidateId, array $data)
     {
         $payload = array_merge($data, ['candidate_id' => $candidateId]);
-        $response = $this->client()->post($this->baseUrl . 'reports', $payload);
-        $response->throw();
 
-        return (object) $response->json();
+        try {
+            $response = $this->client()->post($this->baseUrl . 'reports', $payload);
+            $response->throw();
+
+            return (object) $response->json();
+        } catch (Throwable $e) {
+            Log::error('Checkr report creation failed', [
+                'message' => $e->getMessage(),
+            ]);
+
+            throw new CheckrApiException('Unable to create Checkr report', 0, $e);
+        }
     }
 }

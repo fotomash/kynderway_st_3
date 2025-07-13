@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+require_once __DIR__ . '/../Stubs/FirebaseStubs.php';
+
 use App\Models\Booking;
 use App\Models\User;
 use App\Services\BookingService;
@@ -23,6 +25,7 @@ class BookingServiceTest extends TestCase
         parent::setUp();
 
         $this->pushService = Mockery::mock(PushNotificationService::class);
+        app()->instance(PushNotificationService::class, $this->pushService);
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
