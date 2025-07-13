@@ -40,11 +40,6 @@ class GuestController extends Controller
         $this->slug = $slug;
     }
 
-    public function getPhpInfo()
-    {
-        echo phpinfo();
-        die();
-    }
 
     public function viewPDF(Request $request)
     {
