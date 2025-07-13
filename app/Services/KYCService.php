@@ -81,7 +81,7 @@ class KYCService
         }
 
         $report = $this->checkrService->createReport($candidate->id, [
-            'package' => 'childcare_pro',
+            'package' => config('checkr.package'),
         ]);
 
         $user->background_check_report_id = $report->id;
