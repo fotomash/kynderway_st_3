@@ -10,14 +10,16 @@
   "require": {
     "php": "^8.2",
     "alexpechkarev/google-maps": "^12.1",
+    "bacon/bacon-qr-code": "^3.0",
     "darkaonline/l5-swagger": "^9.0",
     "doctrine/dbal": "^3.1",
     "guzzlehttp/guzzle": "^7.0.1",
-    "lcobucci/jwt": "^5.2",
     "kreait/laravel-firebase": "^6.1",
     "laravel/framework": "^11.0",
     "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.10",
+    "lcobucci/jwt": "^5.2",
+    "pragmarx/google2fa": "^8.0",
     "promphp/prometheus_client_php": "^2.14",
     "stripe/stripe-php": "^10.0"
   },
