@@ -184,6 +184,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(PaymentMethod::class);
     }
 
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
+    }
+
     public function unlockedProfiles()
     {
         return $this->hasMany(UnlockedProfile::class, 'parent_id');
