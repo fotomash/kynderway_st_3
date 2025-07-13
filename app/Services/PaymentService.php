@@ -8,6 +8,7 @@ use App\Events\PaymentProcessed;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Stripe\Transfer;
+use Stripe\Refund;
 
 class PaymentService
 {
@@ -107,5 +108,24 @@ class PaymentService
         event(new PaymentProcessed($transaction));
 
         return $transaction;
+    }
+
+    public function createIntent(array $data)
+    {
+        return PaymentIntent::create($data);
+    }
+
+    public function confirm(string $paymentIntentId)
+    {
+        $intent = PaymentIntent::retrieve($paymentIntentId);
+
+        return $intent->confirm();
+    }
+
+    public function refund(string $paymentIntentId)
+    {
+        return Refund::create([
+            'payment_intent' => $paymentIntentId,
+        ]);
     }
 }
