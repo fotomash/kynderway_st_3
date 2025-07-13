@@ -110,22 +110,5 @@ class PaymentService
         return $transaction;
     }
 
-    public function createIntent(array $data)
-    {
-        return PaymentIntent::create($data);
-    }
-
-    public function confirm(string $paymentIntentId)
-    {
-        $intent = PaymentIntent::retrieve($paymentIntentId);
-
-        return $intent->confirm();
-    }
-
-    public function refund(string $paymentIntentId)
-    {
-        return Refund::create([
-            'payment_intent' => $paymentIntentId,
-        ]);
     }
 }
