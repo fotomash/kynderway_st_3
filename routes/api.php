@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\MapsController;
 use App\Http\Controllers\Api\VacationCareController;
 use App\Http\Controllers\KYCController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PayoutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
