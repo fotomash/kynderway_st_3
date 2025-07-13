@@ -212,14 +212,14 @@
                                     }
                                 },
                                 error: function (jqXHR, testStatus, error) {
-                                    console.log(error);
+                                    // console.log(error);
                                     alert('something went wrong, contact support');
                                 }
                             });
                         });
                     },
                     error: function (jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -391,7 +391,7 @@
                         }
                     },
                     error: function (jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -445,7 +445,7 @@
 
             $('.post-bar:not(.--empty)').click(function (e) {
                 e.preventDefault();
-                console.log('hey');
+                // console.log('hey');
 
                 showJob($(this).find('#popid').val());
             });
@@ -472,7 +472,7 @@
                     success: function (response) {
                         //console.log(response);
                         if (response.success == '1') {
-                            console.log('x');
+                            // console.log('x');
                             $('body').css('overflow', 'hidden');
                             $('#modal_aside_right').html(response.html);
                             $("#modal_aside_right").modal('show');
@@ -489,7 +489,7 @@
                         }
                     },
                     error: function (jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -527,7 +527,7 @@
                         }
                     },
                     error: function(jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         $('#modal-message').text('Something went wrong, contact support');
                         $('#modalSuccessPostJob').modal('show');
                     }

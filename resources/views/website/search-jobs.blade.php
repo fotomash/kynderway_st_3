@@ -412,14 +412,14 @@
                                     }
                                 },
                                 error: function(jqXHR, testStatus, error) {
-                                    console.log(error);
+                                    // console.log(error);
                                     alert('something went wrong, contact support');
                                 }
                             });
                         });
                     },
                     error: function(jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -583,7 +583,7 @@
                         }
                     },
                     error: function(jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -678,7 +678,7 @@
                         }
                     },
                     error: function(jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         alert('something went wrong, contact support');
                     }
                 });
@@ -718,7 +718,7 @@
                         }
                     },
                     error: function(jqXHR, testStatus, error) {
-                        console.log(error);
+                        // console.log(error);
                         $('#modal-message').text('Something went wrong, contact support');
                         $('#modalSuccessPostJob').modal('show');
                     }
