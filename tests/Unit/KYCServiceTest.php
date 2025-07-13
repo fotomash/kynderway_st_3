@@ -52,7 +52,7 @@ class KYCServiceTest extends TestCase
             ->once()
             ->andReturn((object) ['id' => 'cand_x']);
         $checkr->shouldReceive('createReport')
-            ->with('cand_x', ['package' => 'childcare_pro'])
+            ->with('cand_x', ['package' => config('checkr.package')])
             ->once()
             ->andReturn((object) ['id' => 'rpt_x', 'status' => 'pending']);
 
