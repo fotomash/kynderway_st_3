@@ -97,7 +97,6 @@
                         <input type="hidden" id="hidden_usertype" name="hidden_usertype" value="3">
                         <input type="hidden" id="hidden_duration" name="hidden_duration" value="3">
                         <input type="hidden" id="hidden_jobtypes" name="hidden_jobtypes" value="">
-                        {{--                        TODO: Remove the comment after fixing the filter problem --}}
 
                         <div class="col-lg-3 pad-left-mob">
                             <div class="filter-secs shadow">
@@ -233,7 +232,6 @@
                         </div>
 
 
-                        {{--                        TODO: change 12 to 9 when filter fixed --}}
                         <div class="col-lg-9 pad-right-mob">
                             <div class="row mt-1 mb-3">
                                 <div class="col-lg-12 p-0">
