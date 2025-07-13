@@ -80,6 +80,11 @@ class BackgroundCheckTest extends TestCase
         $this->assertEquals('rpt_1', $user->background_check_report_id);
         $this->assertEquals('pending', $user->background_check_status);
         $this->assertEquals('123456789', Crypt::decryptString($user->ssn));
+
+        Http::assertSent(function ($request) {
+            return $request->url() === 'https://api.checkr.com/v1/candidates'
+                && $request['ssn'] === '123456789';
+        });
     }
 
     public function test_repeated_background_check_attempt_is_rejected()
