@@ -65,13 +65,21 @@ class KYCService
     public function performBackgroundCheck($user)
     {
         if (! $user->checkr_candidate_id) {
+            $encryptedSsn = $user->ssn;
+            try {
+                // if value is already encrypted this will succeed
+                Crypt::decryptString($encryptedSsn);
+            } catch (\Throwable $e) {
+                $encryptedSsn = Crypt::encryptString($encryptedSsn);
+            }
+
             $candidate = $this->checkrService->createCandidate([
                 'first_name' => $user->name,
                 'last_name' => $user->last_name,
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'dob' => $user->birth_date,
-                'ssn' => $user->ssn,
+                'ssn' => $encryptedSsn,
                 'zipcode' => $user->postal_code,
             ]);
 
