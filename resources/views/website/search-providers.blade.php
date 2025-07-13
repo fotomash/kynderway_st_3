@@ -342,7 +342,7 @@ active
                 if(!$(event.target).closest('#openModal').length && !$(event.target).is('#openModal')) {
                     if ($(".modal").is(":visible")) {
                         if(!$("#reportModal").is(":visible")){
-                            console.log('hide backdrop');
+                            // console.log('hide backdrop');
                             $('.modal-backdrop').hide();
                         }
                        $("#modal_aside_right").hide();
@@ -654,7 +654,7 @@ active
                         }
                 },
                 error: function(jqXHR, testStatus, error) {
-                    console.log(error);
+                    // console.log(error);
                     $('#modal-message').text('Something went wrong, contact support');
                     $('#modalSuccessPostJob').modal('show');
                 }
