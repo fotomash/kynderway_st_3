@@ -61,24 +61,32 @@ class KYCService
      */
     public function performBackgroundCheck($user)
     {
-        // Integration with background check services
-        // Examples: Checkr, Sterling, GoodHire
-
         $backgroundCheckService = new \App\Services\CheckrService();
 
-        $candidate = $backgroundCheckService->createCandidate([
-            'first_name' => $user->first_name,
-            'last_name' => $user->last_name,
-            'email' => $user->email,
-            'phone' => $user->phone,
-            'dob' => $user->date_of_birth,
-            'ssn' => Crypt::encryptString($user->ssn),
-            'zipcode' => $user->zipcode,
-        ]);
+        if (!$user->checkr_candidate_id) {
+            $candidate = $backgroundCheckService->createCandidate([
+                'first_name' => $user->name,
+                'last_name' => $user->last_name,
+                'email' => $user->email,
+                'phone' => $user->phone,
+                'dob' => $user->birth_date,
+                'ssn' => $user->ssn,
+                'zipcode' => $user->postal_code,
+            ]);
+
+            $user->checkr_candidate_id = $candidate->id;
+        } else {
+            $candidate = (object) ['id' => $user->checkr_candidate_id];
+        }
 
         $report = $backgroundCheckService->createReport($candidate->id, [
-            'package' => 'childcare_pro', // Criminal, sex offender registry, etc.
+            'package' => 'childcare_pro',
         ]);
+
+        $user->background_check_report_id = $report->id;
+        $user->background_check_status = $report->status ?? 'pending';
+        $user->background_check_initiated_at = now();
+        $user->save();
 
         return $report;
     }
