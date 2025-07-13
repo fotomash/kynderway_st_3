@@ -2,6 +2,7 @@ parameters:
     level: max
     paths:
         - app/
+        - tests/
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingCallableSignature: false

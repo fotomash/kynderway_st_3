@@ -48,6 +48,8 @@ Route::prefix('v1')->middleware(['auth:sanctum'])->group(function () {
     Route::post('providers/payout', [PayoutController::class, 'requestPayout']);
 });
 
+Route::post('stripe/webhook', StripeWebhookController::class);
+
 Route::prefix('v2')
     ->middleware(['api', 'throttle:100,1'])
     ->as('v2.')
