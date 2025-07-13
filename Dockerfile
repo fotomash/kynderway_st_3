@@ -1,48 +1,74 @@
-FROM php:8.2-fpm
+# syntax=docker/dockerfile:1
+############################
+# 1️⃣  Composer build – vendor/
+############################
+FROM composer:2.7 AS vendor
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    libzip-dev \
-    supervisor \
-    nginx
+# Extensions needed for composer scripts
+RUN apk add --no-cache icu-dev oniguruma-dev libzip-dev \
+ && docker-php-ext-install intl pdo_mysql zip
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --prefer-dist --no-interaction --no-progress --no-scripts
+COPY . .
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
+############################
+# 2️⃣  Node build – front-end assets
+############################
+FROM node:18-alpine AS nodebuilder
+WORKDIR /app
+COPY --from=vendor /app /app
 
-# Install Redis extension
-RUN pecl install redis && docker-php-ext-enable redis
+# Tools for native modules (if you hit node-gyp errors)
+RUN apk add --no-cache --virtual .gyp python3 make g++
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN npm ci --no-progress --silent \
+ && npm run production      # or npm run build / vite build etc.
 
-# Install Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs
+############################
+# 3️⃣  Runtime – slim PHP-FPM
+############################
+FROM php:8.2-fpm-alpine
 
-# Set working directory
+RUN apk add --no-cache oniguruma libzip icu-libs
+
 WORKDIR /var/www
 
-# Copy application files
-COPY . /var/www
+# Copy backend (code + vendor) and compiled front-end
+COPY --from=vendor      /app           /var/www
+COPY --from=nodebuilder /app/public    /var/www/public
 
-# Install dependencies
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-RUN npm install && npm run production
+# Entrypoint: run artisan optimisations once
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh \
+ && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-
-# Expose port
+HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
 EXPOSE 9000
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["php-fpm"]
 
+############################
+# 3️⃣  Runtime – slim Alpine
+############################
+RUN npm ci && npm run build
+
+# Needed libs (runtime only)
+RUN apk add --no-cache oniguruma libzip icu-libs
+
+WORKDIR /var/www
+
+# Copy backend (incl. vendor) & compiled front-end
+COPY --from=vendor      /app           /var/www
+COPY --from=nodebuilder /app/public    /var/www/public
+
+# Entrypoint runs optimisation once container starts
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh && \
+    chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
+
+EXPOSE 9000
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm"]
