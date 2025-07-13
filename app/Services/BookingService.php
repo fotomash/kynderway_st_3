@@ -4,9 +4,9 @@ namespace App\Services;
 
 use App\Models\Booking;
 use Illuminate\Support\Facades\DB;
-
 use App\Services\PushNotificationService;
 use Kreait\Firebase\Messaging\Notification;
+use App\Events\BookingCreated;
 
 class BookingService
 {
@@ -22,17 +22,7 @@ class BookingService
             $booking = Booking::create($data);
             $this->paymentService->createEscrowPayment($booking);
 
-            $this->notificationService->sendToDevice(
-                $booking->nanny->fcm_token,
-                [
-                    'booking_id' => $booking->id,
-                    'type' => 'new_booking',
-                ],
-                Notification::create(
-                    'New Booking Request',
-                    "{$booking->parent->name} has requested a booking"
-                )
-            );
+            event(new BookingCreated($booking));
             return $booking->fresh();
         });
     }
