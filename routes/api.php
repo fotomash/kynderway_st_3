@@ -5,8 +5,6 @@ use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\MapsController;
 use App\Http\Controllers\Api\VacationCareController;
 use App\Http\Controllers\KYCController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\PayoutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +46,8 @@ Route::prefix('v1')->middleware(['auth:sanctum'])->group(function () {
     Route::get('providers/onboard/callback', [PayoutController::class, 'onboardingCallback']);
     Route::post('providers/payout', [PayoutController::class, 'requestPayout']);
 });
+
+Route::post('stripe/webhook', StripeWebhookController::class);
 
 Route::prefix('v2')
     ->middleware(['api', 'throttle:100,1'])
