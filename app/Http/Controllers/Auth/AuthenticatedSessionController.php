@@ -17,6 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+        session()->forget('errors');
         return view('auth.login');
     }
 
