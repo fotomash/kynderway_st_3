@@ -20,5 +20,6 @@ yarn-error.log
 .terraform/
 /build/coverage/
 /build/logs/
-/.yarn
+.yarn/*
+!.yarn/cache
 .DS_Store
