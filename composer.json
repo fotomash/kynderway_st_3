@@ -8,8 +8,7 @@
   ],
   "license": "MIT",
   "require": {
-  "php": "^8.0",
-    "laravel/framework": "^8.83.29",
+    "php": "8.0",
     "alexpechkarev/google-maps": "^12.0",
     "darkaonline/l5-swagger": "^8.0",
     "doctrine/dbal": "^3.1",
@@ -18,8 +17,9 @@
     "guzzlehttp/guzzle": "^7.0.1",
     "lcobucci/jwt": "^4.3",
     "kreait/laravel-firebase": "^4.2",
-    "laravel/sanctum": "^2.15.1",
+    "laravel/sanctum": "^3.2",
     "laravel/tinker": "^2.8",
+    "laravel/passport": "^11.6",
     "promphp/prometheus_client_php": "^2.14",
     "stripe/stripe-php": "^10.0"
   },

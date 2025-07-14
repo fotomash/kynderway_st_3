@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\KYCService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class KYCController extends Controller
 {
@@ -55,6 +56,11 @@ class KYCController extends Controller
      *     path="/api/kyc/background-check",
      *     summary="Initiate background check"
      * )
+     *
+     * The provided SSN is encrypted and stored on the authenticated user.
+     * When {@see KYCService::performBackgroundCheck()} triggers the Checkr API
+     * the encrypted SSN is decrypted by {@see CheckrService} before sending it
+     * to the external service.
      */
     public function initiateBackgroundCheck(Request $request)
     {
@@ -62,12 +68,20 @@ class KYCController extends Controller
             'consent' => 'required|accepted',
             'ssn' => 'required|string',
         ]);
+        $user = $request->user();
 
-        $report = $this->kycService->performBackgroundCheck($request->user());
+        if ($user->background_check_status === 'pending') {
+            return response()->json(['message' => 'Background check already initiated'], 409);
+        }
+
+        $user->ssn = Crypt::encryptString($request->input('ssn'));
+        $user->save();
+
+        $report = $this->kycService->performBackgroundCheck($user);
 
         return response()->json([
             'report_id' => $report->id,
-            'status' => 'pending',
+            'status' => $report->status ?? 'pending',
             'estimated_completion' => now()->addDays(3),
         ]);
     }

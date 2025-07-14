@@ -76,7 +76,6 @@ active
                     <input type="hidden" id="hidden_language" name="hidden_language" value="3">
                     <input type="hidden" id="hidden_exp" name="hidden_exp" value="3">
                     <input type="hidden" id="hidden_jobtypes" name="hidden_jobtypes" value="">
-                    {{--TODO: Remove the comment after fixing the filter--}}
                     <div class="col-lg-3 pad-left-mob">
                         <div class="filter-secs shadow">
                             <div class="filter-heading">
@@ -342,7 +341,7 @@ active
                 if(!$(event.target).closest('#openModal').length && !$(event.target).is('#openModal')) {
                     if ($(".modal").is(":visible")) {
                         if(!$("#reportModal").is(":visible")){
-                            console.log('hide backdrop');
+                            // console.log('hide backdrop');
                             $('.modal-backdrop').hide();
                         }
                        $("#modal_aside_right").hide();
@@ -654,7 +653,7 @@ active
                         }
                 },
                 error: function(jqXHR, testStatus, error) {
-                    console.log(error);
+                    // console.log(error);
                     $('#modal-message').text('Something went wrong, contact support');
                     $('#modalSuccessPostJob').modal('show');
                 }
