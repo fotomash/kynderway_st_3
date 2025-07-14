@@ -66,11 +66,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: kynderway
-<<<<<<< Updated upstream
       MYSQL_USER: kynderway
       MYSQL_PASSWORD: secret
-=======
->>>>>>> Stashed changes
+
     volumes:
       - db_data:/var/lib/mysql
     ports:

@@ -66,7 +66,7 @@ COPY --from=nodebuilder /app/public    /var/www/public
 # Entrypoint runs optimisation once container starts
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && \
-    chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+    chown -R www-data/:www-data /var/www/storage /var/www/bootstrap/cache
 HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
 
 EXPOSE 9000
