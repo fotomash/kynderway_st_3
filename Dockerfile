@@ -28,6 +28,7 @@ FROM php:8.2-fpm-alpine
 RUN apk add --no-cache mysql-client mariadb-dev $PHPIZE_DEPS \
  && docker-php-ext-install pdo pdo_mysql \
  && pecl install redis \
+ && docker-php-ext-install pdo pdo_mysql \
  && docker-php-ext-enable redis \
  && apk del $PHPIZE_DEPS mariadb-dev
 WORKDIR /var/www
