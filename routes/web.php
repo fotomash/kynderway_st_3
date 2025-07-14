@@ -104,7 +104,11 @@ Route::post('/user/exit-intro', function () {
     }
 });
 
-Route::get('/php-get', [GuestController::class, 'getPhpInfo']);   //optimized
+if (!app()->environment('production')) {
+    Route::get('/php-get', function () {
+        phpinfo();
+    });
+}
 
 Route::get('/mail/admin-delete-user-account', [EmailsController::class, 'adminAccountDelete']);   //optimized
 Route::get('/mail/user-account-delete', [EmailsController::class, 'userAccountDelete']);   //optimized

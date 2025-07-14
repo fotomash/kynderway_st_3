@@ -15,6 +15,10 @@
             <file>./tests/Feature/BookingFlowTest.php</file>
             <file>./tests/Feature/MobileApiTest.php</file>
             <file>./tests/Feature/PushNotificationTest.php</file>
+            <file>./tests/Feature/PaymentEndpointsTest.php</file>
+            <file>./tests/Feature/PayoutEndpointsTest.php</file>
+            <file>./tests/Feature/BackgroundCheckTest.php</file>
+            <file>./tests/Feature/KYCControllerTest.php</file>
         </testsuite>
         <testsuite name="Integration">
             <directory suffix="Test.php">./tests/Integration</directory>

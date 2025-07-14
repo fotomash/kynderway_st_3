@@ -1135,10 +1135,6 @@ parameters:
 			count: 1
 			path: app/Http/Controllers/GuestController.php
 
-		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getPhpInfo\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: app/Http/Controllers/GuestController.php
 
 		-
 			message: "#^Method App\\\\Http\\\\Controllers\\\\GuestController\\:\\:getProfile\\(\\) has no return type specified\\.$#"

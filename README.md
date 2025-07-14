@@ -21,6 +21,8 @@ Kynderway is a Laravel based platform for booking childcare. It provides a REST 
    - **MySQL** – `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
    - **Stripe** – `STRIPE_SECRET` (your secret key)
    - **Firebase** – `FIREBASE_CREDENTIALS` should point to your Firebase service account JSON, e.g. `/path/to/firebase_credentials.json`
+   - **Currency rates** – `CURRENCY_RATES_API_KEY` from your currency provider
+   - **Checkr** – `CHECKR_SECRET` and optional `CHECKR_PACKAGE` to set the default background check package
 5. Run the database migrations:
    ```bash
    php artisan migrate

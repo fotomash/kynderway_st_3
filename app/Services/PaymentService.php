@@ -8,12 +8,13 @@ use App\Events\PaymentProcessed;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Stripe\Transfer;
+use Stripe\Refund;
 
 class PaymentService
 {
     public function __construct()
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(config('services.stripe.secret'));
     }
     
     /**
@@ -107,5 +108,7 @@ class PaymentService
         event(new PaymentProcessed($transaction));
 
         return $transaction;
+    }
+
     }
 }

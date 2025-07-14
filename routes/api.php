@@ -4,7 +4,9 @@ use App\Http\Controllers\Api\V1\JobController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\MapsController;
 use App\Http\Controllers\Api\VacationCareController;
+use App\Http\Controllers\Api\V1\PaymentController;
 use App\Http\Controllers\KYCController;
+use App\Http\Controllers\StripeWebhookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +36,20 @@ Route::prefix('v1')
             Route::post('background-check', [KYCController::class, 'initiateBackgroundCheck']);
         });
 
-        Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
+Route::middleware('jwt.auth')->post('unlock-nanny/{id}', [\App\Http\Controllers\Api\BrowseController::class, 'unlockNanny']);
     });
+
+Route::prefix('v1')->middleware(['auth:sanctum'])->group(function () {
+    Route::post('payments/create-intent', [PaymentController::class, 'createIntent']);
+    Route::post('payments/confirm', [PaymentController::class, 'confirm']);
+    Route::post('payments/refund', [PaymentController::class, 'refund']);
+
+    Route::post('providers/onboard', [PayoutController::class, 'startOnboarding']);
+    Route::get('providers/onboard/callback', [PayoutController::class, 'onboardingCallback']);
+    Route::post('providers/payout', [PayoutController::class, 'requestPayout']);
+});
+
+Route::post('stripe/webhook', StripeWebhookController::class);
 
 Route::prefix('v2')
     ->middleware(['api', 'throttle:100,1'])

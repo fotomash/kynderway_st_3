@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-
 use App\Events\ProfileDelete;
 use App\Events\ProfileActivate;
 use App\Events\JobDelete;
@@ -20,7 +19,7 @@ use App\Events\UserDeleteEmailAdminEvent;
 use App\Events\CreditsPurchased;
 use App\Events\CreditsUsed;
 use App\Events\PaymentProcessed;
-
+use App\Events\BookingCreated;
 use App\Listeners\SendJobDeleteMail;
 use App\Listeners\SendProfileActivateMail;
 use App\Listeners\SendProfileDeleteMail;
@@ -34,6 +33,7 @@ use App\Listeners\SendUserAccountDeleteMail;
 use App\Listeners\SendUserDeleteAdminMail;
 use App\Listeners\SendCreditPurchaseNotification;
 use App\Listeners\UpdateUserCreditsBalance;
+use App\Listeners\SendBookingNotification;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -85,6 +85,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         CreditsUsed::class => [
             UpdateUserCreditsBalance::class,
+        ],
+        BookingCreated::class => [
+            SendBookingNotification::class,
         ],
         PaymentProcessed::class => [],
 
