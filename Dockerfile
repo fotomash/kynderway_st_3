@@ -26,12 +26,14 @@ RUN yarn build
 FROM php:8.2-fpm-alpine
 
 RUN apk add --no-cache mysql-client mariadb-dev $PHPIZE_DEPS \
+ && docker-php-ext-install pdo pdo_mysql \
  && pecl install redis \
  && docker-php-ext-install pdo pdo_mysql \
  && docker-php-ext-enable redis \
- && apk del $PHPIZE_DEPS
+ && apk del $PHPIZE_DEPS mariadb-dev
 WORKDIR /var/www
 COPY --from=vendor      /app           /var/www
+COPY --from=nodebuilder /app/public    /var/www/public
 
 # Entrypoint: run artisan optimisations once
 COPY docker/entrypoint.sh /entrypoint.sh
