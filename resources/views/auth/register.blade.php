@@ -71,11 +71,26 @@
             max-width: 100% !important;
             color: white !important;
         }
+        .btn.selected {
+            background-color: #8c50a0;
+            color: #fff;
+            border-color: #8c50a0;
+        }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection
 
 @section('content')
+@php
+    $startIndex = 0;
+    if(old('type') === 'service_provider') {
+        $startIndex = 2;
+    } elseif(old('type') === 'service_seeker' && old('client_type')) {
+        $startIndex = 2;
+    } elseif(old('type') === 'service_seeker') {
+        $startIndex = 1;
+    }
+@endphp
 <div class="sign-in-page">
     <div class="signin-popup">
         <div class="signin-pop">
@@ -104,13 +119,13 @@
                                         {{ session('status') }}
                                     </div>
                                 @endif
-                                <form action="{{ route('register') }}" method="POST" id="wizard" class="">
+                                <form action="{{ route('register') }}" method="POST" id="wizard" class="" data-start-index="{{ $startIndex }}">
                                     @csrf
                                     <!-- SECTION 1 -->
                                     <h2></h2>
                                     <section>
-                                        <input type="hidden" name="type" value="" />
-                                        <input type="hidden" name="client_type" value="" />
+                                        <input type="hidden" name="type" value="{{ old('type') }}" />
+                                        <input type="hidden" name="client_type" value="{{ old('client_type') }}" />
                                         <div class="form-content">
                                             {{-- <div class="">
                                                 <h3 class="mb-5 text-center">New User</h3>
@@ -118,12 +133,12 @@
                                             <div class="col-lg-6 mx-auto" style="border: 1px solid #ccc; border-radius: 20px; margin: 100px 0px 0;">
                                                 <div class="form-row">
                                                     <div class="col-lg-8 mx-auto text-center">
-                                                        <button type="button" onclick="goTo('first', 'last');set_type_val('service_provider');" class="btn secondary" style="width:225px">I am looking for a job</button>
+                                                        <button type="button" onclick="goTo('first', 'last');set_type_val('service_provider');highlightTypeButton(this);" class="btn secondary" data-type="service_provider" style="width:225px">I am looking for a job</button>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mb-0">
                                                     <div class="col-lg-8 mx-auto mb-3 pb-3 text-center">
-                                                        <button type="button" onclick="goTo('first', 'second');set_type_val('service_seeker');" id="posting" class="btn secondary mt-2" style="width:225px">I am posting a job</button>
+                                                        <button type="button" onclick="goTo('first', 'second');set_type_val('service_seeker');highlightTypeButton(this);" id="posting" class="btn secondary mt-2" data-type="service_seeker" style="width:225px">I am posting a job</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,12 +155,12 @@
                                             <div class="col-lg-6 mx-auto" style="border: 1px solid #ccc; border-radius: 20px; margin: 100px 0px 0;">
                                                 <div class="form-row">
                                                     <div class="col-lg-6 mx-auto text-center">
-                                                        <button type="button" onclick="goTo('second', 'last');set_client_type_val('Private');" data-toggle="tooltip" data-placement="right" title="I am a individual or a parent looking to hire a service provider privately" class="btn secondary" style="width:225px">Private Offer</button>
+                                                        <button type="button" onclick="goTo('second', 'last');set_client_type_val('Private');highlightClientButton(this);" data-toggle="tooltip" data-placement="right" title="I am a individual or a parent looking to hire a service provider privately" class="btn secondary" data-client="Private" style="width:225px">Private Offer</button>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mb-0">
                                                     <div class="col-lg-6 mx-auto mb-3 pb-3 text-center">
-                                                        <button type="button" onclick="goTo('second', 'last');set_client_type_val('Business');" data-toggle="tooltip" data-placement="right" title="I am looking for a service provider on behalf of my client. Business offers are for Nanny Agencies, Cleaning Companies, Recruitment Agencies etc." class="btn secondary mt-2" style="width:225px">Business Offer</button>
+                                                        <button type="button" onclick="goTo('second', 'last');set_client_type_val('Business');highlightClientButton(this);" data-toggle="tooltip" data-placement="right" title="I am looking for a service provider on behalf of my client. Business offers are for Nanny Agencies, Cleaning Companies, Recruitment Agencies etc." class="btn secondary mt-2" data-client="Business" style="width:225px">Business Offer</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,13 +184,13 @@
                                             <div class="row pt-5" style="">
                                                 <div class="col-md-6 error-ele mb-4">
                                                     <div class="sn-field mb-0">
-                                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
+                                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="{{ old('firstname') }}" required>
                                                         <i class="la la-user"></i>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 error-ele mb-4">
                                                     <div class="sn-field mb-0">
-                                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" required>
+                                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="{{ old('lastname') }}" required>
                                                         <i class="la la-user"></i>
                                                     </div>
                                                 </div>
@@ -184,7 +199,7 @@
                                             <div class="row">
                                                 <div class="col-md-6 error-ele mb-4">
                                                     <div class="sn-field mb-0">
-                                                        <input type="email" class="form-control" name="email" placeholder="Email" data-toggle="tooltip" data-html="true" data-placement="top" title="<p>Please make sure that you enter valid email address, as you will be receiving the verification link.</p>" required>
+                                                        <input type="email" class="form-control" name="email" placeholder="Email" data-toggle="tooltip" data-html="true" data-placement="top" title="<p>Please make sure that you enter valid email address, as you will be receiving the verification link.</p>" value="{{ old('email') }}" required>
                                                         <i class="la la-envelope-o"></i>
                                                     </div>
                                                 </div>
@@ -211,7 +226,7 @@
                                                         <div class="signup-tick">
                                                             <div class="row">
                                                                 <div class="col-1 p-0" style="max-width: 20px;">
-                                                                    <input type="checkbox" class="form-control" style="display: none;" name="terms_condition" id="c2" value="1" required="required"/>
+                                                                    <input type="checkbox" class="form-control" style="display: none;" name="terms_condition" id="c2" value="1" required="required" @checked(old('terms_condition')) />
                                                                     <label for="c2"><span></span></label>
                                                                 </div>
                                                                 <div class="col-11 p-0">
@@ -302,6 +317,16 @@
     }
 
     $(document).ready(function(){
+
+        var selectedType = $('input[name="type"]').val();
+        var selectedClientType = $('input[name="client_type"]').val();
+
+        if(selectedType){
+            highlightTypeButton($('button[data-type="'+selectedType+'"]').get(0));
+        }
+        if(selectedClientType){
+            highlightClientButton($('button[data-client="'+selectedClientType+'"]').get(0));
+        }
 
         $(".subbtn").on("click", function(){
                 if($('input[type="checkbox"]').prop("checked") == false){
@@ -418,6 +443,19 @@
     }
     function set_client_type_val(type_val){
         $('form[id="wizard"] input[name="client_type"]').val(type_val);
+    }
+
+    function highlightTypeButton(btn){
+        $('button[data-type]').removeClass('selected');
+        if(btn){
+            $(btn).addClass('selected');
+        }
+    }
+    function highlightClientButton(btn){
+        $('button[data-client]').removeClass('selected');
+        if(btn){
+            $(btn).addClass('selected');
+        }
     }
 
     function togglePasswordView() {

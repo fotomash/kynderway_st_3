@@ -1,15 +1,17 @@
 $(function(){
-	$("#wizard").steps({
-        headerTag: "h2",
-        bodyTag: "section",
-        transitionEffect: "fade",
-        enableAllSteps: true,
-        transitionEffectSpeed: 500,
-        labels: {
-            finish: "Post",
-            next: "Next",
-            previous: "Back"
-        }
+        var startIndex = parseInt($("#wizard").data('start-index')) || 0;
+        $("#wizard").steps({
+            headerTag: "h2",
+            bodyTag: "section",
+            transitionEffect: "fade",
+            enableAllSteps: true,
+            transitionEffectSpeed: 500,
+            startIndex: startIndex,
+            labels: {
+                finish: "Post",
+                next: "Next",
+                previous: "Back"
+            }
     });
     $('.wizard > .steps li a').click(function(){
     	$(this).parent().addClass('checked');
