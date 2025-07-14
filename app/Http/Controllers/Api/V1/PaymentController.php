@@ -3,6 +3,13 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+https://github.com/fotomash/kynderway_st_3/pull/120/conflict?name=app%252FHttp%252FControllers%252FApi%252FV1%252FPaymentController.php&base_oid=499aeb65de48f21918a7b853487e168e8f98c61b&head_oid=fa4f86718ff99b41e1f2be3dbc44ed67e6353711<<<<<<< chore/upgrade-laravel9
+use Illuminate\Http\Request;
+
+class PaymentController extends Controller
+{
+    //
+=======
 use App\Services\PaymentService;
 use App\Models\Booking;
 use Illuminate\Http\Request;
@@ -108,4 +115,5 @@ class PaymentController extends Controller
             return response()->json(['error' => 'Refund processing failed'], 500);
         }
     }
+>>>>>>> main
 }
