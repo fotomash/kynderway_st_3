@@ -105,7 +105,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12 no-pdd error-ele mb-4">
                                                     <div class="sn-field mb-0">
-                                                        <input type="email" name="email" class="form-control" placeholder="Email" required />
+                                                        <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required />
                                                         <i class="la la-envelope-o"></i>
                                                     </div>
                                                 </div>
@@ -128,7 +128,7 @@
                                                         </div> --}}
                                                         <div class="cpp-fiel error-ele">
                                                             <label for="remember_me">
-                                                                <input type="checkbox" name="remember" id="remember_me" style="width: auto; height: auto;">
+                                                                <input type="checkbox" name="remember" id="remember_me" style="width: auto; height: auto;" @checked(old('remember'))>
                                                                 {{ __('Remember Me') }}
                                                             </label>
                                                         </div>
