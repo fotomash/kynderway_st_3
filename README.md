@@ -23,6 +23,7 @@ Kynderway is a Laravel based platform for booking childcare. It provides a REST 
    - **Firebase** – `FIREBASE_CREDENTIALS` should point to your Firebase service account JSON, e.g. `/path/to/firebase_credentials.json`
    - **Currency rates** – `CURRENCY_RATES_API_KEY` from your currency provider
    - **Checkr** – `CHECKR_SECRET` and optional `CHECKR_PACKAGE` to set the default background check package
+   - **reCAPTCHA** – `GOOGLE_RECAPTCHA_KEY` and `GOOGLE_RECAPTCHA_SECRET` from the Google reCAPTCHA admin console. Missing values will prevent the reCAPTCHA widget from appearing.
 5. Run the database migrations:
    ```bash
    php artisan migrate
