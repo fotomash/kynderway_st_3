@@ -14,8 +14,8 @@ services:
       APP_KEY: ${APP_KEY:-base64:INVALIDKEY}  # override in your .env
       DB_HOST: db
       DB_DATABASE: kynderway
-      DB_USERNAME: kynderway
-      DB_PASSWORD: secret
+      DB_USERNAME: root
+      DB_PASSWORD: root
       QUEUE_CONNECTION: redis
       CACHE_DRIVER: redis
       SESSION_DRIVER: redis

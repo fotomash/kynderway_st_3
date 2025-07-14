@@ -4,7 +4,7 @@
 FROM composer:2.7 AS vendor
 WORKDIR /app
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --prefer-dist --optimize-autoloader
+RUN composer install --no-scripts --prefer-dist --optimize-autoloader
 
 ############################
 # 2️⃣  Node build – front-end assets
@@ -23,9 +23,13 @@ RUN yarn build
 ############################
 # 3️⃣  Runtime – slim PHP-FPM
 ############################
-FROM php:8.2-fpm-alpine
+
 RUN apk add --no-cache mysql-client
 RUN docker-php-ext-install pdo pdo_mysql
+RUN apk add --no-cache $PHPIZE_DEPS \
+ && pecl install redis \
+ && docker-php-ext-enable redis \
+ && apk del $PHPIZE_DEPS
 WORKDIR /var/www
 COPY --from=vendor      /app           /var/www
 COPY --from=nodebuilder /app/public    /var/www/public
@@ -35,7 +39,7 @@ COPY docker/entrypoint.sh /entrypoint.sh
 RUN mkdir -p /var/www/storage /var/www/bootstrap/cache \
  && chmod +x /entrypoint.sh \
  && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
- 
+
 HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
 EXPOSE 9000
 ENTRYPOINT ["/entrypoint.sh"]
