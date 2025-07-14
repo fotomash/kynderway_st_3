@@ -56,8 +56,8 @@ Route::get('/get-unseen-message-count', function (Request $request) {
     }
 });
 
-Route::get('/get-new-job-notification', [ClientController::class, 'getNewJobNotification'])->name('get.new.job.notification');
-Route::get('/get-new-job-notification-provider', [ProviderController::class, 'getNewJobNotification'])->name('get.new.job.notification');
+Route::get('/get-new-job-notification', [ClientController::class, 'getNewJobNotification'])->name('get.new.job.notification.client');
+Route::get('/get-new-job-notification-provider', [ProviderController::class, 'getNewJobNotification'])->name('get.new.job.notification.provider');
 
 //Guest Routes
 Route::get('/', [GuestController::class, 'index']);   //optimized

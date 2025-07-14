@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        env('APP_ENV') !== 'production' ? NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider::class : null,
 
 
         /*
