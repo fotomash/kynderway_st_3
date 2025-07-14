@@ -1,0 +1,322 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Kynderway API",
+        "description": "API documentation for Kynderway",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/browse/nannies/{id}/unlock": {
+            "post": {
+                "tags": [
+                    "Credits"
+                ],
+                "summary": "Unlock nanny profile",
+                "operationId": "3912eb1e302a0c51fbdc75496aeb003c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the nanny",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful unlock"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/maps/geocode": {
+            "post": {
+                "summary": "Geocode an address",
+                "operationId": "45262f46477186aa1dff8c5b7e169647",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "address": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/mobile/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Mobile user login",
+                "operationId": "b601403ffc84498521e79a244ee7acaa",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "device_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string"
+                                        },
+                                        "user": {
+                                            "$ref": "#/components/schemas/User"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/mobile/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Mobile user logout",
+                "operationId": "c9a551f0e0b5aaa634f2c41ac7874917",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get list of users",
+                "description": "Returns list of users",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/vacation-care/search": {
+            "post": {
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Search for nannies in vacation location",
+                "operationId": "9b8794b135577c81d25b897fdd823bcc",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "destination": {
+                                        "type": "string"
+                                    },
+                                    "start_date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "end_date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "children_ages": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "care_schedule": {
+                                        "type": "object"
+                                    },
+                                    "accommodation_type": {
+                                        "type": "string"
+                                    },
+                                    "special_requirements": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/kyc/verify-document": {
+            "post": {
+                "summary": "Upload and verify identity document",
+                "operationId": "2c45ad04695349d2dd5ae10880a6bb41",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "document": {
+                                        "type": "file"
+                                    },
+                                    "document_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "passport",
+                                            "drivers_license",
+                                            "national_id"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Document uploaded and verification in progress"
+                    }
+                }
+            }
+        },
+        "/api/kyc/background-check": {
+            "post": {
+                "summary": "Initiate background check",
+                "operationId": "de77452ca163e1fb995a8809b4805fb6",
+                "responses": {
+                    "200": {
+                        "description": "Background check initiated"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "title": "User",
+                "required": [
+                    "id",
+                    "name",
+                    "email"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "User ID",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "User name",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "User email",
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "created_at": {
+                        "description": "Creation timestamp",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT based authentication",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentication",
+            "description": "Operations related to authentication"
+        },
+        {
+            "name": "Users",
+            "description": "Operations about users"
+        },
+        {
+            "name": "Bookings",
+            "description": "Manage bookings"
+        },
+        {
+            "name": "Credits",
+            "description": "Credit related endpoints"
+        }
+    ]
+}

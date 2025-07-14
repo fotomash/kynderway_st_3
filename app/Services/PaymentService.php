@@ -110,5 +110,4 @@ class PaymentService
         return $transaction;
     }
 
-    }
 }

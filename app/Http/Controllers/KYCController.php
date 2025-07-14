@@ -27,6 +27,10 @@ class KYCController extends Controller
      *                 @OA\Property(property="document_type", type="string", enum={"passport", "drivers_license", "national_id"})
      *             )
      *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Document uploaded and verification in progress"
      *     )
      * )
      */
@@ -54,7 +58,11 @@ class KYCController extends Controller
     /**
      * @OA\Post(
      *     path="/api/kyc/background-check",
-     *     summary="Initiate background check"
+     *     summary="Initiate background check",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Background check initiated"
+     *     )
      * )
      *
      * The provided SSN is encrypted and stored on the authenticated user.

@@ -73,6 +73,6 @@ return [
     ],
 
     'checkr' => [
-        'secret' => env('CHECKR_SECRET'),
+        'secret' => env('CHECKR_SECRET', ''),
     ],
 ];

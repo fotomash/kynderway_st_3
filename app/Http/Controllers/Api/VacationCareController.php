@@ -31,6 +31,10 @@ class VacationCareController extends Controller
      *             @OA\Property(property="accommodation_type", type="string"),
      *             @OA\Property(property="special_requirements", type="string")
      *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation"
      *     )
      * )
      */
