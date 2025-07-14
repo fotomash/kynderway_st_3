@@ -25,6 +25,18 @@ services:
       DB_HOST: db
     command: php artisan queue:work
 
+  nginx:
+    image: nginx:alpine
+    container_name: kynderway_nginx
+    depends_on:
+      - app
+    links:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
   db:
     image: mysql:8.0
     container_name: kynderway_db

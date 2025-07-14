@@ -34,9 +34,14 @@ php artisan serve
 ```
 
 ### Using Docker
-A `docker-compose.yml` is included that provides application, queue worker and MySQL services. Build and start the containers with:
+`docker-compose.yml` now includes an `nginx` service which serves the contents of the `public` directory and forwards PHP requests to the `app` container. Build and start the containers with:
 ```bash
 docker-compose up --build
+```
+
+To start only nginx (and its dependencies) run:
+```bash
+docker-compose up nginx
 ```
 
 Prometheus and Grafana containers are also started for metrics at `http://localhost:9090` and `http://localhost:3000`.
