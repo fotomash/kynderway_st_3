@@ -42,4 +42,21 @@ class AuthenticationTest extends TestCase
 
         $this->assertGuest();
     }
+
+    public function test_old_input_is_retained_after_failed_login()
+    {
+        $response = $this->from('/login')->post('/login', [
+            'email' => 'wrong@example.com',
+            'password' => 'invalid-password',
+            'remember' => 'on',
+        ]);
+
+        $response->assertRedirect('/login');
+
+        $response = $this->get('/login');
+
+        $response->assertSee('value="wrong@example.com"', false);
+        $response->assertSee('id="remember_me"', false);
+        $response->assertSee('checked', false);
+    }
 }
