@@ -23,7 +23,9 @@ RUN yarn build
 ############################
 # 3️⃣  Runtime – slim PHP-FPM
 ############################
-FROM php:8.2-fpm-alpine
+
+RUN apk add --no-cache mysql-client
+RUN docker-php-ext-install pdo pdo_mysql
 RUN apk add --no-cache $PHPIZE_DEPS \
  && pecl install redis \
  && docker-php-ext-enable redis \
