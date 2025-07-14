@@ -24,6 +24,8 @@ RUN yarn build
 # 3️⃣  Runtime – slim PHP-FPM
 ############################
 FROM php:8.2-fpm-alpine
+RUN apk add --no-cache mysql-client
+RUN docker-php-ext-install pdo pdo_mysql
 WORKDIR /var/www
 COPY --from=vendor      /app           /var/www
 COPY --from=nodebuilder /app/public    /var/www/public
