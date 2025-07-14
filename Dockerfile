@@ -23,6 +23,7 @@ RUN yarn build
 ############################
 # 3️⃣  Runtime – slim PHP-FPM
 ############################
+FROM php:8.2-fpm-alpine
 
 RUN apk add --no-cache mysql-client
 RUN docker-php-ext-install pdo pdo_mysql
@@ -32,7 +33,6 @@ RUN apk add --no-cache $PHPIZE_DEPS \
  && apk del $PHPIZE_DEPS
 WORKDIR /var/www
 COPY --from=vendor      /app           /var/www
-COPY --from=nodebuilder /app/public    /var/www/public
 
 # Entrypoint: run artisan optimisations once
 COPY docker/entrypoint.sh /entrypoint.sh
