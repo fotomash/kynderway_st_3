@@ -25,10 +25,9 @@ RUN yarn build
 ############################
 FROM php:8.2-fpm-alpine
 
-RUN apk add --no-cache mysql-client
-RUN docker-php-ext-install pdo pdo_mysql
-RUN apk add --no-cache $PHPIZE_DEPS \
+RUN apk add --no-cache mysql-client mariadb-dev $PHPIZE_DEPS \
  && pecl install redis \
+ && docker-php-ext-install pdo pdo_mysql \
  && docker-php-ext-enable redis \
  && apk del $PHPIZE_DEPS
 WORKDIR /var/www
