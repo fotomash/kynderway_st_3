@@ -22,9 +22,10 @@ COPY --from=vendor /app /app
 
 # Tools for native modules (if you hit node-gyp errors)
 RUN apk add --no-cache --virtual .gyp python3 make g++
-
-RUN npm ci --no-progress --silent \
- && npm run production      # or npm run build / vite build etc.
+RUN corepack enable
+RUN corepack prepare yarn@4.9.2 --activate
+RUN yarn install --immutable --immutable-cache --silent \
+ && yarn build
 
 ############################
 # 3️⃣  Runtime – slim PHP-FPM
@@ -45,30 +46,6 @@ RUN chmod +x /entrypoint.sh \
  && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
-EXPOSE 9000
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["php-fpm"]
-
-############################
-# 3️⃣  Runtime – slim Alpine
-############################
-RUN npm ci && npm run build
-
-# Needed libs (runtime only)
-RUN apk add --no-cache oniguruma libzip icu-libs
-
-WORKDIR /var/www
-
-# Copy backend (incl. vendor) & compiled front-end
-COPY --from=vendor      /app           /var/www
-COPY --from=nodebuilder /app/public    /var/www/public
-
-# Entrypoint runs optimisation once container starts
-COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh && \
-    chown -R www-data/:www-data /var/www/storage /var/www/bootstrap/cache
-HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
-
 EXPOSE 9000
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm"]

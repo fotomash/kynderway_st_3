@@ -17,7 +17,7 @@ class AddDarkModeToUsers extends Migration
             // if not exist, add the new column
             if (!Schema::hasColumn('users', 'dark_mode')) {
                 $table->boolean('dark_mode')->default(0)->after('email');
-            }
+            }  
         });
     }
 

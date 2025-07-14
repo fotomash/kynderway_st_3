@@ -14,7 +14,7 @@ class AddSoftDeleteColumnsToJobPosts extends Migration
     public function up()
     {
         Schema::table('job_posts', function (Blueprint $table) {
-            $table->softDeletes();
+             $table->softDeletes();
         });
     }
 

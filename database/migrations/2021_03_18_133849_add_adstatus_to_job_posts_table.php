@@ -14,8 +14,8 @@ class AddAdstatusToJobPostsTable extends Migration
     public function up()
     {
         Schema::table('job_posts', function (Blueprint $table) {
-            $table->boolean('adstatus')->default(1)->comment('0 >Deactive, 1 > Active')->after('publish');
-            $table->string('expirydt')->after('adstatus');
+             $table->boolean('adstatus')->default(1)->comment('0 >Deactive, 1 > Active')->after('publish');
+             $table->string('expirydt')->after('adstatus');
         });
     }
 

@@ -27,7 +27,7 @@ class AddRequestorToUserConnection extends Migration
     public function down()
     {
         Schema::table('user_connections', function (Blueprint $table) {
-            $table->dropColumn('requested_by', 'deleted_by');
+            $table->dropColumn('requested_by','deleted_by');
         });
     }
 }

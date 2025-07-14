@@ -14,7 +14,7 @@ class AddProviderprofileidToUserConnectionsTable extends Migration
     public function up()
     {
         Schema::table('user_connections', function (Blueprint $table) {
-            $table->integer('providerprofileid')->after('jobappliedid');
+             $table->integer('providerprofileid')->after('jobappliedid');
         });
     }
 

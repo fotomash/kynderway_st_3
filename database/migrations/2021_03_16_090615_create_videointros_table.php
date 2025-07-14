@@ -14,7 +14,7 @@ class CreateVideointrosTable extends Migration
     public function up()
     {
         Schema::create('videointros', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');            
             $table->integer('provider_id');
             $table->string('videofile');
             $table->timestamps();

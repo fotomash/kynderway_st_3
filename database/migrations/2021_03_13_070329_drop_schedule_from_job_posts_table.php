@@ -14,16 +14,15 @@ class DropScheduleFromJobPostsTable extends Migration
     public function up()
     {
         Schema::table('job_posts', function (Blueprint $table) {
-            $table->text('workschedule')->after('hoursperweek');
+            $table->text('workschedule')->after('hoursperweek');   
+            $table->dropColumn('schedule_mon');
+            $table->dropColumn('schedule_tue');
+            $table->dropColumn('schedule_wed');
+            $table->dropColumn('schedule_thur');
+            $table->dropColumn('schedule_fri');
+            $table->dropColumn('schedule_sat');
+            $table->dropColumn('schedule_sun');
         });
-
-        foreach (['schedule_mon', 'schedule_tue', 'schedule_wed', 'schedule_thur', 'schedule_fri', 'schedule_sat', 'schedule_sun'] as $column) {
-            if (Schema::hasColumn('job_posts', $column)) {
-                Schema::table('job_posts', function (Blueprint $table) use ($column) {
-                    $table->dropColumn($column);
-                });
-            }
-        }
     }
 
     /**
@@ -35,14 +34,13 @@ class DropScheduleFromJobPostsTable extends Migration
     {
         Schema::table('job_posts', function (Blueprint $table) {
             $table->dropColumn('workschedule');
+            $table->text('schedule_mon');           
+            $table->text('schedule_tue');           
+            $table->text('schedule_wed');           
+            $table->text('schedule_thur');           
+            $table->text('schedule_fri');           
+            $table->text('schedule_sat');           
+            $table->text('schedule_sun');     
         });
-
-        foreach (['schedule_mon', 'schedule_tue', 'schedule_wed', 'schedule_thur', 'schedule_fri', 'schedule_sat', 'schedule_sun'] as $column) {
-            if (!Schema::hasColumn('job_posts', $column)) {
-                Schema::table('job_posts', function (Blueprint $table) use ($column) {
-                    $table->text($column)->nullable();
-                });
-            }
-        }
     }
 }

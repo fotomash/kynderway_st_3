@@ -14,7 +14,7 @@ class CreateUserConnectionsTable extends Migration
     public function up()
     {
         Schema::create('user_connections', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');            
             $table->integer('job_userid');
             $table->integer('provider_id');
             $table->integer('jobappliedid');
@@ -22,7 +22,7 @@ class CreateUserConnectionsTable extends Migration
             $table->string('clienttype');
             $table->boolean('jobconnect')->default(0)->comment('0=busi/ind connect pending, 1 =connection done');
             $table->boolean('providerconnect')->default(0)->comment('0=provider connect pending, 1 =connection done');
-            $table->boolean('fullconnect')->default(0)->comment('0=anyside connect pending, 1 =connection done');
+            $table->boolean('fullconnect')->default(0)->comment('0=anyside connect pending, 1 =connection done');        
             $table->timestamps();
         });
     }

@@ -14,43 +14,36 @@ class Profile_CategoriesSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+     public function run()
     {
-        $jobs = [
+        $jobs = [  
+        	[
+                "categoryname"       =>   "Nanny",                
+            ],          
             [
-                "categoryname"       =>   "Nanny",
-                "slug"               =>   "nanny",
-            ],
-            [
-                "categoryname"       =>   "Maternity Nurse",
-                "slug"               =>   "maternity-nurse",
+                "categoryname"       =>   "Maternity",
             ],
             [
                 "categoryname"       =>   "Carer",
-                "slug"               =>   "carer",
             ],
             [
                 "categoryname"       =>   "Pet Carer",
-                "slug"               =>   "pet-carer",
             ],
             [
                 "categoryname"       =>   "Cleaner",
-                "slug"               =>   "cleaner",
             ],
             [
                 "categoryname"       =>   "Housekeeper",
-                "slug"               =>   "housekeeper",
             ],
             [
                 "categoryname"       =>   "Tutor",
-                "slug"               =>   "tutor",
             ],
-
+           
         ];
 
         DB::table('profile_categories')->truncate();
-        foreach ($jobs as $job) {
-            Profile_Categories::create($job);
-        }
-    }
+        foreach($jobs as $job){
+		    Profile_Categories::create($job);
+		}
+	}
 }

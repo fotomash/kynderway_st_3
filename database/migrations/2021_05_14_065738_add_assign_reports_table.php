@@ -27,7 +27,7 @@ class AddAssignReportsTable extends Migration
     public function down()
     {
         Schema::table('reports', function (Blueprint $table) {
-            $table->dropColumn('user_notes', 'assigned_user_id');
+            $table->dropColumn('user_notes','assigned_user_id');
         });
     }
 }

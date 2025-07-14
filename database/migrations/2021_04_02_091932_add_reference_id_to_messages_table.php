@@ -13,7 +13,7 @@ class AddReferenceIdToMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('messages', function (Blueprint $table) {
+        Schema::table('messages', function (Blueprint $table) {            
             $table->integer('reference_id')->after('to_id')->nullable();
         });
     }

@@ -17,7 +17,7 @@ class Job_TypesSeeder extends Seeder
     public function run()
     {
         $jobs = [
-            [
+        	[
                 "profile_id"       =>   "1",
                 "jobtype" =>    "full time"
             ],
@@ -336,8 +336,10 @@ class Job_TypesSeeder extends Seeder
         ];
 
         DB::table('job_types')->truncate();
-        foreach ($jobs as $job) {
-            Job_Types::create($job);
-        }
+        foreach($jobs as $job){
+		    Job_Types::create($job);
+		}
+
+
     }
 }

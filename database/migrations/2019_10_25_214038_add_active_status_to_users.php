@@ -17,7 +17,7 @@ class AddActiveStatusToUsers extends Migration
             // if not exist, add the new column
             if (!Schema::hasColumn('users', 'active_status')) {
                 $table->boolean('active_status')->default(0)->after('email');
-            }
+            } 
         });
     }
 

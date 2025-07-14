@@ -16,11 +16,11 @@ class ExperiencesSeeder extends Seeder
      */
     public function run()
     {
-        $jobs = [
-            [
+        $jobs = [  
+        	[
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "afterschool activities"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "homework"
@@ -72,50 +72,50 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "light housekeeping"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "reading to children"
-            ],
+            ],   
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "putting to bed"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "creating routine"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "rooms tidying"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "administering medication"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "intellectual stimulation"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "Montessori"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "Driving"
-            ],
+            ],    
             [
                 "profile_category_id"       =>   "1",
                 "exp_name" =>    "organizing bedrooms/toys"
-            ],
+            ],    
 
 
 
             [
                 "profile_category_id"       =>   "2",
                 "exp_name" =>    "provide emotional support"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "2",
                 "exp_name" =>    "establishing routine"
@@ -160,7 +160,7 @@ class ExperiencesSeeder extends Seeder
                 "profile_category_id"       =>   "2",
                 "exp_name" =>    "bathing"
             ],
-
+           
             [
                 "profile_category_id"       =>   "2",
                 "exp_name" =>    "maintaining nursery"
@@ -177,13 +177,13 @@ class ExperiencesSeeder extends Seeder
                 "profile_category_id"       =>   "2",
                 "exp_name" =>    "sorting out clothes"
             ],
-
-
-
+                         
+          
+          
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "assiting with daily activities"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "cooking"
@@ -240,7 +240,7 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "driving/transporting"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "medication mangement"
@@ -252,11 +252,11 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "shopping"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "3",
                 "exp_name" =>    "light gardening"
-            ],
+            ],  
 
 
 
@@ -308,7 +308,7 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "5",
                 "exp_name" =>    "dusting"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "5",
                 "exp_name" =>    "vacuuming"
@@ -365,7 +365,7 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "5",
                 "exp_name" =>    "surface sanitising"
-            ],
+            ],          
 
             [
                 "profile_category_id"       =>   "6",
@@ -418,11 +418,11 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "6",
                 "exp_name" =>    "running errands"
-            ],
+            ],   
             [
                 "profile_category_id"       =>   "6",
                 "exp_name" =>    "food shopping"
-            ],
+            ],    
              [
                 "profile_category_id"       =>   "6",
                 "exp_name" =>    "helping with children"
@@ -440,7 +440,7 @@ class ExperiencesSeeder extends Seeder
             [
                 "profile_category_id"       =>   "7",
                 "exp_name" =>    "online tutoring"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "7",
                 "exp_name" =>    "exam preparation"
@@ -464,8 +464,8 @@ class ExperiencesSeeder extends Seeder
         ];
 
         DB::table('experiences')->truncate();
-        foreach ($jobs as $job) {
-            Experiences::create($job);
-        }
+        foreach($jobs as $job){
+		   Experiences::create($job);
+		}
     }
 }

@@ -13,10 +13,10 @@ class CreateJobTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_types', function (Blueprint $table) {
+        Schema::create('job_types',function (Blueprint $table) {
             $table->increments('id');
             $table->integer('profile_id')->unsigned();
-            $table->string('jobtype');
+            $table->string('jobtype');           
             $table->timestamps();
         });
     }

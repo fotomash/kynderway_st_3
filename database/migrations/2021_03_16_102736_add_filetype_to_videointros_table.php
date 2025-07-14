@@ -14,7 +14,7 @@ class AddFiletypeToVideointrosTable extends Migration
     public function up()
     {
         Schema::table('videointros', function (Blueprint $table) {
-            $table->string('filetype')->after('videofile');
+             $table->string('filetype')->after('videofile');
         });
     }
 

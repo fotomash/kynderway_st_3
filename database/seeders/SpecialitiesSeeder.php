@@ -14,14 +14,14 @@ class SpecialitiesSeeder extends Seeder
      *
      * @return void
      */
-
+   
     public function run()
     {
-        $jobs = [
-            [
+        $jobs = [  
+        	[
                 "profile_category_id"       =>   "1",
                 "name" =>    "newborn (up to 12 months)"
-            ],
+            ],          
             [
                 "profile_category_id"       =>   "1",
                 "name" =>    "toddler (1-3 years)"
@@ -190,8 +190,8 @@ class SpecialitiesSeeder extends Seeder
         ];
 
         DB::table('specialities')->truncate();
-        foreach ($jobs as $job) {
-            Specialities::create($job);
-        }
+        foreach($jobs as $job){
+		    Specialities::create($job);
+		}
     }
 }

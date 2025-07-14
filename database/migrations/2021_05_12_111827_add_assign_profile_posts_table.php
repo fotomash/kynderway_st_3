@@ -29,7 +29,7 @@ class AddAssignProfilePostsTable extends Migration
     public function down()
     {
         Schema::table('profile_posts', function (Blueprint $table) {
-            $table->dropColumn('user_notes', 'assigned_user_id', 'deleted_by', 'deleted_type');
+            $table->dropColumn('user_notes','assigned_user_id','deleted_by','deleted_type');
         });
     }
 }

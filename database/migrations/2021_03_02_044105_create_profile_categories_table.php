@@ -14,8 +14,8 @@ class CreateProfileCategoriesTable extends Migration
     public function up()
     {
         Schema::create('profile_categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('categoryname');
+            $table->increments('id');            
+            $table->string('categoryname');           
             $table->timestamps();
         });
     }

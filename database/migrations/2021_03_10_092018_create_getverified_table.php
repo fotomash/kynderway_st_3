@@ -13,8 +13,8 @@ class CreateGetverifiedTable extends Migration
      */
     public function up()
     {
-        Schema::create('getverified', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('getverified', function (Blueprint $table) {            
+            $table->increments('id');            
             $table->integer('provider_id');
             $table->string('identification_type');
             $table->string('identification_doc');

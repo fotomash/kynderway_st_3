@@ -17,7 +17,7 @@ class AddAvatarToUsers extends Migration
             // if not exist, add the new column
             if (!Schema::hasColumn('users', 'avatar')) {
                 $table->string('avatar')->default(config('chatify.user_avatar.default'))->after('email');
-            }
+            }           
         });
     }
 
