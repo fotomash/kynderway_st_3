@@ -20,3 +20,4 @@ yarn-error.log
 .terraform/
 /build/coverage/
 /build/logs/
+/.yarn
