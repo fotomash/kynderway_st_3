@@ -15,7 +15,7 @@ COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn ./.yarn
 RUN corepack enable \
  && corepack prepare yarn@4.9.2 --activate \
- && yarn install --immutable --immutable-cache --silent
+ && yarn install --check-cache --silent
 COPY resources ./resources
 COPY vite.config.js tailwind.config.js ./
 RUN yarn build
@@ -30,9 +30,10 @@ COPY --from=nodebuilder /app/public    /var/www/public
 
 # Entrypoint: run artisan optimisations once
 COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh \
+RUN mkdir -p /var/www/storage /var/www/bootstrap/cache \
+ && chmod +x /entrypoint.sh \
  && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-
+ 
 HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
 EXPOSE 9000
 ENTRYPOINT ["/entrypoint.sh"]

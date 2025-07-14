@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "build": "vite build",
     "vite": "vite",
     "vite-build": "vite build",
     "e2e": "cypress run",
