@@ -42,6 +42,11 @@ docker-compose up --build
 
 Prometheus and Grafana containers are also started for metrics at `http://localhost:9090` and `http://localhost:3000`.
 
+The application exposes two endpoints for monitoring:
+
+* `GET /metrics` – Prometheus format metrics
+* `GET /health` – returns `{"status":"ok","database":"up"}` when the app and database are reachable
+
 ## Tests and linting
 
 - Execute the test suite:

@@ -41,7 +41,7 @@ RUN mkdir -p /var/www/storage /var/www/bootstrap/cache \
  && chmod +x /entrypoint.sh \
  && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-HEALTHCHECK --interval=30s --timeout=3s CMD php -r "echo 'OK';"
+HEALTHCHECK --interval=30s --timeout=5s CMD wget -qO- http://localhost/health > /dev/null || exit 1
 EXPOSE 9000
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm"]
