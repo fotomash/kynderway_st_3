@@ -60,7 +60,9 @@ Route::get('/get-new-job-notification', [ClientController::class, 'getNewJobNoti
 Route::get('/get-new-job-notification-provider', [ProviderController::class, 'getNewJobNotification'])->name('get.new.job.notification.provider');
 
 //Guest Routes
-Route::get('/', [GuestController::class, 'index']);   //optimized
+Route::middleware('guest')
+     ->get('/', [GuestController::class, 'index'])
+     ->name('landing');
 Route::get('/{id}/download-file', [GuestController::class, 'downloadFile']);
 Route::get('/jobs/{slug}', [GuestController::class, 'getJob']);
 //Route::get('/job/{category_slug}/{profile_slug}',  [GuestController::class, 'getJob']);
