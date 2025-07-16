@@ -14,6 +14,9 @@ use Stripe\PaymentIntent;
 use Stripe\Transfer;
 use Tests\TestCase;
 
+require_once __DIR__ . '/../Stubs/StripeStubs.php';
+require_once __DIR__ . '/../Stubs/FirebaseStubs.php';
+
 class BookingServiceTest extends TestCase
 {
     private $pushService;
@@ -23,6 +26,7 @@ class BookingServiceTest extends TestCase
         parent::setUp();
 
         $this->pushService = Mockery::mock(PushNotificationService::class);
+        app()->instance(PushNotificationService::class, $this->pushService);
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();

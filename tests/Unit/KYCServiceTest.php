@@ -16,6 +16,8 @@ class KYCServiceTest extends TestCase
     {
         parent::setUp();
 
+        config(['app.key' => 'base64:' . base64_encode(random_bytes(32))]);
+
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
