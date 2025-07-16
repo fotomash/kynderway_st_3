@@ -22,6 +22,7 @@ use Chatify\Http\Models\Message;
 use Chatify\Http\Models\Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
 use Carbon\Carbon;
+use App\Providers\RouteServiceProvider;
 
 use Response;
 use Session;
@@ -48,10 +49,9 @@ class GuestController extends Controller
 
     public function index()
     {
-        if (auth()->check()) {
-            return redirect('/login');
-        }
-        return redirect('/search-jobs');
+        return auth()->check()
+            ? redirect(RouteServiceProvider::HOME)
+            : redirect('/search-jobs'); // or view('website.index')
     }
 
     public function getJob($slug)
