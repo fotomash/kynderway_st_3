@@ -28,6 +28,12 @@ Kynderway is a Laravel based platform for booking childcare. It provides a REST 
    ```bash
    php artisan migrate
    ```
+6. Build the frontend assets:
+   ```bash
+   npm run build
+   ```
+
+> **Note** The compiled JavaScript under `public/js/` is ignored in version control. Run `npm run build` during deployment to generate these assets.
 
 You can launch the application with the built in PHP server:
 ```bash
