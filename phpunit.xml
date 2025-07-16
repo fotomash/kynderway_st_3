@@ -19,6 +19,7 @@
             <file>./tests/Feature/PayoutEndpointsTest.php</file>
             <file>./tests/Feature/BackgroundCheckTest.php</file>
             <file>./tests/Feature/KYCControllerTest.php</file>
+            <file>./tests/Feature/RootRedirectTest.php</file>
         </testsuite>
         <testsuite name="Integration">
             <directory suffix="Test.php">./tests/Integration</directory>
