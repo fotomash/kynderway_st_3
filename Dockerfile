@@ -39,7 +39,9 @@ COPY --from=nodebuilder /app/public    /var/www/public
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN mkdir -p /var/www/storage /var/www/bootstrap/cache \
  && chmod +x /entrypoint.sh \
- && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+ && chown -R www-data:www-data /var/www
+
+USER www-data
 
 HEALTHCHECK --interval=30s --timeout=5s CMD wget -qO- http://localhost/health > /dev/null || exit 1
 EXPOSE 9000
