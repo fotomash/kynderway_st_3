@@ -340,7 +340,7 @@
                     //$('#loader').hide();
                 },
                 error: function(jqXHR, testStatus, error) {
-                    console.log(error);
+                    // console.log(error);
                     alert("Page " + href + " cannot open. Error:" + error);
                     //$('#loader').hide();
                 },
@@ -398,7 +398,7 @@
                     //$('#loader').hide();
                 },
                 error: function(jqXHR, testStatus, error) {
-                    console.log(error);
+                    // console.log(error);
                     alert("Page " + href + " cannot open. Error:" + error);
                 },
                 timeout: 8000
